@@ -1,4 +1,22 @@
 .NavMain {
-	display: flex;
-	gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  color: white;
+  background: rgba(150, 150, 150, 0.03);
+  width: 20%;
+  min-width: 250px;
+  height: 100%;
+  padding: 2rem;
+}
+
+.NavMain .logo {
+	/* margin: 3rem 0; */
+  font-family: Dolce Vita;
+  text-align: center;
+  font-size: 3rem;
+  background: radial-gradient(100% 341.89% at 0% 50%, #0047ff 0%, #fa00ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

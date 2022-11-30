@@ -21,7 +21,7 @@ const UserProvider = ({ children }) => {
 			})
 			.catch((e) => {
 				setAuth({ currentUser: null, isLoading: false, isLoggedIn: false })
-				console.error(e.message)
+				console.warn(e.message)
 			})
 	}
 

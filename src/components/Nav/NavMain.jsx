@@ -7,7 +7,7 @@ const NavMain = () => {
 	return (
 		<nav className="NavMain">
 			<NavLink className="logo" to="/">
-				App name
+				HOOKS
 			</NavLink>
 			{isLoggedIn && (
 				<>
