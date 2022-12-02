@@ -44,9 +44,9 @@ const service = {
 			.catch(errorHandler)
 	},
 
-	signin(userInfo) {
+	login(userInfo) {
 		return service
-			.post("/api/auth/signin", userInfo)
+			.post("/api/auth/login", userInfo)
 			.then((res) => res.data)
 			.catch(errorHandler)
 	},

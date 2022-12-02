@@ -13,7 +13,7 @@ const FormSignUp = () => {
 		apiHandler
 			.signup(values)
 			.then(() => {
-				navigate("/signin")
+				navigate("/login")
 			})
 			.catch((error) => {
 				setError(error.response.data)
