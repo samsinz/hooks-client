@@ -1,27 +1,59 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 @font-face {
-	font-family: Dolce Vita;
-	/* src: url(./styles/fonts/Dolce\ Vita.ttf); */
-  }
+  font-family: Dolce Vita;
+  /* src: url(./styles/fonts/Dolce\ Vita.ttf); */
+}
 
+:root {
+	--custompink: #E506FF;
+	--customblue: #0047FF;
+}
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 300;
 }
 
 html {
-	font-family: "Manrope", sans-serif;
-	background-color: #11161B;
+  font-family: "Manrope", sans-serif;
+  background-color: #11161b;
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 ul {
-	list-style-type: none;
+  list-style-type: none;
 }
+
+.hover:hover {
+
+	color: #e4e4e4
+	/* CODE FOR GRADIENT COLOR WHEN HOVERING */
+	/* background: radial-gradient(100% 341.89% at 0% 50%, #0047ff 0%, #fa00ff 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text; */
+}
+
+.border-gradient {
+	background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, darkblue, darkorchid) border-box;
+	border-radius: 0.3rem;
+	border: 2px solid transparent;
+  }
+
+  .border-gradient-circular {
+	background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue),  var(--custompink)) border-box;
+	border-radius: 100%;
+	border: 3px solid transparent;
+  }
+
+  .border-gradient-circular:hover {
+	background: linear-gradient(#151a1f, #341e36) padding-box, linear-gradient(to right, var(--customblue),  var(--custompink)) border-box;
+
+  }

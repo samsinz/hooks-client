@@ -1,12 +1,12 @@
 .App {
     display: flex;
-    /* width: 100%; */
+    width: 100vw;
     height: 100vh;
 }
 
 .App .Panel {
     width: 100%;
-    padding: 2rem
+    /* padding: 2rem */
 }
 
 .App .Home {

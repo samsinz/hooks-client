@@ -1,0 +1,16 @@
+.Achievements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Achievements img {
+  width: 30%;
+  aspect-ratio: 1/1;
+  margin: 0.3rem 0.1rem;
+  padding: 0.65rem;
+}
+
+/* .Achievements img:hover {
+    transform: rotateY(180deg);
+} */
