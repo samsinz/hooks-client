@@ -16,20 +16,18 @@ function App() {
 
   return (
     <div className="App">
-
       {isLoggedIn ? <NavMain /> : true}
 
       <div className="Panel">
         <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           <Route element={<LoggedOut />}>
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </Route>
           <Route element={<PrivateRoute />}>
             {/* All routes after the PrivateRoute require the user to be loggedIn */}
-  
+
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
         </Routes>

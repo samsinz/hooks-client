@@ -5,7 +5,7 @@ import { Navigate, Outlet } from "react-router-dom"
 const LoggedOut = () => {
 	const { isLoggedIn, isLoading } = useAuth()
 	if (isLoading) return <p>Loading...</p>
-	if (isLoggedIn) return <Navigate to="/" />
+	if (isLoggedIn) return <Navigate to="/dashboard" />
 	else return <Outlet />
 }
 
