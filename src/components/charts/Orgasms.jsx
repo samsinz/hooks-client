@@ -1,29 +1,13 @@
 import { ResponsivePie } from "@nivo/pie";
 import { linearGradientDef } from '@nivo/core'
 
-const data =
-  [
-    {
-      id: "sass",
-      label: "sass",
-      value: 100,
-      color: "hsl(341, 70%, 50%)",
-    },
-    {
-      id: "scala",
-      label: "scala",
-      value: 0,
-      color: "#ffffff",
-    },
-  ];
 
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const Orgasms = () => {
-
+const Orgasms = ({data}) => {
   return (
     <ResponsivePie
       data={data}
@@ -47,7 +31,9 @@ const Orgasms = () => {
 
       animate={false}
       legends={[]}
-      keys={['sass', 'scala']}
+      keys={['true', 'false']}
+
+
       // 1. defining gradients
       defs={[
         // using helpers
@@ -77,9 +63,11 @@ const Orgasms = () => {
       // 2. defining rules to apply those gradients
       fill={[
         // match using object query
-        { match: { id: 'sass' }, id: 'gradientC' },
+
+        { match: { id: 'true' }, id: 'gradientC' },
         // match using function
-        { match: d => d.id === 'scala', id: 'gradientB' },
+        { match: d => d.id === 'false', id: 'gradientB' },
+
         // match all, will only affect 'elm', because once a rule match,
         // others are skipped, so now it acts as a fallback
         // { match: 'sass', id: 'gradientC' },
@@ -87,5 +75,4 @@ const Orgasms = () => {
     />
   );
 };
-
 export default Orgasms;
