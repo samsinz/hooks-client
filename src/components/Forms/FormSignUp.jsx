@@ -24,13 +24,14 @@ const FormSignUp = () => {
     const fd = new FormData();
     fd.append("name", values.name);
     fd.append("email", values.name);
+    fd.append("birth", values.birth);
     fd.append("image", selectedFile);
     fd.append("password", values.password);
 
     apiHandler
-      .signup(values)
+      .signup(fd)
       .then(() => {
-        navigate("/signin");
+        navigate("/login");
       })
       .catch((error) => {
         setError(error.response.data);
@@ -39,7 +40,7 @@ const FormSignUp = () => {
   return (
     <>
       <div className="FormSignUp">
-      {/* <span onClick={closeModal}>X</span> */}
+        {/* <span onClick={closeModal}>X</span> */}
         {error && <h3 className="error">{error.message}</h3>}
 
         {/* button to close the modal */}
@@ -55,8 +56,8 @@ const FormSignUp = () => {
             <path
               d="M2.13184 2.13184L10.2636 10.2636M10.2636 10.2636L18.3953 18.3953M10.2636 10.2636L2.13184 18.3953M10.2636 10.2636L18.3953 2.13184"
               stroke="white"
-              stroke-width="3"
-              stroke-linecap="round"
+              strokeWidth="3"
+              strokeLinecap="round"
             />
           </svg>
         </button>
@@ -106,7 +107,7 @@ const FormSignUp = () => {
             onFileSelectError={({ error }) => alert(error)}
           />
 
-          <button className="svgButton arrowButton">
+          <button type="submit" className="svgButton arrowButton">
             <svg
               width="23"
               height="20"
