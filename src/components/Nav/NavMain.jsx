@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../auth/useAuth";
 import "../../styles/NavMain.css";
 import Achievements from './Achievements'
+import FormSignUp from '../Forms/FormSignUp'
+import FormEditProfile from "../Forms/FormEditProfile";
 
 const NavMain = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
-  const [showEdit, setShowEdit] = useState(false)
+  const dialog = useRef()
+
+  const showDialog = () => {
+    dialog.current.showModal()
+  }
+  const closeModal = () => {
+    dialog.current.close()
+  }
   return (
     <nav className="NavMain">
       {isLoggedIn && (
@@ -31,7 +40,7 @@ const NavMain = () => {
             {/* <NavLink className="hover" to="/settings">
               Profile settings
             </NavLink> */}
-            <p onClick={() => setShowEdit(!showEdit)} className="hover">Profile settings</p>
+            <p onClick={showDialog} className="hover">Profile settings</p>
           </span>
 
           {/* <NavLink to="/profile">{currentUser && currentUser.email}</NavLink> */}
@@ -57,9 +66,9 @@ const NavMain = () => {
         </>
       )}
 
-      {showEdit && <dialog>
-       
-      </dialog>}
+      <dialog ref={dialog}>
+       <FormEditProfile closeModal={closeModal} />
+      </dialog>
     </nav>
   );
 };

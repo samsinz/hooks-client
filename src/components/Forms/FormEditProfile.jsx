@@ -4,13 +4,17 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
 import FileUploader from "./FileUploader";
+import useAuth from "../../auth/useAuth";
 
-const FormSignUp = () => {
+const FormEditProfile = ({closeModal}) => {
+
+        const {currentUser, authenticateUser} = useAuth();
+
+
   const [values, handleChange] = useForm({
-    name: "",
-    birth: "",
-    email: "",
-    password: "",
+    name: currentUser.name,
+    birth: currentUser.birth,
+    image : currentUser.image,
   });
   const [selectedFile, setSelectedFile] = useState("");
   const current = new Date().toISOString().split("T")[0];
@@ -26,21 +30,21 @@ const FormSignUp = () => {
     fd.append("name", values.name);
     fd.append("email", values.name);
     fd.append("image", selectedFile);
-    fd.append("password", values.password);
 
-    apiHandler
-      .signup(values)
-      .then(() => {
-        navigate("/signin");
-      })
+    apiHandler.patch('/api/auth/me', fd)
+      .then((async () => {
+        await authenticateUser()
+        closeModal()
+      }))
       .catch((error) => {
-        setError(error.response.data);
-      });
+        console.log(error)
+        // setError(error.response.data);
+      })
   };
   return (
     <>
-      <div className="FormSignUp">
-      {/* <span onClick={closeModal}>X</span> */}
+      <div className="FormEditProfile">
+      <span onClick={closeModal}>X</span>
         {error && <h3 className="error">{error.message}</h3>}
         <form onSubmit={handleSubmit}>
           <h2>Create your account</h2>
@@ -64,22 +68,7 @@ const FormSignUp = () => {
             name="birth"
             max={current}
           />
-          <label htmlFor="email">Email</label>
-          <input
-            onChange={handleChange}
-            value={values.email}
-            type="email"
-            id="email"
-            name="email"
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            onChange={handleChange}
-            value={values.password}
-            type="password"
-            id="password"
-            name="password"
-          />
+          
           <label htmlFor="image">Upload a profile picture</label>
           <FileUploader
             onFileSelectSuccess={(file) => setSelectedFile(file)}
@@ -93,4 +82,5 @@ const FormSignUp = () => {
   );
 };
 
-export default FormSignUp;
+export default FormEditProfile;
+
