@@ -35,7 +35,10 @@ h2 {
   font-weight: bold;
 }
 
+
 .hover:hover {
+	cursor: pointer;
+
   color: #e4e4e4;
   /* CODE FOR GRADIENT COLOR WHEN HOVERING */
   /* background: radial-gradient(100% 341.89% at 0% 50%, #0047ff 0%, #fa00ff 100%);
