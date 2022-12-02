@@ -4,7 +4,7 @@ import apiHandler from "../../api/apiHandler"
 import useAuth from "../../auth/useAuth"
 import { useNavigate } from "react-router-dom"
 
-const FormSignIn = () => {
+const FormLogIn = () => {
 	const [{ email, password }, handleChange] = useForm({
 		email: "",
 		password: "",
@@ -16,7 +16,7 @@ const FormSignIn = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		apiHandler
-			.signin({ email, password })
+			.login({ email, password })
 			.then((res) => {
 				console.log(res)
 				storeToken(res.authToken)
@@ -32,7 +32,7 @@ const FormSignIn = () => {
 		<>
 			{error && <h3 className="error">{error.message}</h3>}
 			<form onSubmit={handleSubmit}>
-				<h2>Signin</h2>
+				<h2>Login</h2>
 				<label htmlFor="email">Email</label>
 				<input
 					type="email"
@@ -55,7 +55,7 @@ const FormSignIn = () => {
 	)
 }
 
-export default FormSignIn
+export default FormLogIn
 
 // const token = localStorage.getItem('authToken')
 

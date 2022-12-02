@@ -35,7 +35,7 @@ const NavMain = () => {
           {/* <button onClick={removeUser}>Log-Out</button> */}
 
           <p id='achievement'>Achievements</p>
-		  <Achievements/>
+          <Achievements />
 
           <div id="logout-container">
             <span id="logout" className="hover" onClick={removeUser}>
@@ -49,7 +49,7 @@ const NavMain = () => {
           <NavLink className="logo" to="/">
             HOOKS
           </NavLink>
-          <NavLink to="/signin">Log in</NavLink>
+          <NavLink to="/login">Log in</NavLink>
           <NavLink to="/signup">Sign Up</NavLink>
         </>
       )}
