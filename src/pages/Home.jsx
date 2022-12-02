@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import service from "../api/apiHandler";
 import Orgasms from "../components/charts/Orgasms";
+import Activities from "../components/charts/Activities";
+import Ratings from '../components/charts/Ratings'
 
 const Home = () => {
   const [users, setUsers] = useState(null);
@@ -53,7 +55,9 @@ const Home = () => {
       {/* {orgasms.map((orgasm) => {
         return <div>{orgasm ? "true" : "false"}</div>;
       })} */}
-      <Orgasms />
+      {/* <Orgasms /> */}
+      {/* <Activities /> */}
+      <Ratings />
     </div>
   );
 };
