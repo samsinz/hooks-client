@@ -16,6 +16,7 @@ const FormSignUp = () => {
   const current = new Date().toISOString().split("T")[0];
   const [error, setError] = useState(null);
 
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
