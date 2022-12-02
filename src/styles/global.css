@@ -5,8 +5,8 @@
 }
 
 :root {
-	--custompink: #E506FF;
-	--customblue: #0047FF;
+  --custompink: #e506ff;
+  --customblue: #0047ff;
 }
 
 * {
@@ -31,29 +31,34 @@ ul {
   list-style-type: none;
 }
 
-.hover:hover {
+h2 {
+  font-weight: bold;
+}
 
-	color: #e4e4e4
-	/* CODE FOR GRADIENT COLOR WHEN HOVERING */
-	/* background: radial-gradient(100% 341.89% at 0% 50%, #0047ff 0%, #fa00ff 100%);
+.hover:hover {
+  color: #e4e4e4;
+  /* CODE FOR GRADIENT COLOR WHEN HOVERING */
+  /* background: radial-gradient(100% 341.89% at 0% 50%, #0047ff 0%, #fa00ff 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text; */
 }
 
 .border-gradient {
-	background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, darkblue, darkorchid) border-box;
-	border-radius: 0.3rem;
-	border: 2px solid transparent;
-  }
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to right, darkblue, darkorchid) border-box;
+  border-radius: 0.3rem;
+  border: 2px solid transparent;
+}
 
-  .border-gradient-circular {
-	background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue),  var(--custompink)) border-box;
-	border-radius: 100%;
-	border: 3px solid transparent;
-  }
+.border-gradient-circular {
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+  border-radius: 100%;
+  border: 3px solid transparent;
+}
 
-  .border-gradient-circular:hover {
-	background: linear-gradient(#151a1f, #341e36) padding-box, linear-gradient(to right, var(--customblue),  var(--custompink)) border-box;
-
-  }
+.border-gradient-circular:hover {
+  background: linear-gradient(#151a1f, #341e36) padding-box,
+    linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+}

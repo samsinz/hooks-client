@@ -16,7 +16,6 @@ const FormSignUp = () => {
   const current = new Date().toISOString().split("T")[0];
   const [error, setError] = useState(null);
 
-
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -41,11 +40,33 @@ const FormSignUp = () => {
     <>
       <div className="FormSignUp">
         {error && <h3 className="error">{error.message}</h3>}
+
+        {/* button to close the modal */}
+
+        <button className="svgButton">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.13184 2.13184L10.2636 10.2636M10.2636 10.2636L18.3953 18.3953M10.2636 10.2636L2.13184 18.3953M10.2636 10.2636L18.3953 2.13184"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
         <form onSubmit={handleSubmit}>
-          <h2>Create your account</h2>
-          <p>
-            Already have an accout? <Link to="/">Log in</Link>
-          </p>
+          <div className="titleArea">
+            <h2>Create your account</h2>
+            <p>
+              Already have an accout? <Link to="/login">Log in</Link>
+            </p>
+          </div>
           <label htmlFor="name">Name</label>
           <input
             onChange={handleChange}
@@ -79,13 +100,25 @@ const FormSignUp = () => {
             id="password"
             name="password"
           />
-          <label htmlFor="image">Upload a profile picture</label>
           <FileUploader
             onFileSelectSuccess={(file) => setSelectedFile(file)}
             onFileSelectError={({ error }) => alert(error)}
           />
 
-          <button>Submit</button>
+          <button className="svgButton arrowButton">
+            <svg
+              width="23"
+              height="20"
+              viewBox="0 0 23 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.3177 20L11.6771 18.3807L18.4314 11.6264H0.938477V9.28267H18.4314L11.6771 2.54972L13.3177 0.909091L22.8632 10.4545L13.3177 20Z"
+                fill="#11161B"
+              />
+            </svg>
+          </button>
         </form>
       </div>
     </>
