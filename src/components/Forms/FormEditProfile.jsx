@@ -47,10 +47,8 @@ const FormEditProfile = ({closeModal}) => {
       <span onClick={closeModal}>X</span>
         {error && <h3 className="error">{error.message}</h3>}
         <form onSubmit={handleSubmit}>
-          <h2>Create your account</h2>
-          <p>
-            Already have an accout? <Link to="/">Log in</Link>
-          </p>
+          <h2>Edit your account</h2>
+          
           <label htmlFor="name">Name</label>
           <input
             onChange={handleChange}
