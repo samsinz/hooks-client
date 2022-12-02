@@ -39,6 +39,7 @@ const FormSignUp = () => {
   return (
     <>
       <div className="FormSignUp">
+      {/* <span onClick={closeModal}>X</span> */}
         {error && <h3 className="error">{error.message}</h3>}
 
         {/* button to close the modal */}

@@ -79,4 +79,11 @@
   cursor: pointer;
 }
 
+dialog {
+  background-color: black;
+}
+dialog::backdrop {
+  backdrop-filter: blur(4px);
+}
+
   
