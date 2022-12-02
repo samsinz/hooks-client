@@ -23,7 +23,7 @@
 }
 
 .NavMain #image {
-  width: 65%;
+  width: 15vh;
   object-fit: cover;
   aspect-ratio: 1/1;
   border-radius: 100%;
@@ -39,7 +39,7 @@
 .NavMain #tags {
   display: flex;
   align-self: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4.5vh;
 }
 
 .NavMain #tags span {
@@ -61,7 +61,7 @@
 .NavMain #achievement {
 	text-align: center;
 	font-weight: 600;
-	margin-top: 3rem;
+	margin-top: 4.5vh;
 	margin-bottom: 1rem;
 }
 
