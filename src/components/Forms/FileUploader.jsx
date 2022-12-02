@@ -19,7 +19,9 @@ const FileUploader = ({ onFileSelectError, onFileSelectSuccess }) => {
       <button
         onClick={(e) => fileInput.current && fileInput.current.click()}
         className="btn btn-primary"
-      />
+      >
+        Upload a profile picture
+      </button>
     </div>
   );
 };
