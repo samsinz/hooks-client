@@ -9,6 +9,8 @@ import homeProtection from "../assets/images/home-protection.png";
 import service from "../api/apiHandler";
 import useAuth from "../auth/useAuth";
 import Orgasms from "../components/charts/Orgasms";
+import Activities from "../components/charts/Activities";
+import Ratings from '../components/charts/Ratings'
 
 const Home = () => {
   return (
@@ -57,6 +59,7 @@ const Home = () => {
           <img id='trophy' src={homeTrophy} alt="trophy" />
         </div>
       </div>
+
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { ResponsivePie } from "@nivo/pie";
 import { linearGradientDef } from '@nivo/core'
 
+
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
@@ -27,16 +28,21 @@ const Orgasms = ({data}) => {
       isInteractive={false}
       enableArcLabels={false}
       transitionMode="startAngle"
+
       animate={false}
       legends={[]}
       keys={['true', 'false']}
+
+
       // 1. defining gradients
       defs={[
         // using helpers
         // will inherit colors from current element
+
         linearGradientDef('gradientC', [
           { offset: 20, color: '#0C009C' },
           { offset: 100, color: '#98009B' },
+
         ],
           // you may specify transforms for your gradients, e.g. rotations and skews,
           // following the transform attribute format.
@@ -49,6 +55,7 @@ const Orgasms = ({data}) => {
           id: 'gradientB',
           type: 'linearGradient',
           colors: [
+
             { offset: 0, color: '#151A1F', opacity: 0 },
           ],
         },
@@ -56,9 +63,11 @@ const Orgasms = ({data}) => {
       // 2. defining rules to apply those gradients
       fill={[
         // match using object query
+
         { match: { id: 'true' }, id: 'gradientC' },
         // match using function
         { match: d => d.id === 'false', id: 'gradientB' },
+
         // match all, will only affect 'elm', because once a rule match,
         // others are skipped, so now it acts as a fallback
         // { match: 'sass', id: 'gradientC' },
