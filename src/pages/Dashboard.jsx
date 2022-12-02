@@ -27,6 +27,7 @@ const Dashboard = () => {
         <div id="age"></div>
         <div id="duration"></div>
       </div>
+
     </div>
   );
 };
