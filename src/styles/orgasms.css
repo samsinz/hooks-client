@@ -1,0 +1,32 @@
+.Orgasms {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Orgasms #info {
+    margin: 1rem;
+    width: 50%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+
+.Orgasms h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.Orgasms p {
+    font-size: 0.8rem;
+}
+
+
+.Orgasms #chart {
+    height: 100%;
+    width: 50%;
+    /* background-color: darkslategrey; */
+    padding: 1.5rem;
+}

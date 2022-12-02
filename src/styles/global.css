@@ -32,6 +32,7 @@ ul {
 }
 
 .hover:hover {
+	cursor: pointer;
 
 	color: #e4e4e4
 	/* CODE FOR GRADIENT COLOR WHEN HOVERING */
