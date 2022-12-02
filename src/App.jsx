@@ -29,7 +29,7 @@ function App() {
           </Route>
           <Route element={<PrivateRoute />}>
             {/* All routes after the PrivateRoute require the user to be loggedIn */}
-            <Route path="/profile" element={<Profile />} />
+
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
         </Routes>

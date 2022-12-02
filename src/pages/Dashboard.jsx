@@ -29,53 +29,54 @@ const Dashboard = () => {
     let orgasmCounter = 0;
     let hookCounter = 0;
 
-      for (let j = 0; j < userStats.partners.length; j++) {
-        for (let k = 0; k < userStats.partners[j].hooks.length; k++) {
-          setOrgasms((currentValue) => [...currentValue, userStats.partners[j].hooks[k].orgasm]);
-          userStats.partners[j].hooks[k].orgasm ? orgasmCounter++ : true;
-          hookCounter++;
-        }
+    for (let j = 0; j < userStats.partners.length; j++) {
+      for (let k = 0; k < userStats.partners[j].hooks.length; k++) {
+        setOrgasms((currentValue) => [...currentValue, userStats.partners[j].hooks[k].orgasm]);
+        userStats.partners[j].hooks[k].orgasm ? orgasmCounter++ : true;
+        hookCounter++;
       }
-    
-	console.table({hookCounter, orgasmCounter})
+    }
+
+    console.table({ hookCounter, orgasmCounter })
     setOrgasms([
       { id: "true", value: (orgasmCounter * 100) / hookCounter },
       { id: "false", value: 100 - (orgasmCounter * 100) / hookCounter },
     ]);
   }, [userStats]);
 
-console.log(userStats);
+  console.log(userStats);
   if (!userStats || !orgasms.length) return <div>Loading</div>;
 
   return (
     <div className="Home">
-	{console.log(userStats)}
-	{console.log(orgasms)}
+      {console.log(userStats)}
+      {console.log(orgasms)}
       <h1>Welcome 🏡</h1>
       {/* {users.map((user) => {
         return (
           <div key={user._id}> */}
-            <p>User: {userStats.name}</p>
-            {userStats.partners.map((partner) => {
+      <p>User: {userStats.name}</p>
+      {userStats.partners.map((partner) => {
+        return (
+          <div key={partner._id}>
+            <p>Partner: {partner.name}</p>
+            {partner.hooks.map((hook) => {
               return (
-                <div key={partner._id}>
-                  <p>Partner: {partner.name}</p>
-                  {partner.hooks.map((hook) => {
-                    return (
-                      <div key={hook._id}>
-                        <p>{hook.orgasm ? "Orgasm true" : "Orgasm false"}</p>
-                      </div>
-                    );
-                  })}
+                <div key={hook._id}>
+                  <p>{hook.orgasm ? "Orgasm true" : "Orgasm false"}</p>
                 </div>
               );
             })}
-          {/* </div>
+          </div>
+        );
+      })}
+      {/* </div>
         );
       })} */}
       {/* {orgasms.map((orgasm) => {
         return <div>{orgasm ? "true" : "false"}</div>;
       })} */}
+      <Profile />
       <Orgasms data={orgasms} />
     </div>
   );

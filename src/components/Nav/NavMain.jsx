@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../auth/useAuth";
 import "../../styles/NavMain.css";
@@ -5,6 +6,7 @@ import Achievements from './Achievements'
 
 const NavMain = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
+  const [showEdit, setShowEdit] = useState(false)
   return (
     <nav className="NavMain">
       {isLoggedIn && (
@@ -26,9 +28,10 @@ const NavMain = () => {
             </NavLink>
           </span>
           <span>
-            <NavLink className="hover" to="/settings">
+            {/* <NavLink className="hover" to="/settings">
               Profile settings
-            </NavLink>
+            </NavLink> */}
+            <p onClick={() => setShowEdit(!showEdit)} className="hover">Profile settings</p>
           </span>
 
           {/* <NavLink to="/profile">{currentUser && currentUser.email}</NavLink> */}
@@ -53,6 +56,10 @@ const NavMain = () => {
           <NavLink to="/signup">Sign Up</NavLink>
         </>
       )}
+
+      {showEdit && <dialog>
+       
+      </dialog>}
     </nav>
   );
 };
