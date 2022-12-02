@@ -1,13 +1,15 @@
 .Achievements {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  max-height: 200px;
+  overflow: scroll;
 }
 
 .Achievements img {
-  width: 30%;
+  width: 25%;
   aspect-ratio: 1/1;
-  margin: 0.3rem 0.1rem;
+  margin: 0 0.3rem 0.6rem 0.3rem;
   padding: 0.65rem;
 }
 
