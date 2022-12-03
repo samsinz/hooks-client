@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
 import FileUploader from "./FileUploader";
 
-const FormSignUp = () => {
+const FormSignUp = ({ closeModal }) => {
   const [values, handleChange] = useForm({
     name: "",
     birth: "",
@@ -32,6 +32,7 @@ const FormSignUp = () => {
       .signup(fd)
       .then(() => {
         navigate("/login");
+        closeModal();
       })
       .catch((error) => {
         setError(error.response.data);
@@ -40,12 +41,7 @@ const FormSignUp = () => {
   return (
     <>
       <div className="FormSignUp">
-        {/* <span onClick={closeModal}>X</span> */}
-        {error && <h3 className="error">{error.message}</h3>}
-
-        {/* button to close the modal */}
-
-        <button className="svgButton">
+        <span onClick={closeModal} className="svgButton">
           <svg
             width="20"
             height="20"
@@ -60,7 +56,7 @@ const FormSignUp = () => {
               strokeLinecap="round"
             />
           </svg>
-        </button>
+        </span>
 
         <form onSubmit={handleSubmit}>
           <div className="titleArea">
@@ -69,23 +65,30 @@ const FormSignUp = () => {
               Already have an accout? <Link to="/login">Log in</Link>
             </p>
           </div>
-          <label htmlFor="name">Name</label>
-          <input
-            onChange={handleChange}
-            value={values.name}
-            type="text"
-            id="name"
-            name="name"
-          />
-          <label htmlFor="birth">Birthdate</label>
-          <input
-            onChange={handleChange}
-            value={values.birth}
-            type="date"
-            id="birth"
-            name="birth"
-            max={current}
-          />
+
+          <div className="sameLine">
+            <div className="left">
+              <label htmlFor="name">Name</label>
+              <input
+                onChange={handleChange}
+                value={values.name}
+                type="text"
+                id="name"
+                name="name"
+              />
+            </div>
+            <div className="right">
+              <label htmlFor="birth">Birthdate</label>
+              <input
+                onChange={handleChange}
+                value={values.birth}
+                type="date"
+                id="birth"
+                name="birth"
+                max={current}
+              />
+            </div>
+          </div>
           <label htmlFor="email">Email</label>
           <input
             onChange={handleChange}
@@ -106,6 +109,8 @@ const FormSignUp = () => {
             onFileSelectSuccess={(file) => setSelectedFile(file)}
             onFileSelectError={({ error }) => alert(error)}
           />
+
+          {error && <h3 className="error">{error.message}</h3>}
 
           <button type="submit" className="svgButton arrowButton">
             <svg

@@ -1,32 +1,27 @@
-.FormSignUp {
-  box-sizing: content-box;
-  width: 25rem;
-  padding: 3rem 2rem;
-  border: solid rgba(39, 48, 56, 1) 1px;
-  border-radius: 5%;
-  background-color: rgba(17, 22, 27, 0.8);
-}
-
-.FormSignUp .svgButton {
-  padding: 0.7rem;
-  border: none;
-  background-color: transparent;
-  margin-bottom: 2rem;
+.FormSignUp .sameLine {
   display: flex;
-  margin-right: 0;
-  margin-left: auto;
+  flex-direction: row;
+  gap: 0.5rem;
 }
 
-.FormSignUp .arrowButton {
-  border-radius: 100%;
-  aspect-ratio: 1;
+.FormSignUp p {
+  margin-bottom: 2rem !important;
+}
+
+.FormSignUp u {
+  color: var(--custompink);
+}
+
+.FormSignUp .left,
+.FormSignUp .right {
+  width: 100%;
   display: flex;
-  margin: 1.5rem 0 0 auto;
-  background-color: white !important;
+  flex-direction: column;
 }
 
-.FormSignUp .titleArea {
-  margin-bottom: 2rem;
+.FormSignUp label {
+  display: block;
+  margin: 1rem 0 0.2rem 0;
 }
 
 .FormSignUp input {
@@ -38,7 +33,28 @@
   height: 2.5rem;
 }
 
-.FormSignUp label {
-  display: block;
-  margin: 1rem 0 0.2rem 0;
+.FormSignUp .svgButton {
+  padding: 0.7rem;
+  border: none;
+  background-color: transparent;
+  margin: 0 0 2rem auto;
+  display: flex;
+  cursor: pointer;
+}
+
+.FormSignUp span {
+  display: flex;
+  justify-content: right;
+}
+
+.FormSignUp .svgButton p {
+  text-align: right !important;
+}
+
+.FormSignUp .arrowButton {
+  border-radius: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  margin: 1.5rem 0 0 auto;
+  background-color: white !important;
 }
