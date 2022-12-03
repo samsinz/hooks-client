@@ -12,16 +12,29 @@ import useAuth from "../auth/useAuth";
 import Orgasms from "../components/charts/Orgasms";
 import Activities from "../components/charts/Activities";
 import Ratings from "../components/charts/Ratings";
+import FormLogIn from "../components/Forms/FormLogIn";
 
 const Home = () => {
-  const dialog = useRef();
+  // modale signup //
+  const signup = useRef();
 
-  const showDialog = () => {
-    dialog.current.showModal();
+  const showSignup = () => {
+    signup.current.showModal();
   };
 
-  const closeModal = () => {
-    dialog.current.close();
+  const closeSignup = () => {
+    signup.current.close();
+  };
+
+  // modale login //
+  const login = useRef();
+
+  const showLogin = () => {
+    login.current.showModal();
+  };
+
+  const closeLogin = () => {
+    login.current.close();
   };
 
   return (
@@ -55,7 +68,7 @@ const Home = () => {
             sexual growth. Keep track of your intimate moments, discover an
             overview of your well-being and find detailed information.
           </p>
-          <button onClick={showDialog} id="get-started">
+          <button onClick={showSignup} id="get-started">
             Get started &nbsp; &nbsp;
             <svg
               width="13"
@@ -70,6 +83,12 @@ const Home = () => {
               />
             </svg>
           </button>
+          <p>
+            Already have an account ?{" "}
+            <span onClick={showLogin}>
+              <u>Log in</u>
+            </span>
+          </p>
         </div>
         <div className="images">
           <img id="dashboard" src={homeDashboard} alt="dashboard" />
@@ -77,8 +96,15 @@ const Home = () => {
           <img id="trophy" src={homeTrophy} alt="trophy" />
         </div>
       </div>
-      <dialog ref={dialog}>
-        <FormSignUp closeModal={closeModal} />
+
+      {/* modales */}
+
+      <dialog ref={signup}>
+        <FormSignUp closeSignup={closeSignup} />
+      </dialog>
+
+      <dialog ref={login}>
+        <FormLogIn closeLogin={closeLogin} />
       </dialog>
     </div>
   );

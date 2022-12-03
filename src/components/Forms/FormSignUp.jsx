@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
 import FileUploader from "./FileUploader";
 
-const FormSignUp = ({ closeModal }) => {
+const FormSignUp = ({ closeSignup }) => {
   const [values, handleChange] = useForm({
     name: "",
     birth: "",
@@ -41,7 +41,7 @@ const FormSignUp = ({ closeModal }) => {
   return (
     <>
       <div className="FormSignUp">
-        <span onClick={closeModal} className="svgButton">
+        <span onClick={closeSignup} className="svgButton">
           <svg
             width="20"
             height="20"
