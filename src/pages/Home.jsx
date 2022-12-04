@@ -39,7 +39,8 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <img id="glow" src={homeGlow} alt="glow" />
+      {/* l'image se met par dessus le menu donc il n'est pas cliquable */}
+      {/* <img id="glow" src={homeGlow} alt="glow" /> */}
 
       <div className="top-bar">
         <div className="logo">
@@ -52,10 +53,10 @@ const Home = () => {
           <NavLink className="hover" to="/howitworks">
             How it works
           </NavLink>
-          <NavLink className="hover" to="/signup">
+          <NavLink className="hover" onClick={showSignup}>
             Sign up
           </NavLink>
-          <NavLink className="hover" to="/login">
+          <NavLink className="hover" onClick={showLogin}>
             Log in
           </NavLink>
         </div>
