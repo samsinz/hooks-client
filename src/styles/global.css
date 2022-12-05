@@ -101,13 +101,12 @@ dialog::backdrop {
 
 .border-gradient-circular2 {
   background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
-
   border-radius: 100%;
   border: 3px solid transparent;
 }
 
 
-.border-gradient-circular2 {
+.border-gradient-circular {
   background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
   width: 23%;
   aspect-ratio: 1/1;
