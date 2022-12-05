@@ -31,8 +31,9 @@ const AchievementsInfo =({closeAchievement, id}) => {
           </svg>
         </span>
         
-           
-        <img className="border-gradient-circular achivementImg" src={id.image} alt="" />
+           <div className="border-gradient-circular">
+        <img className="infoImg" src={id.image} alt="" />
+        </div>
         <h1> {id.name}</h1>
         <p> {id.description}</p>
         

@@ -6,7 +6,9 @@
   overflow: scroll;
 
 }
-
+.infoImg{
+  margin-top:2rem
+}
 .Achievements img {
   width: 50%;
   align-self: center;
