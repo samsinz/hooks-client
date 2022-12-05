@@ -12,7 +12,9 @@ import useAuth from "../auth/useAuth";
 import Orgasms from "../components/charts/Orgasms";
 import Activities from "../components/charts/Activities";
 import Ratings from "../components/charts/Ratings";
+
 import FormLogIn from "../components/Forms/FormLogIn";
+
 
 const Home = () => {
   // modale signup //
@@ -39,17 +41,18 @@ const Home = () => {
 
   return (
     <div className="Home">
+
       {/* l'image se met par dessus le menu donc il n'est pas cliquable */}
       {/* <img id="glow" src={homeGlow} alt="glow" /> */}
 
+
       <div className="top-bar">
         <div className="logo">
-          <span>Hooks.</span>
+          <NavLink className="hover" to="/">
+            <span>Hooks</span>
+          </NavLink>
         </div>
         <div className="links">
-          <NavLink className="hover" to="/">
-            Home
-          </NavLink>
           <NavLink className="hover" to="/howitworks">
             How it works
           </NavLink>
@@ -61,13 +64,15 @@ const Home = () => {
           </NavLink>
         </div>
       </div>
+      <img id="glow" src={homeGlow} alt="glow" />
+
       <div className="home-content">
         <div className="info">
-          <h1>Track your alcoholic well-being</h1>
+          <h1>Track your sexual well-being</h1>
           <p>
-            Hooks provides you with a safe space to enter information about your
-            sexual growth. Keep track of your intimate moments, discover an
-            overview of your well-being and find detailed information.
+            Hooks provides you with a safe space to enter information about your sexual growth. Keep track of your intimate moments, discover an overview of
+            your well-being and find detailed information about your relationships.
+
           </p>
           <button onClick={showSignup} id="get-started">
             Get started &nbsp; &nbsp;
@@ -107,6 +112,7 @@ const Home = () => {
       <dialog ref={login}>
         <FormLogIn closeLogin={closeLogin} />
       </dialog>
+
     </div>
   );
 };

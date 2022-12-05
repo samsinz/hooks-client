@@ -2,36 +2,35 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  overflow: scroll;
 }
 
 .Dashboard #title {
-  margin: 1rem 2rem -1.5rem;
-  width: 1100px;
+  margin: 1.5vh 3vh;
+  /* width: 1100px; */
+  width: 120vh;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.Dashboard h1 {
-  font-size: 1.4rem;
-}
-
 .Dashboard .top-row {
   /* max-width: 1100px; */
   /* width: 90%; */
-  margin: 0 2rem;
-  width: 1100px;
+  margin: 0 3vh;
+  /* width: 1100px; */
+  width: 120vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 3vh;
 }
 
 .Dashboard .add {
-  font-size: 1.1rem;
   font-weight: 800;
-  padding: 0 0.5rem;
+  padding: 0 0.2rem;
   margin-right: 0.3rem;
   background: rgba(150, 150, 150, 0.5);
   border-radius: 2rem;
@@ -42,7 +41,7 @@
   width: 70%;
   background: rgba(150, 150, 150, 0.03);
   border-radius: 20px;
-  margin-right: 2rem;
+  margin-right: 3vh;
 }
 
 .Dashboard #favorites {
@@ -54,10 +53,12 @@
 
 .Dashboard .middle-row {
   margin: 0 2rem;
-  width: 1100px;
+  /* width: 1100px; */
+  width: 120vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 3vh;
 }
 
 .Dashboard #safe {
@@ -65,7 +66,7 @@
   width: 27%;
   background: rgba(150, 150, 150, 0.03);
   border-radius: 20px;
-  margin-right: 2rem;
+  margin-right: 3vh;
 }
 
 .Dashboard #ratings {
@@ -76,8 +77,9 @@
 }
 
 .Dashboard .bottom-row {
-  width: 1100px;
-  margin: 0 2rem 1rem;
+  /* width: 1100px; */
+  width: 120vh;
+  margin: 0 3vh 1.5vh;
   display: flex;
   flex-direction: row;
 }
@@ -94,7 +96,7 @@
   width: 17%;
   background: rgba(150, 150, 150, 0.03);
   border-radius: 20px;
-  margin: 0 2rem;
+  margin: 0 3vh;
 }
 
 .Dashboard #duration {
@@ -102,4 +104,45 @@
   width: 40%;
   background: rgba(150, 150, 150, 0.03);
   border-radius: 20px;
+}
+
+.Dashboard #more span {
+  font-weight: 700;
+  background: rgba(150, 150, 150, 0.5);
+  border-radius: 2rem;
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 0.2vh 0.9vh;
+}
+
+.Dashboard h1 {
+  font-size: 2.6vh;
+}
+
+.Dashboard h2 {
+  /* font-size: 1.1rem; */
+  font-size: 2vh;
+}
+
+.Dashboard h3 {
+  font-size: 1.4vh;
+}
+
+.Dashboard h4 {
+  font-size: 1.2vh;
+}
+
+.Dashboard p {
+  font-size: 1.4vh;
+}
+
+.Dashboard .percentage .number {
+  font-size: 4.7vh;
+}
+.Dashboard .percentage .percent {
+  font-size: 1.5vh;
+}
+
+.Dashboard #more {
+  font-size: 1.4vh;
 }

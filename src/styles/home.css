@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1.5rem 3rem;
+  margin: 2rem 3rem;
 }
 
 .Home .logo {
@@ -41,7 +41,7 @@
 .Home h1 {
   font-size: 4rem;
   font-weight: 700;
-  line-height: 4rem;
+  line-height: 5rem;
   background: radial-gradient(100% 341.89% at 0% 50%, var(--customblue) 0%, var(--custompink) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -53,16 +53,21 @@
 .Home p {
   margin-bottom: 6rem;
   line-height: 2rem;
-  color: #e9e9e9;
+  /* color: #e9e9e9; */
+  font-size: 1rem;
 }
 
 .Home #get-started {
   padding: 1rem 2rem;
-  animation: gradientLoop2 3s alternate infinite;
+  /* animation: gradientLoop2 3s alternate infinite; */
   /* animation-direction: alternate; */
-  /* background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box; */
+  background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
   border-radius: 2rem;
   border: 2px solid transparent;
+}
+
+.Home #get-started:hover {
+    background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to left, var(--customblue), var(--custompink)) border-box;
 }
 
 .Home .images {
@@ -76,37 +81,59 @@
 
 .Home #glow {
   height: 100vh;
+  width: 65%;
   position: absolute;
   right: 0;
   top: 0;
+  pointer-events: none;
+
 }
 
 .Home #dashboard {
-  height: 60vh;
+  /* height: 60vh; */
+  width: 42vw;
   position: absolute;
-  right: 10vh;
-  top: 8vh;
+  right: 5vw;
+  top: 5vw;
   object-fit: cover;
   animation: hover1 5s ease-in-out infinite;
 }
 
 .Home #protection {
   object-fit: cover;
-  height: 30vh;
+  width: 10.2vw;
   position: absolute;
-  right: 75vh;
-  top: 42vh;
+  right: 40vw;
+  top: 23vw;
   animation: hover2 5s ease-in-out infinite;
 }
 
 .Home #trophy {
   object-fit: cover;
-  height: 22vh;
+  width: 11vw;
+  /* max-height: 12vw; */
   position: absolute;
-  right: 5vh;
-  top: 52vh;
+  right: 2vw;
+  top: 29vw;
   animation: hover3 5s ease-in-out infinite;
 }
+/* 
+@media (max-width: 1000px) {
+    .Home #dashboard {
+        height: 35vw;
+    }
+
+    .Home #protection {
+        height: 18vw;
+    }
+
+    .Home #trophy {
+        height: 12vw;
+    }
+
+} */
+
+
 
 @keyframes hover1 {
   0% {

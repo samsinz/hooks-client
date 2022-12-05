@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-height: 130px;
+  max-height: 140px;
   overflow: scroll;
 }
 
@@ -10,9 +10,15 @@
   width: 25%;
   aspect-ratio: 1/1;
   margin: 0 0.3rem 0.6rem 0.3rem;
-  padding: 0.65rem;
+  padding: 0.8rem;
 }
 
 /* .Achievements img:hover {
     transform: rotateY(180deg);
 } */
+
+@media (max-height: 700px){
+    .Achievements img {
+		padding: 0.4rem;
+	}
+}
