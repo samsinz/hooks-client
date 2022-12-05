@@ -69,3 +69,37 @@
   border-radius: 2rem;
   margin-right: 1vh;
 } */
+
+
+.safeInfo h1 {
+  
+  margin-bottom: 1rem;
+}
+
+.safeInfo h2 {
+  color: var(--custompink);
+}
+
+.safeInfo{
+ 
+  width: 40rem
+ 
+}
+
+.safeInfo span {
+  position: absolute;
+  right:10vh;
+  top: 5vh;
+}
+
+.safeInfo p {
+  font-size: 17px;
+
+}
+
+.safeInfo a {
+
+  font-size: 10px;
+
+}
+

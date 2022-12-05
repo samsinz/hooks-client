@@ -1,11 +1,23 @@
 import { ResponsivePie } from "@nivo/pie";
 import { linearGradientDef } from "@nivo/core";
 import useAuth from "../../auth/useAuth";
-import { useEffect, useState } from "react";
+
+import { useEffect, useState, useRef } from "react";
+import SafeInfo from '../Info/SafeInfo'
 import "../../styles/Dashboard/safe.css";
 
 const Safe = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
+  const info = useRef()
+
+  const showInfo = ()=> {
+    console.log('hello')
+    info.current.showModal()
+  }
+
+  const closeInfo = ()=> {
+    info.current.close()
+  }
 
   const [protection, setProtection] = useState([]);
 
@@ -106,9 +118,12 @@ const Safe = () => {
           ]}
         />
         <p className="hover" id="more">
-          <span>i</span>
+          <span onClick={showInfo}>i</span>
         </p>
       </div>
+      <dialog ref={info}>
+        <SafeInfo closeInfo={closeInfo}/>
+      </dialog>
     </div>
   );
 };
