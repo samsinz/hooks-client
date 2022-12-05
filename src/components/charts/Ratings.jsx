@@ -18,8 +18,10 @@ const Ratings = () => {
     if (!currentUser) {
       return;
     }
-    let tempRatings = [];
-    tempRatings.push({ x: 1, y: 0 });
+
+    let tempRatings = []
+    tempRatings.push({x: 1, y:0})
+
     for (let i = 0; i < currentUser.partners.length; i++) {
       for (let j = 0; j < currentUser.partners[i].hooks.length; j++) {
         tempRatings.push({

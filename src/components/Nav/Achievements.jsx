@@ -24,7 +24,7 @@ const Achievements = () => {
     <div className="Achievements">
       {currentUser.achievements.map((achievement) => {
         return (
-          <div className="border-gradient-circular">
+          <div className="border-gradient-circular hover">
         <img key={achievement.name} onClick={()=> showAchievement(achievement)} className="petit" src={achievement.image} alt={achievement.name} />
         </div>
         )
