@@ -1,4 +1,3 @@
-
 /* @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
@@ -6,7 +5,6 @@
   font-family: Dolce Vita;
   src: url(./fonts/Dolce\ Vita.ttf);
 }
-
 
 :root {
   --custompink: #e506ff;
@@ -35,14 +33,9 @@ ul {
   list-style-type: none;
 }
 
-/* h2 {
-  font-weight: bold;
-} */
-
 .bold {
   font-weight: 600;
 }
-
 
 h1 {
   font-size: 1.4rem;
@@ -50,6 +43,7 @@ h1 {
 
 h2 {
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 h3 {
@@ -61,7 +55,7 @@ h4 {
 }
 
 p {
-	font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 /* dialog et dialog backdrop en conflit */
@@ -76,8 +70,6 @@ dialog::backdrop {
   backdrop-filter: blur(4px);
 }
 
-
-
 .hover:hover {
   cursor: pointer;
   color: #dddddd;
@@ -89,17 +81,25 @@ dialog::backdrop {
 	background-clip: text; */
 }
 
-#more:hover span{
-	background: rgba(150, 150, 150, 0.8);
+#more:hover span {
+  background: rgba(150, 150, 150, 0.8);
 }
 
 .border-gradient {
-  background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, darkblue, darkorchid) border-box;
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to right, darkblue, darkorchid) border-box;
   border-radius: 0.3rem;
   border: 2px solid transparent;
 }
 
 .border-gradient-circular {
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+  border-radius: 100%;
+  border: 3px solid transparent;
+}
+
+.border-gradient-circular2 {
   background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
   width: 23%;
   aspect-ratio: 1/1;
@@ -112,12 +112,15 @@ dialog::backdrop {
   justify-content: center;
 }
 
+
 .border-gradient-circular:hover {
-  background: linear-gradient(#151a1f, #341e36) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+  background: linear-gradient(#151a1f, #341e36) padding-box,
+    linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
 }
 
 .fullgradient {
-  background: linear-gradient(to right, var(--customblue), var(--custompink)) padding-box;
+  background: linear-gradient(to right, var(--customblue), var(--custompink))
+    padding-box;
   width: 100%;
   height: 100%;
   top: 0;
@@ -126,10 +129,10 @@ dialog::backdrop {
 }
 
 .colored-text {
-	background: radial-gradient(100% 341.89% at 0% 50%, #0047ff 0%, #fa00ff 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
+  background: radial-gradient(100% 341.89% at 0% 50%, #0047ff 0%, #fa00ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* @media (max-height: 900px) {

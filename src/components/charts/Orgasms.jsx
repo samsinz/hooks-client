@@ -2,8 +2,8 @@ import { ResponsivePie } from "@nivo/pie";
 import { linearGradientDef } from "@nivo/core";
 import useAuth from "../../auth/useAuth";
 import { useEffect, useState,useRef } from "react";
-import "../../styles/orgasms.css";
 import OrgasmsInfo from '../Info/OrgasmsInfo'
+import "../../styles/Dashboard/orgasms.css";
 
 const Orgasms = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
@@ -35,7 +35,7 @@ const Orgasms = () => {
       }
     }
 
-    console.table({ hookCounter, orgasmCounter });
+    // console.table({ hookCounter, orgasmCounter });
     setOrgasms([
       { id: "true", value: (orgasmCounter * 100) / hookCounter },
       { id: "false", value: 100 - (orgasmCounter * 100) / hookCounter },

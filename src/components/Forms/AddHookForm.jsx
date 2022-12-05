@@ -1,0 +1,227 @@
+import "./../../styles/Forms/addhook.css";
+import useForm from "../../hooks/useForm";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import apiHandler from "../../api/apiHandler";
+import FileUploader from "./FileUploader";
+import React from "react";
+
+const AddHookForm = () => {
+  const [stage, setStage] = useState("");
+  const [orgasm, setOrgasm] = useState(false);
+  const [protection, setProtection] = useState(false);
+
+  const current = new Date().toISOString().split("T")[0];
+  const minimumDate = new Date("1970").toISOString();
+
+  const [values, handleChange] = useForm({
+    name: "",
+    age: "",
+    nationality: "",
+    comment: "",
+    location: "",
+    date: "",
+    type: "",
+    rating: "",
+    duration: "",
+    orgasm: orgasm,
+    protection: protection,
+  });
+  const [selectedFile, setSelectedFile] = useState("");
+  const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const fd = new FormData();
+    fd.append("name", values.name);
+    fd.append("age", values.age);
+    fd.append("image", selectedFile);
+    fd.append("nationality", values.nationality);
+    fd.append("comment", values.comment);
+    fd.append("location", values.location);
+    fd.append("date", values.date);
+    fd.append("type", stage);
+    fd.append("rating", values.rating);
+    fd.append("duration", values.duration);
+    fd.append("orgasm", orgasm);
+    fd.append("protection", protection);
+
+    apiHandler
+      .addHook(fd)
+      .then(() => {
+        navigate("/hooks");
+      })
+      .catch((error) => {
+        setError(error.response.data);
+      });
+  };
+
+  return (
+    <>
+      <div className="addhook">
+        {/* <span onClick={closeSignup} className="svgButton"> */}
+
+        <span className="svgButton">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.13184 2.13184L10.2636 10.2636M10.2636 10.2636L18.3953 18.3953M10.2636 10.2636L2.13184 18.3953M10.2636 10.2636L18.3953 2.13184"
+              stroke="white"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+          </svg>
+        </span>
+
+        <form onSubmit={handleSubmit}>
+          {/* <h2>Find a hook</h2>
+
+          <input
+            onChange={handleChange}
+            value=""
+            type="search"
+            id="search"
+            name="search"
+          /> */}
+
+          <h2>Or add a new one</h2>
+
+          <label htmlFor="name">What is your partner's name?</label>
+          <input
+            onChange={handleChange}
+            value={values.name}
+            type="text"
+            id="name"
+            name="name"
+          />
+          <label htmlFor="age">How old is he/she?</label>
+          <input
+            onChange={handleChange}
+            value={values.age}
+            type="number"
+            id="age"
+            name="age"
+          />
+
+          <div className="sameLine">
+            <div className="left">
+              <label htmlFor="location">Where</label>
+              <input
+                onChange={handleChange}
+                value={values.location}
+                type="text"
+                id="location"
+                name="location"
+              />
+            </div>
+            <div className="right">
+              <label htmlFor="date">When</label>
+              <input
+                onChange={handleChange}
+                value={values.date}
+                max={current}
+                min={minimumDate}
+                type="date"
+                id="date"
+                name="date"
+              />
+            </div>
+          </div>
+
+          <label htmlFor="type">Stage</label>
+          <div className="stage">
+            <p className="stageItem" onClick={() => setStage("Kissing")}>
+              Kissing
+            </p>
+            <p className="stageItem" onClick={() => setStage("Foreplay")}>
+              Foreplay
+            </p>
+            <p className="stageItem" onClick={() => setStage("Sex")}>
+              Sex
+            </p>
+          </div>
+
+          <label htmlFor="nationality">Nationality</label>
+          <input
+            onChange={handleChange}
+            value={values.nationality}
+            type="search"
+            id="nationality"
+            name="nationality"
+          />
+
+          <label htmlFor="comment">Comment</label>
+          <input
+            onChange={handleChange}
+            value={values.comment}
+            type="text"
+            id="comment"
+            name="comment"
+          />
+
+          <div className="duration">
+            <label htmlFor="duration">Duration</label>
+            <input
+              onChange={handleChange}
+              value={values.duration}
+              min="0"
+              max="2"
+              type="range"
+              id="duration"
+              name="duration"
+            />
+          </div>
+
+          <p className="tag" onClick={() => setOrgasm(!orgasm)}>
+            + You had an orgasm
+          </p>
+
+          <p className="tag" onClick={() => setProtection(!protection)}>
+            + You used protection
+          </p>
+
+          <label htmlFor="rating">Rating</label>
+          <input
+            onChange={handleChange}
+            value={values.rating}
+            type="number"
+            id="rating"
+            name="rating"
+          />
+
+          <FileUploader
+            onFileSelectSuccess={(file) => setSelectedFile(file)}
+            onFileSelectError={({ error }) => alert(error)}
+          />
+
+          <button type="submit" className="svgButton arrowButton">
+            <svg
+              width="23"
+              height="20"
+              viewBox="0 0 23 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.3177 20L11.6771 18.3807L18.4314 11.6264H0.938477V9.28267H18.4314L11.6771 2.54972L13.3177 0.909091L22.8632 10.4545L13.3177 20Z"
+                fill="#11161B"
+              />
+            </svg>
+          </button>
+
+          {error && <h3 className="error">{error.message}</h3>}
+        </form>
+      </div>
+    </>
+  );
+};
+
+export default AddHookForm;

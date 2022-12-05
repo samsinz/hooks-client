@@ -2,8 +2,8 @@ import { ResponsivePie } from "@nivo/pie";
 import { linearGradientDef } from "@nivo/core";
 import useAuth from "../../auth/useAuth";
 import { useEffect, useState, useRef } from "react";
-import "../../styles/safe.css";
 import SafeInfo from '../Info/SafeInfo'
+import "../../styles/Dashboard/safe.css";
 
 const Safe = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
@@ -35,7 +35,7 @@ const Safe = () => {
       }
     }
 
-    console.table({ hookCounter, protectionCounter });
+    // console.table({ hookCounter, protectionCounter });
     setProtection([
       { id: "true", value: (protectionCounter * 100) / hookCounter },
       { id: "false", value: 100 - (protectionCounter * 100) / hookCounter },

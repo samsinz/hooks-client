@@ -1,0 +1,29 @@
+.Activities {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.Activities .info {
+  height: 30%;
+  padding: 2vh 3vh;
+}
+
+.Activities h2 {
+  margin-bottom: 1.5vh;
+}
+
+.Activities .chart {
+  align-self: center;
+  height: 75%;
+  width: 90%;
+  padding: 2vh 0 3vh 0;
+}
+
+.Activities #more {
+    position: absolute;
+    bottom: 1.2vh;
+    right: 1.2vh;
+}

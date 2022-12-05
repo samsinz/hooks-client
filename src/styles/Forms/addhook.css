@@ -1,0 +1,82 @@
+.addhook .sameLine {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.addhook p {
+  margin-bottom: 2rem !important;
+}
+
+.addhook u {
+  color: var(--custompink);
+}
+
+.addhook .left,
+.addhook .right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.addhook label {
+  display: block;
+  margin: 1rem 0 0.2rem 0;
+}
+
+.addhook input {
+  padding: 10px;
+  background-color: rgba(150, 150, 150, 0.03);
+  border: solid white 1px;
+  border-radius: 5px;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.addhook .svgButton {
+  padding: 0.7rem;
+  border: none;
+  background-color: transparent;
+  margin: 0 0 2rem auto;
+  display: flex;
+  cursor: pointer;
+}
+
+.addhook span {
+  display: flex;
+  justify-content: right;
+}
+
+.addhook .svgButton p {
+  text-align: right !important;
+}
+
+.addhook .arrowButton {
+  border-radius: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  margin: 1.5rem 0 0 auto;
+  background-color: white !important;
+}
+
+.addhook .stage {
+  display: flex;
+  justify-content: left;
+}
+
+.addhook .stageItem {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  border: solid white 2px;
+}
+
+.addhook .tag {
+  display: inline;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  border: solid white 2px;
+}

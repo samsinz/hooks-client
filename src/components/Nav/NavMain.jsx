@@ -37,8 +37,8 @@ const NavMain = () => {
             </NavLink>
           </h3>
           <h3>
-            <NavLink className="hover" to="/hooks">
-              Your hooks
+            <NavLink className="hover" to="/partners">
+              Partners
             </NavLink>
           </h3>
           <h3>
