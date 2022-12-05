@@ -2,54 +2,51 @@ import { ResponsivePie } from "@nivo/pie";
 import { linearGradientDef } from "@nivo/core";
 import useAuth from "../../auth/useAuth";
 import { useEffect, useState } from "react";
-import "../../styles/orgasms.css";
+import "../../styles/safe.css";
 
-const Orgasms = () => {
+const Safe = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
 
-  const [orgasms, setOrgasms] = useState([]);
+  const [protection, setProtection] = useState([]);
 
   useEffect(() => {
     if (!currentUser) {
       return;
     }
-    let orgasmCounter = 0;
+    let protectionCounter = 0;
     let hookCounter = 0;
 
     for (let j = 0; j < currentUser.partners.length; j++) {
       for (let k = 0; k < currentUser.partners[j].hooks.length; k++) {
-        setOrgasms((currentValue) => [...currentValue, currentUser.partners[j].hooks[k].orgasm]);
-        currentUser.partners[j].hooks[k].orgasm ? orgasmCounter++ : true;
+        setProtection((currentValue) => [...currentValue, currentUser.partners[j].hooks[k].protection]);
+        currentUser.partners[j].hooks[k].protection ? protectionCounter++ : true;
         hookCounter++;
       }
     }
 
-    console.table({ hookCounter, orgasmCounter });
-    setOrgasms([
-      { id: "true", value: (orgasmCounter * 100) / hookCounter },
-      { id: "false", value: 100 - (orgasmCounter * 100) / hookCounter },
+    console.table({ hookCounter, protectionCounter });
+    setProtection([
+      { id: "true", value: (protectionCounter * 100) / hookCounter },
+      { id: "false", value: 100 - (protectionCounter * 100) / hookCounter },
     ]);
   }, [currentUser]);
 
-  if (!orgasms.length) return <div>Loading</div>;
+  if (!protection.length) return <div>Loading</div>;
 
   return (
-    <div className="Orgasms">
+    <div className="Safe">
       <div id="info">
-        <h2 className="bold">Orgasms</h2>
-        <p>This graph shows you the amount of sexual experiences that gave you an orgasm.</p>
-        <p className="hover" id="more">
-          <span>i</span>More info
-        </p>
+        <h2 className="bold">Safe sex</h2>
+        <p>Your overall protected sex rate.</p>
       </div>
 
       <div id="chart">
         <div className="percentage">
-          <span className="number">{Math.round(orgasms[0].value)}</span>
+          <span className="number">{Math.round(protection[0].value)}</span>
           <span className="percent">PERCENT</span>
         </div>
         <ResponsivePie
-          data={orgasms}
+          data={protection}
           // margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
           valueFormat=" >-"
           innerRadius={0.75}
@@ -67,8 +64,7 @@ const Orgasms = () => {
           isInteractive={false}
           enableArcLabels={false}
           transitionMode="startAngle"
-          animate={true}
-          motionConfig={'slow'}
+          animate={false}
           legends={[]}
           keys={["true", "false"]}
           // 1. defining gradients
@@ -109,8 +105,11 @@ const Orgasms = () => {
             // { match: 'sass', id: 'gradientC' },
           ]}
         />
+        <p className="hover" id="more">
+          <span>i</span>
+        </p>
       </div>
     </div>
   );
 };
-export default Orgasms;
+export default Safe;

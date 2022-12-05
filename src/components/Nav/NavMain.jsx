@@ -21,38 +21,38 @@ const NavMain = () => {
       {isLoggedIn && (
         <>
           <img id="image" src={currentUser.image} alt="profile" />
-          <p id="name">{currentUser.name}</p>
+          <h1 id="name" className="bold">{currentUser.name}</h1>
           <div id="tags">
             <span>{currentUser.partners.length === 1 ? currentUser.partners.length + " hook" : currentUser.partners.length + " hooks"}  · {currentUser.score} pts</span>
             {/* <span>{currentUser.score} pts</span> */}
           </div>
-          <span>
+          <h3>
             <NavLink className="hover" to="/dashboard">
               Dashboard
             </NavLink>
-          </span>
-          <span>
+          </h3>
+          <h3>
             <NavLink className="hover" to="/hooks">
               Your hooks
             </NavLink>
-          </span>
-          <span>
+          </h3>
+          <h3>
             {/* <NavLink className="hover" to="/settings">
               Profile settings
             </NavLink> */}
-            <p onClick={showDialog} className="hover">Profile settings</p>
-          </span>
+            <span onClick={showDialog} className="hover">Profile settings</span>
+          </h3>
 
           {/* <NavLink to="/profile">{currentUser && currentUser.email}</NavLink> */}
           {/* <button onClick={removeUser}>Log-Out</button> */}
 
-          <p id='achievement'>Achievements</p>
+          <h3 id='achievement' className="bold">Achievements</h3>
           <Achievements />
 
           <div id="logout-container">
-            <span id="logout" className="hover" onClick={removeUser}>
+            <h3 id="logout" className="hover" onClick={removeUser}>
               Log out
-            </span>
+            </h3>
           </div>
         </>
       )}

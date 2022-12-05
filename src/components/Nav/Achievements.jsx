@@ -11,7 +11,7 @@ const Achievements = () => {
 
       {console.log(currentUser)}
       {currentUser.achievements.map((achievement) => {
-        return <img className="border-gradient-circular" src={achievement.image} alt={achievement.name} />;
+        return <img key={achievement.name} className="border-gradient-circular" src={achievement.image} alt={achievement.name} />;
       })}
     </div>
   );
