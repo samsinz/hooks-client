@@ -10,6 +10,7 @@ import LoggedOut from "./components/LoggedOut/LoggedOut";
 import useAuth from "./auth/useAuth";
 
 import "./styles/app.css";
+import AddHookForm from "./components/Forms/AddHookForm";
 
 function App() {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
@@ -27,7 +28,7 @@ function App() {
           </Route>
           <Route element={<PrivateRoute />}>
             {/* All routes after the PrivateRoute require the user to be loggedIn */}
-
+            <Route path="/addhook" element={<AddHookForm />} />
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
