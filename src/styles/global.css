@@ -99,13 +99,11 @@ dialog::backdrop {
   border: 3px solid transparent;
 }
 
+
 .border-gradient-circular2 {
-  background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
-
-  border-radius: 100%;
-  border: 3px solid transparent;
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
 }
-
 
 .border-gradient-circular {
   background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
@@ -114,12 +112,11 @@ dialog::backdrop {
   border-radius: 100%;
   border: 2px solid transparent;
   margin-bottom: 0.6rem;
-  margin-right:0.5rem;
+  margin-right: 0.5rem;
   display: flex;
   align-content: center;
   justify-content: center;
 }
-
 
 .border-gradient-circular:hover {
   background: linear-gradient(#151a1f, #341e36) padding-box,

@@ -14,7 +14,7 @@ const AchievementsInfo =({closeAchievement, id}) => {
     // return (console.log(currentUser.achievement.name))
     return(
         <div className='AchievementInfo'>
-        <span onClick={closeAchievement}className="svgButton">
+        <span onClick={closeAchievement}className="svgButton hover">
           <svg
             width="20"
             height="20"
