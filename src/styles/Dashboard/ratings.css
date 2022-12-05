@@ -1,0 +1,39 @@
+.Ratings {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Ratings .info {
+  height: 30%;
+  padding: 2vh 3vh;
+}
+
+.Ratings h2 {
+  margin-bottom: 1.5vh;
+}
+
+.Ratings .chart {
+  align-self: center;
+  height: 75%;
+  width: 85%;
+  padding: 2vh 0 3vh 0;
+  display: flex;
+}
+
+.Ratings .legend {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  margin-right: 1vh;
+  padding: 3vh 0vh 1.5vh 0;
+  font-size: 1.2vh;
+}
+
+.Ratings .legend span {
+  color: #b3b3b3;
+}
+
+

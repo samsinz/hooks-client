@@ -1,0 +1,51 @@
+.Duration {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Duration .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Duration h2 {
+    margin: 2vh 3vh;
+}
+
+.Duration p {
+    margin: 0 3vh 2vh;
+}
+
+.Duration #more {
+    margin: 0 1.5vh;
+}
+
+.Duration .gauge {
+    margin-top: 0.5vh;
+    background: rgba(150, 150, 150, 0.1);
+    border-radius: 2vh;
+    width: 80%;
+    height: 2vh;
+    align-self: center;
+}
+
+.Duration .level {
+    background: linear-gradient(to right, var(--customblue), var(--custompink));
+    height: 100%;
+    /* width: 20%; */
+    border-radius: 2vh;
+}
+
+.Duration .legend {
+    align-self: center;
+    width: 80%;
+    margin-top: 1.5vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Duration .legend h3{
+    color: #b3b3b3;
+}
