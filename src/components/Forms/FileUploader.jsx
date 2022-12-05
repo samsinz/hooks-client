@@ -7,7 +7,7 @@ const FileUploader = ({ onFileSelectError, onFileSelectSuccess }) => {
   const handleFileInput = (e) => {
     // handle validations
     const file = e.target.files[0];
-    if (file.size > 100000)
+    if (file.size > 300000)
       onFileSelectError({ error: "Your image is too heavy" });
     else onFileSelectSuccess(file);
   };
