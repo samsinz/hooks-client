@@ -6,7 +6,7 @@ import apiHandler from "../../api/apiHandler";
 import FileUploader from "./FileUploader";
 import React from "react";
 
-const AddHookForm = () => {
+const AddHookForm = ({ closeAddHook }) => {
   const [stage, setStage] = useState("");
   const [orgasm, setOrgasm] = useState(false);
   const [protection, setProtection] = useState(false);
@@ -62,9 +62,7 @@ const AddHookForm = () => {
   return (
     <>
       <div className="addhook">
-        {/* <span onClick={closeSignup} className="svgButton"> */}
-
-        <span className="svgButton">
+        <span onClick={closeAddHook} className="svgButton">
           <svg
             width="20"
             height="20"
