@@ -18,20 +18,28 @@ const Ratings = () => {
     if (!currentUser) {
       return;
     }
+
     let tempRatings = []
     tempRatings.push({x: 1, y:0})
+
     for (let i = 0; i < currentUser.partners.length; i++) {
-        for (let j = 0; j < currentUser.partners[i].hooks.length; j++) {
-            tempRatings.push({x:Date.parse(currentUser.partners[i].hooks[j].date), y: currentUser.partners[i].hooks[j].rating})
-        }
+      for (let j = 0; j < currentUser.partners[i].hooks.length; j++) {
+        tempRatings.push({
+          x: Date.parse(currentUser.partners[i].hooks[j].date),
+          y: currentUser.partners[i].hooks[j].rating,
+        });
+      }
     }
-    tempRatings=tempRatings.sort((a, b) => a.x - b.x)
+    tempRatings = tempRatings.sort((a, b) => a.x - b.x);
     let cleanedRatings = [];
     // for (let i = 0; i < tempRatings.length; i++){
     //     if (tempRatings[i].date === tempRatings[i-1].date)
     // }
 
-    setRatings((currentValue)=> [...currentValue,{id:"ratings", data: tempRatings}])
+    setRatings((currentValue) => [
+      ...currentValue,
+      { id: "ratings", data: tempRatings },
+    ]);
   }, [currentUser]);
 
   if (!ratings.length) {
@@ -40,10 +48,13 @@ const Ratings = () => {
 
   return (
     <div className="Ratings">
-{console.log(ratings)}
+      {console.log(ratings)}
       <div className="info">
         <h2 className="bold">Ratings</h2>
-        <p>This graph shows the evolution of your average hook scores from the beginning to now.</p>
+        <p>
+          This graph shows the evolution of your average hook scores from the
+          beginning to now.
+        </p>
       </div>
       <div className="chart">
         <div className="legend">
@@ -67,15 +78,15 @@ const Ratings = () => {
           lineWidth={3}
           yFormat=">-.2f"
           curve="monotoneX"
-        //   axisTop={{
-        //     orient: "top",
-        //     tickSize: 0,
-        //     tickPadding: 18,
-        //     tickRotation: 0,
-        //     legend: "",
-        //     legendOffset: 36,
-        //   }}
-        axisTop={null}
+          //   axisTop={{
+          //     orient: "top",
+          //     tickSize: 0,
+          //     tickPadding: 18,
+          //     tickRotation: 0,
+          //     legend: "",
+          //     legendOffset: 36,
+          //   }}
+          axisTop={null}
           theme={{ textColor: "#b3b3b3" }}
           axisRight={null}
           axisBottom={null}

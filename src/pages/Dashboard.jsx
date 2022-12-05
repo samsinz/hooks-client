@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import service from "../api/apiHandler";
 import useAuth from "../auth/useAuth";
 import Age from "../components/charts/Age";
@@ -10,9 +10,20 @@ import "../styles/Dashboard/dashboard.css";
 import Duration from "../components/charts/Duration";
 import Ratings from "../components/charts/Ratings";
 import Activities from "../components/charts/Activities";
+import AddHookForm from "../components/Forms/AddHookForm";
 
 const Dashboard = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
+
+  const addHook = useRef();
+
+  const openAddHook = () => {
+    addHook.current.showModal();
+  };
+
+  const closeAddHook = () => {
+    addHook.current.close();
+  };
 
   if (!currentUser.partners.length) {
     return (
@@ -32,14 +43,14 @@ const Dashboard = () => {
     <div className="Dashboard">
       <div id="title">
         <h1 className="bold">Dashboard</h1>
-        <h3 className="hover">
+        <h3 className="hover" onClick={openAddHook}>
           <span className="add">+</span> Add a new hook
         </h3>
       </div>
 
       <div className="top-row">
         <div id="activity">
-          <Activities/>
+          <Activities />
         </div>
         <div id="favorites">
           <Favorites />
@@ -64,6 +75,9 @@ const Dashboard = () => {
           <Orgasms />
         </div>
       </div>
+      <dialog ref={addHook}>
+        <AddHookForm closeAddHook={closeAddHook} />
+      </dialog>
     </div>
   );
 };
