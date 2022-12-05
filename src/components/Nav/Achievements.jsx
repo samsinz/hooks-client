@@ -22,9 +22,6 @@ const Achievements = () => {
 
   return (
     <div className="Achievements">
-      
-
-      
       {currentUser.achievements.map((achievement) => {
         return (
           <div className="border-gradient-circular">

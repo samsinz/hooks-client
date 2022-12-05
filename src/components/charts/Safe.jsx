@@ -1,6 +1,7 @@
 import { ResponsivePie } from "@nivo/pie";
 import { linearGradientDef } from "@nivo/core";
 import useAuth from "../../auth/useAuth";
+
 import { useEffect, useState, useRef } from "react";
 import SafeInfo from '../Info/SafeInfo'
 import "../../styles/Dashboard/safe.css";
