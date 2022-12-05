@@ -5,6 +5,7 @@ import "../../styles/NavMain.css";
 import Achievements from "./Achievements";
 import FormEditProfile from "../Forms/FormEditProfile";
 
+
 const NavMain = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
   const dialog = useRef();
@@ -77,6 +78,9 @@ const NavMain = () => {
       <dialog ref={dialog}>
         <FormEditProfile closeModal={closeModal} />
       </dialog>
+
+      
+
     </nav>
   );
 };

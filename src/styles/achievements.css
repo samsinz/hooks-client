@@ -4,18 +4,43 @@
   justify-content: center;
   max-height: 140px;
   overflow: scroll;
+
 }
 
 .Achievements img {
-  width: 25%;
-  aspect-ratio: 1/1;
-  margin: 0 0.3rem 0.6rem 0.3rem;
-  padding: 0.8rem;
+  width: 50%;
+  align-self: center;
+  justify-self: center;
 }
 
 /* .Achievements img:hover {
     transform: rotateY(180deg);
 } */
+.AchievementInfo {
+  height: 50vh;
+  width: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+
+.AchievementInfo img {
+  margin-bottom: 2rem
+}
+.AchievementInfo h1 {
+  margin-bottom: 1rem
+}
+
+.AchievementInfo span{
+  position: absolute;
+  right:10vh;
+  top: 5vh;
+
+}
+
 
 @media (max-height: 700px){
     .Achievements img {

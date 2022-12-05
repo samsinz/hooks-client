@@ -1,12 +1,23 @@
 import { ResponsivePie } from "@nivo/pie";
 import { linearGradientDef } from "@nivo/core";
 import useAuth from "../../auth/useAuth";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import "../../styles/orgasms.css";
+import OrgasmsInfo from '../Info/OrgasmsInfo'
 
 const Orgasms = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
 
+  const info = useRef()
+
+  const showInfo = ()=> {
+    console.log('hello')
+    info.current.showModal()
+  }
+
+  const closeInfo = ()=> {
+    info.current.close()
+  }
   const [orgasms, setOrgasms] = useState([]);
 
   useEffect(() => {
@@ -39,7 +50,7 @@ const Orgasms = () => {
         <h2 className="bold">Orgasms</h2>
         <p>This graph shows you the amount of sexual experiences that gave you an orgasm.</p>
         <p className="hover" id="more">
-          <span>i</span>More info
+        <span onClick={showInfo}>i</span>
         </p>
       </div>
 
@@ -110,6 +121,12 @@ const Orgasms = () => {
           ]}
         />
       </div>
+
+      <dialog ref={info}>
+        <OrgasmsInfo closeInfo={closeInfo}/>
+      </dialog>
+
+    
     </div>
   );
 };
