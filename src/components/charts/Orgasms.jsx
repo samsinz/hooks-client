@@ -2,7 +2,7 @@ import { ResponsivePie } from "@nivo/pie";
 import { linearGradientDef } from "@nivo/core";
 import useAuth from "../../auth/useAuth";
 import { useEffect, useState } from "react";
-import "../../styles/orgasms.css";
+import "../../styles/Dashboard/orgasms.css";
 
 const Orgasms = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
@@ -24,7 +24,7 @@ const Orgasms = () => {
       }
     }
 
-    console.table({ hookCounter, orgasmCounter });
+    // console.table({ hookCounter, orgasmCounter });
     setOrgasms([
       { id: "true", value: (orgasmCounter * 100) / hookCounter },
       { id: "false", value: 100 - (orgasmCounter * 100) / hookCounter },
@@ -39,7 +39,7 @@ const Orgasms = () => {
         <h2 className="bold">Orgasms</h2>
         <p>This graph shows you the amount of sexual experiences that gave you an orgasm.</p>
         <p className="hover" id="more">
-          <span>i</span>More info
+          <span>i</span>
         </p>
       </div>
 

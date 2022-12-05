@@ -6,7 +6,7 @@
 }
 
 .Orgasms #info {
-    margin: 2vh;
+    margin: 2vh 3vh;
     width: 50%;
     /* display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@
 }
 
 .Orgasms h2 {
-    margin-bottom: 1vh;
+    margin-bottom: 1.5vh;
 }
 
 
@@ -23,7 +23,7 @@
     height: 100%;
     width: 50%;
     /* background-color: darkslategrey; */
-    padding: 5%;
+    padding: 5% 8% 5% 0;
     position: relative;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .Orgasms #more {
-    margin-top: 2vh;
+    margin-top: 4vh;
     font-weight: 400;
 }
 

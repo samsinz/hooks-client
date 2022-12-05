@@ -74,7 +74,7 @@ const Home = () => {
             your well-being and find detailed information about your relationships.
 
           </p>
-          <button onClick={showSignup} id="get-started">
+          <button onClick={showSignup} id="get-started" className="hover">
             Get started &nbsp; &nbsp;
             <svg
               width="13"
@@ -89,12 +89,12 @@ const Home = () => {
               />
             </svg>
           </button>
-          <p>
+          {/* <p>
             Already have an account ?{" "}
             <span onClick={showLogin}>
               <u>Log in</u>
             </span>
-          </p>
+          </p> */}
         </div>
         <div className="images">
           <img id="dashboard" src={homeDashboard} alt="dashboard" />

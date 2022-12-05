@@ -1,6 +1,6 @@
 import useAuth from "../../auth/useAuth";
 import { useEffect, useState } from "react";
-import "../../styles/age.css";
+import "../../styles/Dashboard/age.css";
 
 const Age = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
@@ -16,8 +16,7 @@ const Age = () => {
         setAge((currentValue) => currentValue + currentUser.partners[i].age)
     }
     setAge((currentValue) =>  Math.round(currentValue / currentUser.partners.length))
-    console.log('yes')
-    console.log(age)
+
 
   }, [currentUser]);
 
