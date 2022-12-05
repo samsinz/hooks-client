@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const OrgasmsInfo = ({closeInfo})=> {
+const ActivityInfo = ({closeInfo})=> {
     return (
     <div className='safeInfo'>
         <span onClick={closeInfo} className="svgButton">
@@ -27,7 +27,7 @@ const OrgasmsInfo = ({closeInfo})=> {
          
             
             <div> 
-            <h1>Info about orgasms</h1>
+            <h1>Info about sexual activities</h1>
                 <h2>What to do in case of unprotected sex?</h2>
                 <p>If you've had unprotected sex, taking action now can help safeguard your health now and in the future.</p>
                 <p>Whether your protection mode has failed or you haven't used one, having unprotected sex can happen. There is then a risk of pregnancy and contracting a sexually transmitted infection (STI). This can cause stress and anxiety. However, do not panic, there are solutions.</p>
@@ -72,4 +72,4 @@ const OrgasmsInfo = ({closeInfo})=> {
     </div>)
 }
 
-export default OrgasmsInfo;
+export default ActivityInfo;

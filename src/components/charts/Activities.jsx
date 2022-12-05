@@ -1,7 +1,8 @@
 import { ResponsiveCalendar } from "@nivo/calendar";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import useAuth from "../../auth/useAuth";
 import "../../styles/Dashboard/activities.css";
+import ActivityInfo from '../Info/ActivityInfo'
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
@@ -11,6 +12,18 @@ import "../../styles/Dashboard/activities.css";
 
 const Activities = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
+
+  const info = useRef()
+
+  const showInfo = ()=> {
+    console.log('hello')
+    info.current.showModal()
+  }
+
+  const closeInfo = ()=> {
+    info.current.close()
+  }
+
   const [dates, setDates] = useState([]);
   const year = new Date().getFullYear();
   useEffect(() => {
@@ -77,8 +90,12 @@ const Activities = () => {
         />
       </div>
       <p className="hover" id="more">
-        <span>i</span>
+        <span onClick={showInfo}>i</span>
       </p>
+
+      <dialog ref={info}>
+        <ActivityInfo closeInfo={closeInfo}/>
+      </dialog>
     </div>
   );
 };
