@@ -23,7 +23,7 @@
 }
 
 .NavMain #image {
-  width: 65%;
+  width: 15vh;
   object-fit: cover;
   aspect-ratio: 1/1;
   border-radius: 100%;
@@ -39,7 +39,7 @@
 .NavMain #tags {
   display: flex;
   align-self: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4.5vh;
 }
 
 .NavMain #tags span {
@@ -54,17 +54,16 @@
 }
 
 .NavMain span {
-	margin: 0.2rem 0;
-	text-align: center;
+  margin: 0.2rem 0;
+  text-align: center;
 }
 
 .NavMain #achievement {
-	text-align: center;
-	font-weight: 600;
-	margin-top: 3rem;
-	margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 4.5vh;
+  margin-bottom: 1rem;
 }
-
 
 .NavMain #logout-container {
   left: 0;
@@ -80,12 +79,3 @@
 .NavMain #logout {
   cursor: pointer;
 }
-
-dialog {
-  background-color: black;
-}
-dialog::backdrop {
-  backdrop-filter: blur(4px);
-}
-
-  

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
 import FileUploader from "./FileUploader";
 
-const FormSignUp = () => {
+const FormSignUp = ({ closeSignup }) => {
   const [values, handleChange] = useForm({
     name: "",
     birth: "",
@@ -24,13 +24,15 @@ const FormSignUp = () => {
     const fd = new FormData();
     fd.append("name", values.name);
     fd.append("email", values.email);
+    fd.append("birth", values.birth);
     fd.append("image", selectedFile);
     fd.append("password", values.password);
 
     apiHandler
-      .signup(values)
+      .signup(fd)
       .then(() => {
-        navigate("/signin");
+        navigate("/login");
+        closeModal();
       })
       .catch((error) => {
         setError(error.response.data);
@@ -39,12 +41,7 @@ const FormSignUp = () => {
   return (
     <>
       <div className="FormSignUp">
-      {/* <span onClick={closeModal}>X</span> */}
-        {error && <h3 className="error">{error.message}</h3>}
-
-        {/* button to close the modal */}
-
-        <button className="svgButton">
+        <span onClick={closeSignup} className="svgButton">
           <svg
             width="20"
             height="20"
@@ -55,11 +52,11 @@ const FormSignUp = () => {
             <path
               d="M2.13184 2.13184L10.2636 10.2636M10.2636 10.2636L18.3953 18.3953M10.2636 10.2636L2.13184 18.3953M10.2636 10.2636L18.3953 2.13184"
               stroke="white"
-              stroke-width="3"
-              stroke-linecap="round"
+              strokeWidth="3"
+              strokeLinecap="round"
             />
           </svg>
-        </button>
+        </span>
 
         <form onSubmit={handleSubmit}>
           <div className="titleArea">
@@ -68,23 +65,30 @@ const FormSignUp = () => {
               Already have an accout? <Link to="/login">Log in</Link>
             </p>
           </div>
-          <label htmlFor="name">Name</label>
-          <input
-            onChange={handleChange}
-            value={values.name}
-            type="text"
-            id="name"
-            name="name"
-          />
-          <label htmlFor="birth">Birthdate</label>
-          <input
-            onChange={handleChange}
-            value={values.birth}
-            type="date"
-            id="birth"
-            name="birth"
-            max={current}
-          />
+
+          <div className="sameLine">
+            <div className="left">
+              <label htmlFor="name">Name</label>
+              <input
+                onChange={handleChange}
+                value={values.name}
+                type="text"
+                id="name"
+                name="name"
+              />
+            </div>
+            <div className="right">
+              <label htmlFor="birth">Birthdate</label>
+              <input
+                onChange={handleChange}
+                value={values.birth}
+                type="date"
+                id="birth"
+                name="birth"
+                max={current}
+              />
+            </div>
+          </div>
           <label htmlFor="email">Email</label>
           <input
             onChange={handleChange}
@@ -106,7 +110,9 @@ const FormSignUp = () => {
             onFileSelectError={({ error }) => alert(error)}
           />
 
-          <button className="svgButton arrowButton">
+          {error && <h3 className="error">{error.message}</h3>}
+
+          <button type="submit" className="svgButton arrowButton">
             <svg
               width="23"
               height="20"

@@ -7,21 +7,20 @@ const FileUploader = ({ onFileSelectError, onFileSelectSuccess }) => {
   const handleFileInput = (e) => {
     // handle validations
     const file = e.target.files[0];
-    console.log(file.size);
-    if (file.size > 300000)
-      onFileSelectError({ error: "Choose a lighter image" });
+    if (file.size > 100000)
+      onFileSelectError({ error: "Your image is too heavy" });
     else onFileSelectSuccess(file);
   };
 
   return (
     <div className="fileUploader">
       <input type="file" onChange={handleFileInput} ref={fileInput} />
-      <button
+      <p
         onClick={(e) => fileInput.current && fileInput.current.click()}
         className="btn btn-primary"
       >
         Upload a profile picture
-      </button>
+      </p>
     </div>
   );
 };

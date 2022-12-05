@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
-@font-face {
-  font-family: Dolce Vita;
-  /* src: url(./styles/fonts/Dolce\ Vita.ttf); */
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
 :root {
   --custompink: #e506ff;
@@ -18,7 +14,7 @@
 }
 
 html {
-  font-family: "Manrope", sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #11161b;
 }
 
@@ -35,9 +31,18 @@ h2 {
   font-weight: bold;
 }
 
+dialog {
+  background-color: rgba(17, 22, 27, 0.8);
+  border: solid rgba(39, 48, 56, 1) 1px;
+  border-radius: 5%;
+  padding: 2rem;
+}
+dialog::backdrop {
+  backdrop-filter: blur(4px);
+}
 
 .hover:hover {
-	cursor: pointer;
+  cursor: pointer;
 
   color: #e4e4e4;
   /* CODE FOR GRADIENT COLOR WHEN HOVERING */

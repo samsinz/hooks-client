@@ -1,30 +1,37 @@
-.FormSignUp .sameLine {
+.FormEditProfile h2 {
+  margin-bottom: 1rem;
+}
+
+.FormEditProfile .sameLine {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 }
 
-.FormSignUp p {
+.FormEditProfile p {
   margin-bottom: 2rem !important;
 }
 
-.FormSignUp u {
+.FormEditProfile u {
   color: var(--custompink);
 }
 
-.FormSignUp .left,
-.FormSignUp .right {
+.FormEditProfile .left,
+.FormEditProfile .right {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.FormSignUp label {
+.FormEditProfile label {
   display: block;
   margin: 1rem 0 0.2rem 0;
 }
 
-.FormSignUp input {
+.FormEditProfile input,
+.FormEditProfile #name {
+  font-size: 1rem;
+  text-align: left;
   padding: 10px;
   background-color: rgba(150, 150, 150, 0.03);
   border: solid white 1px;
@@ -33,7 +40,7 @@
   height: 2.5rem;
 }
 
-.FormSignUp .svgButton {
+.FormEditProfile .svgButton {
   padding: 0.7rem;
   border: none;
   background-color: transparent;
@@ -42,16 +49,16 @@
   cursor: pointer;
 }
 
-.FormSignUp span {
+.FormEditProfile span {
   display: flex;
   justify-content: right;
 }
 
-.FormSignUp .svgButton p {
+.FormEditProfile .svgButton p {
   text-align: right !important;
 }
 
-.FormSignUp .arrowButton {
+.FormEditProfile .arrowButton {
   border-radius: 100%;
   aspect-ratio: 1;
   display: flex;
