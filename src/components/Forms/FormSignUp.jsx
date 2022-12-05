@@ -23,7 +23,7 @@ const FormSignUp = () => {
 
     const fd = new FormData();
     fd.append("name", values.name);
-    fd.append("email", values.name);
+    fd.append("email", values.email);
     fd.append("image", selectedFile);
     fd.append("password", values.password);
 
