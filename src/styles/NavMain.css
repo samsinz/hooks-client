@@ -54,9 +54,18 @@
   color: var(--custompink);
 }
 
+
 .NavMain h3 {
   text-align: center;
   margin: 0.3rem 0;
+  }
+  
+  /* h3 et span etaient dans un conflit, voir si y'en a un inutile? */
+
+.NavMain span {
+  margin: 0.2rem 0;
+  text-align: center;
+
 }
 
 .NavMain #achievement {
@@ -110,3 +119,4 @@ dialog::backdrop {
     display: none;
   }
 }
+

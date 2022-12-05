@@ -2,20 +2,19 @@ import { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../auth/useAuth";
 import "../../styles/NavMain.css";
-import Achievements from './Achievements'
-import FormSignUp from '../Forms/FormSignUp'
+import Achievements from "./Achievements";
 import FormEditProfile from "../Forms/FormEditProfile";
 
 const NavMain = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
-  const dialog = useRef()
+  const dialog = useRef();
 
   const showDialog = () => {
-    dialog.current.showModal()
-  }
+    dialog.current.showModal();
+  };
   const closeModal = () => {
-    dialog.current.close()
-  }
+    dialog.current.close();
+  };
   return (
     <nav className="NavMain">
       {isLoggedIn && (
@@ -23,7 +22,12 @@ const NavMain = () => {
           <img id="image" src={currentUser.image} alt="profile" />
           <h1 id="name" className="bold">{currentUser.name}</h1>
           <div id="tags">
-            <span>{currentUser.partners.length === 1 ? currentUser.partners.length + " hook" : currentUser.partners.length + " hooks"}  · {currentUser.score} pts</span>
+            <span>
+              {currentUser.partners.length === 1
+                ? currentUser.partners.length + " hook"
+                : currentUser.partners.length + " hooks"}{" "}
+              · {currentUser.score} pts
+            </span>
             {/* <span>{currentUser.score} pts</span> */}
           </div>
           <h3>
@@ -40,13 +44,17 @@ const NavMain = () => {
             {/* <NavLink className="hover" to="/settings">
               Profile settings
             </NavLink> */}
+
             <span onClick={showDialog} className="hover">Profile settings</span>
           </h3>
+
 
           {/* <NavLink to="/profile">{currentUser && currentUser.email}</NavLink> */}
           {/* <button onClick={removeUser}>Log-Out</button> */}
 
+
           <h3 id='achievement' className="bold">Achievements</h3>
+
           <Achievements />
 
           <div id="logout-container">
@@ -67,7 +75,7 @@ const NavMain = () => {
       )}
 
       <dialog ref={dialog}>
-       <FormEditProfile closeModal={closeModal} />
+        <FormEditProfile closeModal={closeModal} />
       </dialog>
     </nav>
   );
