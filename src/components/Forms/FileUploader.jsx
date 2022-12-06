@@ -8,15 +8,12 @@ const FileUploader = ({ onFileSelectSuccess, setImageProfile }) => {
   const handleFileInput = (e) => {
     // handle validations
     const file = e.target.files[0];
-
-    setImageProfile?setImageProfile(URL.createObjectURL(file)):true;
-    console.log(URL.createObjectURL(file));
+    setImageProfile ? setImageProfile(URL.createObjectURL(file)) : true;
     onFileSelectSuccess(file);
-
     setState(true);
     setTimeout(() => {
       setState(false);
-    }, 1000);
+    }, 3000);
   };
 
   return (
@@ -24,7 +21,9 @@ const FileUploader = ({ onFileSelectSuccess, setImageProfile }) => {
       <input type="file" onChange={handleFileInput} ref={fileInput} />
       <div
         className="btn btn-primary"
-        onClick={(e) => fileInput.current && fileInput.current.click()}
+        onClick={(e) => {
+          fileInput.current && fileInput.current.click();
+        }}
       >
         <p>Upload a picture {state ? "  ✓" : ""}</p>
       </div>
