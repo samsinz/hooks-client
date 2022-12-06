@@ -9,6 +9,7 @@ import useAuth from "../../auth/useAuth";
 const FormEditProfile = ({ closeModal }) => {
   const { currentUser, authenticateUser } = useAuth();
 
+
   const [values, handleChange] = useForm({
     name: currentUser.name,
     birth: currentUser.birth,
@@ -26,6 +27,7 @@ const FormEditProfile = ({ closeModal }) => {
     const fd = new FormData();
     fd.append("name", values.name);
     fd.append("email", values.email);
+    fd.append('birth', values.birth)
     fd.append("image", selectedFile);
 
     apiHandler
@@ -38,6 +40,8 @@ const FormEditProfile = ({ closeModal }) => {
         console.log(error);
         // setError(error.response.data);
       });
+
+      
   };
   return (
     <>
@@ -65,6 +69,7 @@ const FormEditProfile = ({ closeModal }) => {
           <h2>Edit your account</h2>
 
           <div className="sameLine">
+           <img src={currentUser.image} alt=""/>
             <div className="left">
               <label htmlFor="name">Name</label>
               <input
@@ -105,6 +110,7 @@ const FormEditProfile = ({ closeModal }) => {
             </svg>
           </button>
         </form>
+        <p>Do you want to delete your account?</p>
       </div>
     </>
   );
