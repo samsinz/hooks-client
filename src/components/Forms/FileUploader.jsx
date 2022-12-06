@@ -1,12 +1,14 @@
 import React, { useRef } from "react";
 import "./../../styles/Forms/fileUploader.css";
 
-const FileUploader = ({ onFileSelectSuccess }) => {
+const FileUploader = ({ onFileSelectSuccess, setImageProfile }) => {
   const fileInput = useRef(null);
 
   const handleFileInput = (e) => {
     // handle validations
     const file = e.target.files[0];
+    setImageProfile(URL.createObjectURL(file))
+    console.log(URL.createObjectURL(file))
 
     onFileSelectSuccess(file);
 
@@ -14,6 +16,7 @@ const FileUploader = ({ onFileSelectSuccess }) => {
 
   return (
     <div className="fileUploader">
+     
       <input type="file" onChange={handleFileInput} ref={fileInput}  />
       <p
         onClick={(e) => fileInput.current && fileInput.current.click()}
