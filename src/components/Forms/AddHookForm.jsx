@@ -1,9 +1,10 @@
 import "./../../styles/Forms/addhook.css";
 import useForm from "../../hooks/useForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import apiHandler from "../../api/apiHandler";
 import FileUploader from "./FileUploader";
 import React from "react";
+import service from "../../api/apiHandler";
 
 const AddHookForm = ({ closeAddHook }) => {
   const [stage, setStage] = useState("");
@@ -14,10 +15,13 @@ const AddHookForm = ({ closeAddHook }) => {
   const [foreplayIsActive, setForeplayIsActive] = useState(false);
   const [kissingIsActive, setKissingIsActive] = useState(false);
 
-  const current = new Date().toISOString().split("T")[0];
-  // const minimumDate = new Date("1970").toISOString();
+  const [partnersName, setPartnersName] = useState([]);
 
-  const [values, handleChange] = useForm({
+  const current = new Date().toISOString().split("T")[0];
+
+  const minimumDate = new Date("1970-01-01").toISOString();
+
+  const [values, handleChange, setValues] = useForm({
     name: "",
     age: "",
     nationality: "",
@@ -33,6 +37,28 @@ const AddHookForm = ({ closeAddHook }) => {
 
   const [selectedFile, setSelectedFile] = useState("");
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    service.get("/api/user").then((res) => {
+      const partners = res.data.partners;
+      // const partnersInfo = partners.map((info) => {
+      //   return info
+      // });
+      setPartnersName(partners);
+    });
+  }, []);
+
+  const handlePartnersList = (e) => {
+    const name = e.target.value;
+    const partner = partnersName.find((partner) => partner.name === name);
+    setValues({
+      ...values,
+      name: partner.name,
+      age: partner.age,
+      nationality: partner.nationality,
+      image: partner.image,
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -82,15 +108,14 @@ const AddHookForm = ({ closeAddHook }) => {
         </span>
 
         <form onSubmit={handleSubmit}>
-          {/* <h2>Find a hook</h2>
+          <h2>Find a hook</h2>
 
-          <input
-            onChange={handleChange}
-            value=""
-            type="search"
-            id="search"
-            name="search"
-          /> */}
+          <input type="text" list="partners" onChange={handlePartnersList} />
+          <datalist id="partners">
+            {partnersName.map((partner) => {
+              return <option value={partner.name} />;
+            })}
+          </datalist>
 
           <h2>Or add a new one</h2>
 
@@ -128,7 +153,7 @@ const AddHookForm = ({ closeAddHook }) => {
                 onChange={handleChange}
                 value={values.date}
                 max={current}
-                // min={minimumDate}
+                min={minimumDate}
                 type="date"
                 id="date"
                 name="date"
@@ -190,8 +215,6 @@ const AddHookForm = ({ closeAddHook }) => {
               <p>Perfect</p>
               <p>Too long</p>
             </div>
-
-            {console.log(values.duration)}
           </div>
 
           <p
