@@ -15,12 +15,12 @@ import Ratings from "../components/charts/Ratings";
 
 import FormLogIn from "../components/Forms/FormLogIn";
 
-
 const Home = () => {
   // modale signup //
   const signup = useRef();
 
   const showSignup = () => {
+    closeLogin();
     signup.current.showModal();
   };
 
@@ -32,6 +32,7 @@ const Home = () => {
   const login = useRef();
 
   const showLogin = () => {
+    closeSignup();
     login.current.showModal();
   };
 
@@ -41,10 +42,8 @@ const Home = () => {
 
   return (
     <div className="Home">
-
       {/* l'image se met par dessus le menu donc il n'est pas cliquable */}
       {/* <img id="glow" src={homeGlow} alt="glow" /> */}
-
 
       <div className="top-bar">
         <div className="logo">
@@ -70,9 +69,10 @@ const Home = () => {
         <div className="info">
           <h1>Track your sexual well-being</h1>
           <p>
-            Hooks provides you with a safe space to enter information about your sexual growth. Keep track of your intimate moments, discover an overview of
-            your well-being and find detailed information about your relationships.
-
+            Hooks provides you with a safe space to enter information about your
+            sexual growth. Keep track of your intimate moments, discover an
+            overview of your well-being and find detailed information about your
+            relationships.
           </p>
           <button onClick={showSignup} id="get-started" className="hover">
             Get started &nbsp; &nbsp;
@@ -106,13 +106,12 @@ const Home = () => {
       {/* modales */}
 
       <dialog ref={signup}>
-        <FormSignUp closeSignup={closeSignup} />
+        <FormSignUp closeSignup={closeSignup} showLogin={showLogin} />
       </dialog>
 
       <dialog ref={login}>
-        <FormLogIn closeLogin={closeLogin} />
+        <FormLogIn closeLogin={closeLogin} showSignup={showSignup} />
       </dialog>
-
     </div>
   );
 };

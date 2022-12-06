@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
 import FileUploader from "./FileUploader";
 
-const FormSignUp = ({ closeSignup }) => {
+const FormSignUp = ({ closeSignup, showLogin }) => {
   const [values, handleChange] = useForm({
     name: "",
     birth: "",
@@ -31,8 +31,8 @@ const FormSignUp = ({ closeSignup }) => {
     apiHandler
       .signup(fd)
       .then(() => {
-        navigate("/login");
         closeModal();
+        showLogin();
       })
       .catch((error) => {
         setError(error.response.data);
@@ -61,9 +61,8 @@ const FormSignUp = ({ closeSignup }) => {
         <form onSubmit={handleSubmit}>
           <div className="titleArea">
             <h2>Create your account</h2>
-            <p>
-              Already have an accout? <Link to="/login">Log in</Link>
-            </p>
+            <p> Already have an accout? </p>
+            <p onClick={showLogin}>Log in</p>
           </div>
 
           <div className="sameLine">

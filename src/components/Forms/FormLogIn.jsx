@@ -4,7 +4,7 @@ import apiHandler from "../../api/apiHandler";
 import useAuth from "../../auth/useAuth";
 import { Link, useNavigate } from "react-router-dom";
 
-const FormLogIn = ({ closeLogin }) => {
+const FormLogIn = ({ closeLogin, showSignup }) => {
   const [{ email, password }, handleChange] = useForm({
     email: "",
     password: "",
@@ -51,9 +51,8 @@ const FormLogIn = ({ closeLogin }) => {
 
         <form onSubmit={handleSubmit}>
           <h2>Login</h2>
-          <p>
-            Don't have an account yet? <Link to="/signup">Signup</Link>
-          </p>
+          <p>Don't have an account yet?</p>
+          <p onClick={showSignup}>Signup</p>
           <label htmlFor="email">Email</label>
           <input
             type="email"
