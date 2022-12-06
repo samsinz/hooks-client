@@ -31,14 +31,28 @@ const Ratings = () => {
       }
     }
     tempRatings = tempRatings.sort((a, b) => a.x - b.x);
-    let cleanedRatings = [];
-    // for (let i = 0; i < tempRatings.length; i++){
-    //     if (tempRatings[i].date === tempRatings[i-1].date)
-    // }
+    tempRatings.push({x: Infinity, y: 0})
+
+    let tempSum = 0;
+    let tempCount = 0;
+    let cleanedRatings = []
+    for (let i = 0; i < tempRatings.length -1; i++){
+
+        if (tempRatings[i].x === tempRatings[i+1].x){
+            tempSum+=tempRatings[i].y;
+            tempCount++;
+        } else {
+            tempSum+=tempRatings[i].y;
+            tempCount++;
+            cleanedRatings.push({x: tempRatings[i].x, y: tempSum/tempCount})
+            tempSum = 0;
+            tempCount= 0;
+        }
+    }
 
     setRatings((currentValue) => [
       ...currentValue,
-      { id: "ratings", data: tempRatings },
+      { id: "ratings", data: cleanedRatings },
     ]);
   }, [currentUser]);
 
@@ -48,11 +62,10 @@ const Ratings = () => {
 
   return (
     <div className="Ratings">
-      {console.log(ratings)}
       <div className="info">
         <h2 className="bold">Ratings</h2>
         <p>
-          This graph shows the evolution of your average hook scores from the
+          This graph represents the evolution of your average hook scores from the
           beginning to now.
         </p>
       </div>
@@ -91,9 +104,9 @@ const Ratings = () => {
           axisRight={null}
           axisBottom={null}
           axisLeft={null}
-          pointSize={0}
+          pointSize={1}
           pointColor="#98009B"
-          pointBorderWidth={2}
+          pointBorderWidth={0}
           pointBorderColor="#98009B"
           pointLabel={function (t) {
             return t.x + ": " + t.y;
@@ -113,7 +126,7 @@ const Ratings = () => {
             linearGradientDef(
               "gradientD",
               [
-                { offset: 50, color: "#98009B" },
+                { offset: 40, color: "#98009B" },
                 { offset: 115, color: "#0C009C", opacity: 0.5 },
               ],
               // you may specify transforms for your gradients, e.g. rotations and skews,

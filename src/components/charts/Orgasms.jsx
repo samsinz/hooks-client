@@ -49,10 +49,10 @@ const Orgasms = () => {
     <div className="Orgasms">
       <div id="info">
         <h2 className="bold">Orgasms</h2>
-        <p>This graph shows you the amount of sexual experiences that gave you an orgasm.</p>
+        <p>This graph represents the amount of sexual experiences that gave you an orgasm.</p>
         <p className="hover" id="more">
 
-        <span onClick={showInfo}>i</span>
+        <span onClick={showInfo}>𝑖</span>
 
         </p>
       </div>

@@ -5,7 +5,6 @@ import "../../styles/NavMain.css";
 import Achievements from "./Achievements";
 import FormEditProfile from "../Forms/FormEditProfile";
 
-
 const NavMain = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
   const dialog = useRef();
@@ -16,18 +15,29 @@ const NavMain = () => {
   const closeModal = () => {
     dialog.current.close();
   };
+  const regex = /[a-z]/;
   return (
     <nav className="NavMain">
       {isLoggedIn && (
         <>
-          <img id="image" src={currentUser.image} alt="profile" />
-          <h1 id="name" className="bold">{currentUser.name}</h1>
+          <img
+            id="image"
+            className={currentUser.image ? "" : "border-gradient-circular-og"}
+            src={
+              currentUser.image
+                ? currentUser.image
+                : regex.test(currentUser.name.toLowerCase().slice(0, 1))
+                ? `https://res.cloudinary.com/dtr9a2dsx/image/upload/v1670273532/alphabet/${currentUser.name.toLowerCase().slice(0, 1)}.png`
+                : `https://res.cloudinary.com/dtr9a2dsx/image/upload/v1670273532/alphabet/x.png`
+            }
+            alt="profile"
+          />
+          <h1 id="name" className="bold">
+            {currentUser.name}
+          </h1>
           <div id="tags">
             <span>
-              {currentUser.partners.length === 1
-                ? currentUser.partners.length + " hook"
-                : currentUser.partners.length + " hooks"}{" "}
-              · {currentUser.score} pts
+              {currentUser.partners.length === 1 ? currentUser.partners.length + " hook" : currentUser.partners.length + " hooks"} · {currentUser.score} pts
             </span>
             {/* <span>{currentUser.score} pts</span> */}
           </div>
@@ -46,15 +56,17 @@ const NavMain = () => {
               Profile settings
             </NavLink> */}
 
-            <span onClick={showDialog} className="hover">Profile settings</span>
+            <span onClick={showDialog} className="hover">
+              Profile settings
+            </span>
           </h3>
-
 
           {/* <NavLink to="/profile">{currentUser && currentUser.email}</NavLink> */}
           {/* <button onClick={removeUser}>Log-Out</button> */}
 
-
-          <h3 id='achievement' className="bold">Achievements</h3>
+          <h3 id="achievement" className="bold">
+            Achievements
+          </h3>
 
           <Achievements />
 
@@ -78,9 +90,6 @@ const NavMain = () => {
       <dialog ref={dialog}>
         <FormEditProfile closeModal={closeModal} />
       </dialog>
-
-      
-
     </nav>
   );
 };

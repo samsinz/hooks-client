@@ -35,7 +35,7 @@ const Duration = () => {
       }
     }
 
-    setDuration(Math.round((durationCounter * 100) / hooksCounter));
+    setDuration(Math.round((durationCounter * 50) / hooksCounter));
   }, [currentUser]);
 
   return (
@@ -43,10 +43,10 @@ const Duration = () => {
       <div className="title">
         <h2 className="bold">Duration</h2>
         <p className="hover" id="more">
-          <span onClick={showInfo}>i</span>
+          <span onClick={showInfo}>𝑖</span>
         </p>
       </div>
-      <p>This graph shows how you feel about the average length of your sexual encounters.</p>
+      <p>This graph represents how you feel about the average length of your sexual encounters.</p>
       <div className="gauge">
         <div className="level" style={{ width: `${duration}%` }}></div>
       </div>

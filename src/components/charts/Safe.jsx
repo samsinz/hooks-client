@@ -118,7 +118,7 @@ const Safe = () => {
           ]}
         />
         <p className="hover" id="more">
-          <span onClick={showInfo}>i</span>
+          <span onClick={showInfo}>𝑖</span>
         </p>
       </div>
       <dialog ref={info}>
