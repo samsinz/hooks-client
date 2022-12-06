@@ -51,8 +51,12 @@ const FormLogIn = ({ closeLogin, showSignup }) => {
 
         <form onSubmit={handleSubmit}>
           <h2>Login</h2>
-          <p>Don't have an account yet?</p>
-          <p onClick={showSignup}>Signup</p>
+          <div className="toFlex">
+            <p>Don't have an account yet?</p>
+            <p className="toLink" onClick={showSignup}>
+              Signup
+            </p>
+          </div>
           <label htmlFor="email">Email</label>
           <input
             type="email"

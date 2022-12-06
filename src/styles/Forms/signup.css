@@ -58,3 +58,14 @@
   margin: 1.5rem 0 0 auto;
   background-color: white !important;
 }
+
+.toFlex {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toLink {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--custompink);
+}
