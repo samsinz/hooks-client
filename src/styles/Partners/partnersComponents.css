@@ -1,0 +1,49 @@
+.Partners .partners-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3vh;
+}
+
+.Partners .component-title {
+  font-size: 1.7vh;
+  margin-bottom: 2vh;
+}
+
+.Partners .rate {
+  font-size: 7vh;
+  font-weight: 600;
+  line-height: 7vh;
+}
+
+.Partners .rate-special {
+  font-size: 7vh;
+  font-weight: 600;
+  line-height: 7vh;
+  margin-top: 1vh;
+}
+
+.Partners .percent {
+  font-size: 1.8vh;
+}
+
+.Partners .ratings-component {
+  width: 100%;
+  height: 100%;
+  padding: 4vh 4vh 3vh 2vh;
+  display: flex;
+}
+
+.Partners .legend {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  margin-right: 1vh;
+  /* padding: 3vh 0vh 1.5vh 0; */
+  font-size: 1.2vh;
+}
+
+.Partners .legend span {
+  color: #b3b3b3;
+}
