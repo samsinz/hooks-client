@@ -88,10 +88,7 @@ const FormEditProfile = ({ closeModal }) => {
             </div>
           </div>
 
-          <FileUploader
-            onFileSelectSuccess={(file) => setSelectedFile(file)}
-            onFileSelectError={({ error }) => alert(error)}
-          />
+          <FileUploader onFileSelectSuccess={(file) => setSelectedFile(file)} />
 
           <button type="submit" className="svgButton arrowButton">
             <svg
