@@ -31,7 +31,7 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
     apiHandler
       .signup(fd)
       .then(() => {
-        closeModal();
+        closeSignup();
         showLogin();
       })
       .catch((error) => {
