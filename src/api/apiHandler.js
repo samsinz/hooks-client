@@ -58,6 +58,22 @@ const service = {
     .catch(errorHandler);
   },
 
+  deleteHook(userInfo){
+    const {hookId, partnerId} = userInfo;
+    return service
+    .delete(`/api/partners/${partnerId}/delete/${hookId}`)
+    .then((res) => res.data)
+    .catch(errorHandler);
+  },
+
+  deletePartner(userInfo){
+    const {partnerId} = userInfo;
+    return service
+    .delete(`/api/partners/${partnerId}/delete`, userInfo)
+    .then((res) => res.data)
+    .catch(errorHandler);
+  },
+
   // getAllTheCats() {
   // 	return service
   // 		.get("/api/cats")
