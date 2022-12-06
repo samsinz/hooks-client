@@ -9,7 +9,7 @@ const FileUploader = ({ onFileSelectSuccess, setImageProfile }) => {
     // handle validations
     const file = e.target.files[0];
 
-    setImageProfile(URL.createObjectURL(file));
+    setImageProfile?setImageProfile(URL.createObjectURL(file)):true;
     console.log(URL.createObjectURL(file));
     onFileSelectSuccess(file);
 
