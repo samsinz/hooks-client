@@ -9,12 +9,14 @@ const FileUploader = ({ onFileSelectSuccess, setImageProfile }) => {
     // handle validations
     const file = e.target.files[0];
 
-    setImageProfile(URL.createObjectURL(file))
-    console.log(URL.createObjectURL(file))
-
-
+    setImageProfile(URL.createObjectURL(file));
+    console.log(URL.createObjectURL(file));
     onFileSelectSuccess(file);
+
     setState(true);
+    setTimeout(() => {
+      setState(false);
+    }, 1000);
   };
 
   return (
@@ -24,7 +26,7 @@ const FileUploader = ({ onFileSelectSuccess, setImageProfile }) => {
         className="btn btn-primary"
         onClick={(e) => fileInput.current && fileInput.current.click()}
       >
-        <p> {state ? "Picture uploaded ✓" : "Upload a picture"}</p>
+        <p>Upload a picture {state ? "  ✓" : ""}</p>
       </div>
     </div>
   );
