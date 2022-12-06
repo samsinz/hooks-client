@@ -105,10 +105,7 @@ const FormSignUp = ({ closeSignup }) => {
             id="password"
             name="password"
           />
-          <FileUploader
-            onFileSelectSuccess={(file) => setSelectedFile(file)}
-            onFileSelectError={({ error }) => alert(error)}
-          />
+          <FileUploader onFileSelectSuccess={(file) => setSelectedFile(file)} />
 
           {error && <h3 className="error">{error.message}</h3>}
 

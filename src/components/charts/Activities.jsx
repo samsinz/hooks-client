@@ -1,27 +1,29 @@
 import { ResponsiveCalendar } from "@nivo/calendar";
-import { useEffect, useState,useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import useAuth from "../../auth/useAuth";
 import "../../styles/Dashboard/activities.css";
-import ActivityInfo from '../Info/ActivityInfo'
+import ActivityInfo from "../Info/ActivityInfo";
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
 
-
 const Activities = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
 
-  const info = useRef()
+  const info = useRef();
 
-  const showInfo = ()=> {
-    info.current.showModal()
-  }
 
-  const closeInfo = ()=> {
-    info.current.close()
-  }
+  const showInfo = () => {
+    console.log("hello");
+    info.current.showModal();
+  };
+
+
+  const closeInfo = () => {
+    info.current.close();
+  };
 
   const [dates, setDates] = useState([]);
   const year = new Date().getFullYear();
@@ -33,9 +35,11 @@ const Activities = () => {
     for (let i = 0; i < currentUser.partners.length; i++) {
       for (let j = 0; j < currentUser.partners[i].hooks.length; j++) {
         // increment month by one
+
         const date = `${new Date(Date.parse(currentUser.partners[i].hooks[j].date)).getFullYear()}-${(
           "0" + (new Date(Date.parse(currentUser.partners[i].hooks[j].date)).getMonth()+1)
         ).slice(-2)}-${("0" + new Date(Date.parse(currentUser.partners[i].hooks[j].date)).getDate()).slice(-2)}`;
+
         tempCalendar.push({ value: 1, day: date });
       }
     }
@@ -51,7 +55,9 @@ const Activities = () => {
     <div className="Activities">
       <div className="info">
         <h2 className="bold">Sexual activity</h2>
+
         <p>An overview of your sexual activity during the year {year}.</p>
+
       </div>
       <div className="chart">
 
@@ -68,8 +74,10 @@ const Activities = () => {
           margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
           yearLegendOffset={100}
           monthBorderWidth={0}
+
           monthBorderColor="#444444"
           dayBorderColor="#151a1f" //192229 1A2229
+
           legends={[
             {
               anchor: "bottom-right",
@@ -91,7 +99,7 @@ const Activities = () => {
       </p>
 
       <dialog ref={info}>
-        <ActivityInfo closeInfo={closeInfo}/>
+        <ActivityInfo closeInfo={closeInfo} />
       </dialog>
     </div>
   );

@@ -1,18 +1,21 @@
 import "./../../styles/Forms/addhook.css";
 import useForm from "../../hooks/useForm";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
 import FileUploader from "./FileUploader";
 import React from "react";
 
 const AddHookForm = ({ closeAddHook }) => {
   const [stage, setStage] = useState("");
+
   const [orgasm, setOrgasm] = useState(false);
   const [protection, setProtection] = useState(false);
+  const [sexIsActive, setSexIsActive] = useState(false);
+  const [foreplayIsActive, setForeplayIsActive] = useState(false);
+  const [kissingIsActive, setKissingIsActive] = useState(false);
 
   const current = new Date().toISOString().split("T")[0];
-  const minimumDate = new Date("1970").toISOString();
+  // const minimumDate = new Date("1970").toISOString();
 
   const [values, handleChange] = useForm({
     name: "",
@@ -23,14 +26,13 @@ const AddHookForm = ({ closeAddHook }) => {
     date: "",
     type: "",
     rating: "",
-    duration: "",
+    duration: 0,
     orgasm: orgasm,
     protection: protection,
   });
+
   const [selectedFile, setSelectedFile] = useState("");
   const [error, setError] = useState(null);
-
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,7 +54,7 @@ const AddHookForm = ({ closeAddHook }) => {
     apiHandler
       .addHook(fd)
       .then(() => {
-        navigate("/hooks");
+        closeAddHook();
       })
       .catch((error) => {
         setError(error.response.data);
@@ -126,7 +128,7 @@ const AddHookForm = ({ closeAddHook }) => {
                 onChange={handleChange}
                 value={values.date}
                 max={current}
-                min={minimumDate}
+                // min={minimumDate}
                 type="date"
                 id="date"
                 name="date"
@@ -136,53 +138,73 @@ const AddHookForm = ({ closeAddHook }) => {
 
           <label htmlFor="type">Stage</label>
           <div className="stage">
-            <p className="stageItem" onClick={() => setStage("Kissing")}>
+            <p
+              className={kissingIsActive ? "activeStage" : "stageItem"}
+              onClick={() => {
+                setStage("Kissing");
+                setKissingIsActive((current) => !current);
+                setForeplayIsActive(false);
+                setSexIsActive(false);
+              }}
+            >
               Kissing
             </p>
-            <p className="stageItem" onClick={() => setStage("Foreplay")}>
+            <p
+              className={foreplayIsActive ? "activeStage" : "stageItem"}
+              onClick={() => {
+                setStage("Foreplay");
+                setForeplayIsActive((current) => !current);
+                setKissingIsActive(false);
+                setSexIsActive(false);
+              }}
+            >
               Foreplay
             </p>
-            <p className="stageItem" onClick={() => setStage("Sex")}>
+            <p
+              className={sexIsActive ? "activeStage" : "stageItem"}
+              onClick={() => {
+                setStage("Sex");
+                setSexIsActive((current) => !current);
+                setKissingIsActive(false);
+                setForeplayIsActive(false);
+              }}
+            >
               Sex
             </p>
           </div>
 
-          <label htmlFor="nationality">Nationality</label>
-          <input
-            onChange={handleChange}
-            value={values.nationality}
-            type="search"
-            id="nationality"
-            name="nationality"
-          />
-
-          <label htmlFor="comment">Comment</label>
-          <input
-            onChange={handleChange}
-            value={values.comment}
-            type="text"
-            id="comment"
-            name="comment"
-          />
-
-          <div className="duration">
-            <label htmlFor="duration">Duration</label>
+          <div className="newHookDuration">
+            <label htmlFor="duration">Timing</label>
             <input
               onChange={handleChange}
               value={values.duration}
+              defaultValue={null}
               min="0"
               max="2"
               type="range"
               id="duration"
               name="duration"
             />
+            <div className="legendTiming">
+              <p>Too short</p>
+              <p>Perfect</p>
+              <p>Too long</p>
+            </div>
+
+            {console.log(values.duration)}
           </div>
 
-          <p className="tag" onClick={() => setOrgasm(!orgasm)}>
+          <p
+            className={orgasm ? "activeTag" : "tag"}
+            onClick={() => setOrgasm(!orgasm)}
+          >
             + You had an orgasm
           </p>
 
-          <p className="tag" onClick={() => setProtection(!protection)}>
+          <p
+            className={protection ? "activeTag" : "tag"}
+            onClick={() => setProtection(!protection)}
+          >
             + You used protection
           </p>
 
@@ -195,10 +217,25 @@ const AddHookForm = ({ closeAddHook }) => {
             name="rating"
           />
 
-          <FileUploader
-            onFileSelectSuccess={(file) => setSelectedFile(file)}
-            onFileSelectError={({ error }) => alert(error)}
+          <label htmlFor="nationality">Nationality</label>
+          <input
+            onChange={handleChange}
+            value={values.nationality}
+            type="search"
+            id="nationality"
+            name="nationality"
           />
+
+          <label htmlFor="comment">Comments</label>
+          <input
+            onChange={handleChange}
+            value={values.comment}
+            type="textarea"
+            id="comment"
+            name="comment"
+          />
+
+          <FileUploader onFileSelectSuccess={(file) => setSelectedFile(file)} />
 
           <button type="submit" className="svgButton arrowButton">
             <svg
