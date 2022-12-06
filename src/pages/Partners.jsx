@@ -1,8 +1,7 @@
-import '../styles/Partners/partners.css'
+import "../styles/Partners/partners.css";
 
-const Partners = () => {   
-    return <div>Hello</div>
+const Partners = () => {
+  return <div>Hello</div>;
+};
 
-}
-
-export default Partners
+export default Partners;
