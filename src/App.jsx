@@ -12,6 +12,7 @@ import useAuth from "./auth/useAuth";
 
 import "./styles/app.css";
 import AddHookForm from "./components/Forms/AddHookForm";
+import Hooks from "./pages/Hooks";
 
 function App() {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
@@ -32,6 +33,7 @@ function App() {
             <Route path="/partners/create" element={<AddHookForm />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/partners/:id" element={<Hooks />} />
 
           </Route>
         </Routes>

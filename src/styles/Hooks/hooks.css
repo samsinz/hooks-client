@@ -1,0 +1,121 @@
+.Hooks {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+.Hooks #title {
+  margin: 5.6vh 4vh 5vh;
+  width: 120vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.Hooks #partner-image {
+  width: 12vh;
+  height: 12vh;
+  object-fit: cover;
+  margin-right: 3vh;
+}
+
+.Hooks .partner-container {
+  width: 120vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.Hooks .partner-info {
+  display: flex;
+}
+
+.Hooks .partner-details {
+  align-self: flex-end;
+}
+
+.Hooks .partner-details h2 {
+  text-transform: capitalize;
+  margin-bottom: 1vh;
+}
+
+.Hooks #add {
+  font-size: 5vh;
+  padding: 2.4vh 1vh 3vh;
+  border-radius: 4vh;
+  line-height: 0;
+  background: rgba(150, 150, 150, 0.3);
+}
+
+.Hooks #add:hover {
+  background: rgba(150, 150, 150, 0.5);
+}
+
+.Hooks .hook {
+  display: flex;
+  width: 120vh;
+  background: rgba(150, 150, 150, 0.03);
+  margin-top: 4vh;
+  height: 20vh;
+  border-radius: 20px;
+}
+
+.Hooks .date {
+  width: 20vh;
+  align-self: center;
+  padding-left: 3vh;
+}
+
+.Hooks .tags {
+  width: 35vh;
+}
+
+.Hooks .rating {
+  width: 20vh;
+}
+
+.Hooks .notes {
+  width: 35vh;
+}
+
+.Hooks .buttons {
+  width: 10vh;
+}
+
+.Hooks h1 {
+  font-size: 2.6vh;
+}
+
+.Hooks h2 {
+  /* font-size: 1.1rem; */
+  font-size: 2vh;
+}
+
+.Hooks h3 {
+  font-size: 1.4vh;
+}
+
+.Hooks h4 {
+  font-size: 1.6vh;
+}
+
+.Hooks p {
+  font-size: 1.4vh;
+}
+
+.Hooks .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Hooks .rating span {
+    font-weight: 600;
+    font-size: 10vh;
+}
+
+.Hooks .notes {
+    padding: 2vh
+}
