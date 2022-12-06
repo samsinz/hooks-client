@@ -15,6 +15,9 @@ const NavMain = () => {
   const closeModal = () => {
     dialog.current.close();
   };
+
+  const [scoreUser, setScoreUser] = useState(currentUser.score)
+  
   const regex = /[a-z]/;
   return (
     <nav className="NavMain">

@@ -9,6 +9,7 @@ import service from "../../api/apiHandler";
 const AddHookForm = ({ closeAddHook }) => {
   const [stage, setStage] = useState("");
 
+
   const [orgasm, setOrgasm] = useState(false);
   const [protection, setProtection] = useState(false);
   const [sexIsActive, setSexIsActive] = useState(false);
@@ -61,6 +62,8 @@ const AddHookForm = ({ closeAddHook }) => {
   };
 
   const handleSubmit = (e) => {
+
+    
     e.preventDefault();
 
     const fd = new FormData();
@@ -166,6 +169,7 @@ const AddHookForm = ({ closeAddHook }) => {
             <p
               className={kissingIsActive ? "activeStage" : "stageItem"}
               onClick={() => {
+                // setScore(score += 10)
                 setStage("Kissing");
                 setKissingIsActive((current) => !current);
                 setForeplayIsActive(false);
@@ -177,6 +181,7 @@ const AddHookForm = ({ closeAddHook }) => {
             <p
               className={foreplayIsActive ? "activeStage" : "stageItem"}
               onClick={() => {
+                // setScore(score += 20)
                 setStage("Foreplay");
                 setForeplayIsActive((current) => !current);
                 setKissingIsActive(false);
@@ -188,6 +193,7 @@ const AddHookForm = ({ closeAddHook }) => {
             <p
               className={sexIsActive ? "activeStage" : "stageItem"}
               onClick={() => {
+                // setScore(score += 50)
                 setStage("Sex");
                 setSexIsActive((current) => !current);
                 setKissingIsActive(false);
@@ -219,14 +225,21 @@ const AddHookForm = ({ closeAddHook }) => {
 
           <p
             className={orgasm ? "activeTag" : "tag"}
-            onClick={() => setOrgasm(!orgasm)}
+            onClick={() => {
+              setOrgasm(!orgasm) 
+              // setScore(score += 50)
+            }
+              }
           >
             + You had an orgasm
           </p>
 
           <p
             className={protection ? "activeTag" : "tag"}
-            onClick={() => setProtection(!protection)}
+            onClick={() => {
+              // setScore(score += 50)
+              setProtection(!protection)}
+            }
           >
             + You used protection
           </p>
