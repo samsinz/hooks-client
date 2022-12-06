@@ -29,12 +29,15 @@ const Dashboard = () => {
     return (
       <div className="Dashboard">
         <div className="empty hover">
-          <h2>You don't have any hooks at the moment.</h2>
-          <h2>Add your first now</h2>
-          <span id="big-add" className="hover">
+          <h2 onClick={openAddHook}>You don't have any hooks at the moment.</h2>
+          <h2 onClick={openAddHook}>Add your first now</h2>
+          <span id="big-add" className="hover" onClick={openAddHook}>
             +
           </span>
         </div>
+        <dialog ref={addHook}>
+          <AddHookForm closeAddHook={closeAddHook} />
+        </dialog>
       </div>
     );
   }
