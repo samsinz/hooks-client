@@ -11,7 +11,6 @@ import favoriteEmpty from "../assets/images/favorite-empty.png";
 import favoriteFill from "../assets/images/favorite-fill.png";
 import apiHandler from "../api/apiHandler";
 
-
 const Partners = () => {
   const { isLoggedIn, currentUser, removeUser, authenticateUser } = useAuth();
   const navigate = useNavigate();
@@ -26,11 +25,11 @@ const Partners = () => {
     addHook.current.close();
   };
 
-  const handleFavorite = (partnerId, state ) => {
-    apiHandler.toggleFavorite({partnerId: partnerId, state: state})
-    .then(() => authenticateUser())
-    .catch((error) => console.error(error))
-
+  const handleFavorite = (partnerId, state) => {
+    apiHandler
+      .toggleFavorite({ partnerId: partnerId, state: state })
+      .then(() => authenticateUser())
+      .catch((error) => console.error(error));
   };
 
   if (!currentUser.partners.length) {
@@ -40,7 +39,11 @@ const Partners = () => {
   return (
     <div className="Partners">
       <div id="title">
-        <h1 className="bold">{currentUser.partners.length === 1 ? currentUser.partners.length + " partner" : currentUser.partners.length + " partners"}</h1>
+        <h1 className="bold">
+          {currentUser.partners.length === 1
+            ? currentUser.partners.length + " partner"
+            : currentUser.partners.length + " partners"}
+        </h1>
         <h3 className="hover" onClick={openAddHook}>
           <span className="add">+</span> Add a new hook
         </h3>
@@ -59,16 +62,31 @@ const Partners = () => {
                   partner.image
                     ? partner.image
                     : regex.test(partner.name.toLowerCase().slice(0, 1))
-                    ? `https://res.cloudinary.com/dtr9a2dsx/image/upload/v1670273532/alphabet/${partner.name.toLowerCase().slice(0, 1)}.png`
+                    ? `https://res.cloudinary.com/dtr9a2dsx/image/upload/v1670273532/alphabet/${partner.name
+                        .toLowerCase()
+                        .slice(0, 1)}.png`
                     : `https://res.cloudinary.com/dtr9a2dsx/image/upload/v1670273532/alphabet/x.png`
                 }
                 alt="partner"
               />
               <img
                 className="favorite"
-                src={currentUser.favorites.filter((favorite) => favorite._id === partner._id).length ? favoriteFill : favoriteEmpty}
+                src={
+                  currentUser.favorites.filter(
+                    (favorite) => favorite._id === partner._id
+                  ).length
+                    ? favoriteFill
+                    : favoriteEmpty
+                }
                 alt="favorite"
-                onClick={() => handleFavorite(partner._id, currentUser.favorites.filter((favorite) => favorite._id === partner._id).length)}
+                onClick={() =>
+                  handleFavorite(
+                    partner._id,
+                    currentUser.favorites.filter(
+                      (favorite) => favorite._id === partner._id
+                    ).length
+                  )
+                }
               />
             </div>
             <div className="info">
@@ -76,7 +94,10 @@ const Partners = () => {
                 {partner.name}, {partner.age}
               </h2>
               <h3>{partner.comment}</h3>
-              <span id="more" onClick={() => navigate(`/partners/${partner._id}`)}>
+              <span
+                id="more"
+                onClick={() => navigate(`/partners/${partner._id}`)}
+              >
                 See more
               </span>
             </div>
@@ -95,6 +116,9 @@ const Partners = () => {
           </div>
         );
       })}
+      <dialog ref={addHook}>
+        <AddHookForm closeAddHook={closeAddHook}></AddHookForm>
+      </dialog>
     </div>
   );
 };
