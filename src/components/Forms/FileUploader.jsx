@@ -10,11 +10,12 @@ const FileUploader = ({ onFileSelectError, onFileSelectSuccess }) => {
     if (file.size > 300000)
       onFileSelectError({ error: "Your image is too heavy" });
     else onFileSelectSuccess(file);
+  
   };
 
   return (
     <div className="fileUploader">
-      <input type="file" onChange={handleFileInput} ref={fileInput} />
+      <input type="file" onChange={handleFileInput} ref={fileInput}  />
       <p
         onClick={(e) => fileInput.current && fileInput.current.click()}
         className="btn btn-primary"
