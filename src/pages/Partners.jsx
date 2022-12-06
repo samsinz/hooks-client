@@ -2,7 +2,7 @@ import "../styles/Partners/partners.css";
 import { useNavigate, Navigate } from "react-router-dom";
 import useAuth from "../auth/useAuth";
 import AddHookForm from "../components/Forms/AddHookForm";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import RatingsPartners from "../components/charts/RatingsPartners";
 import RatingPartners from "../components/charts/RatingPartners";
 import OrgasmsPartners from "../components/charts/OrgasmsPartners";
@@ -11,12 +11,21 @@ import favoriteEmpty from "../assets/images/favorite-empty.png";
 import favoriteFill from "../assets/images/favorite-fill.png";
 import apiHandler from "../api/apiHandler";
 
-
 const Partners = () => {
   const { isLoggedIn, currentUser, removeUser, authenticateUser } = useAuth();
+  const [search, setSearch] = useState("");
+  const [allPartners, setAllPartners] = useState(currentUser.partners);
   const navigate = useNavigate();
   const addHook = useRef();
   const regex = /[a-z]/;
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  useEffect(() => {
+    setAllPartners(currentUser.partners.filter((partner) => partner.name.toLowerCase().includes(search.toLowerCase())));
+  }, [search]);
 
   const openAddHook = () => {
     addHook.current.showModal();
@@ -26,11 +35,11 @@ const Partners = () => {
     addHook.current.close();
   };
 
-  const handleFavorite = (partnerId, state ) => {
-    apiHandler.toggleFavorite({partnerId: partnerId, state: state})
-    .then(() => authenticateUser())
-    .catch((error) => console.error(error))
-
+  const handleFavorite = (partnerId, state) => {
+    apiHandler
+      .toggleFavorite({ partnerId: partnerId, state: state })
+      .then(() => authenticateUser())
+      .catch((error) => console.error(error));
   };
 
   if (!currentUser.partners.length) {
@@ -46,9 +55,9 @@ const Partners = () => {
         </h3>
       </div>
       <div className="search">
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" onChange={handleSearch} />
       </div>
-      {currentUser.partners.map((partner) => {
+      {allPartners.map((partner) => {
         return (
           <div key={partner._id} className="partner-card">
             <div className="profile-pic">
