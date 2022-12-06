@@ -21,6 +21,7 @@ const Achievements = () => {
 
   return (
     <div className="Achievements">
+    {!currentUser.achievements.length? <div id='add-data'><h4>Add data to unlock achievements.</h4></div> : true}
       {currentUser.achievements.map((achievement) => {
         return (
           <div key={achievement.name} className="border-gradient-circular hover" onClick={() => showAchievement(achievement)}>

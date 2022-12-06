@@ -63,7 +63,7 @@ const Activities = () => {
 
         <ResponsiveCalendar
           isInteractive={false}
-          theme={{ textColor: "#151a1f" }}
+          theme={{ textColor: "#b3b3b3" }}
           data={dates}
           from={from}
           to={to}

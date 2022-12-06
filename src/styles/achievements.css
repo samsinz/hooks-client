@@ -14,6 +14,14 @@
   justify-self: center;
 }
 
+.Achievements #add-data {
+  width: 100%;
+}
+
+.Achievements #add-data h4 {
+  text-align: center;
+}
+
 /* .Achievements img:hover {
     transform: rotateY(180deg);
 } */
@@ -36,7 +44,6 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 3vh;
-
 }
 
 .AchievementInfo img {
