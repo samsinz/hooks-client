@@ -51,6 +51,13 @@ const service = {
       .catch(errorHandler);
   },
 
+  toggleFavorite(userInfo){
+    return service
+    .post("/api/toggleFavorite", userInfo)
+    .then((res) => res.data)
+    .catch(errorHandler);
+  },
+
   // getAllTheCats() {
   // 	return service
   // 		.get("/api/cats")

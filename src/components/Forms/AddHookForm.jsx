@@ -92,7 +92,7 @@ const AddHookForm = ({ closeAddHook }) => {
             name="search"
           /> */}
 
-          <h2>Or add a new one</h2>
+          <h2 className="bold">Or add a new one</h2>
 
           <label htmlFor="name">What is your partner's name?</label>
           <input
