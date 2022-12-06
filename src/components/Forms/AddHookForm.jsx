@@ -113,7 +113,7 @@ const AddHookForm = ({ closeAddHook }) => {
           <input type="text" list="partners" onChange={handlePartnersList} />
           <datalist id="partners">
             {partnersName.map((partner) => {
-              return <option value={partner.name} />;
+              return <option key={partner.id} value={partner.name} />;
             })}
           </datalist>
 

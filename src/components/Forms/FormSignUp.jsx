@@ -61,8 +61,12 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
         <form onSubmit={handleSubmit}>
           <div className="titleArea">
             <h2>Create your account</h2>
-            <p> Already have an accout? </p>
-            <p onClick={showLogin}>Log in</p>
+            <div className="toFlex">
+              <p> Already have an accout? </p>
+              <p className="toLink" onClick={showLogin}>
+                Log in
+              </p>
+            </div>
           </div>
 
           <div className="sameLine">
