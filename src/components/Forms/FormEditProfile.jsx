@@ -1,14 +1,28 @@
 import "./../../styles/Forms/editProfile.css";
 import useForm from "../../hooks/useForm";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
+import { useRef } from "react";
 import FileUploader from "./FileUploader";
 import useAuth from "../../auth/useAuth";
+import DeleteAccount from '../LoggedOut/DeleteAccount'
 
 const FormEditProfile = ({ closeModal }) => {
+
+
+  const dialog = useRef();
+
+  const showDialog = () => {
+    dialog.current.showModal();
+  };
+  const closeDelete = () => {
+    dialog.current.close();
+  };
+
   const { currentUser, authenticateUser } = useAuth();
 
+const [imageProfile, setImageProfile]= useState(currentUser.image)
 
   const [values, handleChange] = useForm({
     name: currentUser.name,
@@ -40,7 +54,7 @@ const FormEditProfile = ({ closeModal }) => {
         console.log(error);
         // setError(error.response.data);
       });
-
+      
       
   };
   return (
@@ -66,10 +80,10 @@ const FormEditProfile = ({ closeModal }) => {
         {error && <h3 className="error">{error.message}</h3>}
 
         <form onSubmit={handleSubmit}>
-          <h2>Edit your account</h2>
-
+          <h2 className="ProfileH2">Profile settings</h2>
+          <img className="Profilepic" src={imageProfile} alt=""/>
           <div className="sameLine">
-           <img src={currentUser.image} alt=""/>
+           
             <div className="left">
               <label htmlFor="name">Name</label>
               <input
@@ -93,7 +107,7 @@ const FormEditProfile = ({ closeModal }) => {
             </div>
           </div>
 
-          <FileUploader onFileSelectSuccess={(file) => setSelectedFile(file)} />
+          <FileUploader setImageProfile={setImageProfile} onFileSelectSuccess={(file) => setSelectedFile(file)} />
 
           <button type="submit" className="svgButton arrowButton">
             <svg
@@ -110,8 +124,15 @@ const FormEditProfile = ({ closeModal }) => {
             </svg>
           </button>
         </form>
-        <p>Do you want to delete your account?</p>
+        <p onClick={showDialog}> Do you want to delete your account?</p>
+
+
+        <dialog ref={dialog}>
+          <DeleteAccount closeDelete={closeDelete} />
+      </dialog>
       </div>
+
+
     </>
   );
 };

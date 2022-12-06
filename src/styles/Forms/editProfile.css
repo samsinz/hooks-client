@@ -1,5 +1,7 @@
 .FormEditProfile h2 {
   margin-bottom: 1rem;
+  margin-left:6rem;
+
 }
 
 .FormEditProfile .sameLine {
@@ -16,6 +18,15 @@
   color: var(--custompink);
 }
 
+.Profilepic {
+  width: 8rem;
+  margin-left:6rem;
+  background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+  border: 2px solid transparent;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  
+}
 .FormEditProfile .left,
 .FormEditProfile .right {
   width: 100%;
