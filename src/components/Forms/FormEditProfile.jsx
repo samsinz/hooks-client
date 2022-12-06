@@ -79,7 +79,7 @@ const FormEditProfile = ({ closeModal }) => {
               <label htmlFor="birth">Birthdate</label>
               <input
                 onChange={handleChange}
-                value={values.birth}
+                value={new Date(values.birth).toISOString().split("T")[0]}
                 type="date"
                 id="birth"
                 name="birth"

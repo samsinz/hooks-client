@@ -16,7 +16,6 @@ const Activities = () => {
   const info = useRef()
 
   const showInfo = ()=> {
-    console.log('hello')
     info.current.showModal()
   }
 
@@ -37,7 +36,6 @@ const Activities = () => {
         const date = `${new Date(Date.parse(currentUser.partners[i].hooks[j].date)).getFullYear()}-${(
           "0" + (new Date(Date.parse(currentUser.partners[i].hooks[j].date)).getMonth()+1)
         ).slice(-2)}-${("0" + new Date(Date.parse(currentUser.partners[i].hooks[j].date)).getDate()).slice(-2)}`;
-        console.log(date);
         tempCalendar.push({ value: 1, day: date });
       }
     }
@@ -53,18 +51,17 @@ const Activities = () => {
     <div className="Activities">
       <div className="info">
         <h2 className="bold">Sexual activity</h2>
-        <p>An overview of your sexual activity periods during the year {year}.</p>
+        <p>An overview of your sexual activity during the year {year}.</p>
       </div>
       <div className="chart">
-        {console.log(dates)}
 
         <ResponsiveCalendar
           isInteractive={false}
-          theme={{ textColor: "#b3b3b3" }}
+          theme={{ textColor: "#151a1f" }}
           data={dates}
           from={from}
           to={to}
-          emptyColor="#11161C"
+          emptyColor="#101419" //11161c
           colors={["#7E24FF"]}
           minValue={-38}
           maxValue={100}
@@ -72,7 +69,7 @@ const Activities = () => {
           yearLegendOffset={100}
           monthBorderWidth={0}
           monthBorderColor="#444444"
-          dayBorderColor="#192229"
+          dayBorderColor="#151a1f" //192229 1A2229
           legends={[
             {
               anchor: "bottom-right",
@@ -90,7 +87,7 @@ const Activities = () => {
         />
       </div>
       <p className="hover" id="more">
-        <span onClick={showInfo}>i</span>
+        <span onClick={showInfo}>𝑖</span>
       </p>
 
       <dialog ref={info}>

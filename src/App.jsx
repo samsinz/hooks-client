@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import NavMain from "./components/Nav/NavMain";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
+import Partners from "./pages/Partners";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
@@ -30,6 +31,8 @@ function App() {
             {/* All routes after the PrivateRoute require the user to be loggedIn */}
             <Route path="/partners/create" element={<AddHookForm />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/partners" element={<Partners />} />
+
           </Route>
         </Routes>
       </div>

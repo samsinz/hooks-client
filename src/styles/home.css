@@ -133,6 +133,10 @@
 
 } */
 
+.circle-animation {
+  animation: gradientLoop 0.8s ease-in-out infinite;
+}
+
 
 
 @keyframes hover1 {

@@ -1,14 +1,13 @@
 .Achievements {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  max-height: 140px;
+  /* justify-content: space-evenly; */
+  max-height: 115px;
   overflow: scroll;
+  width: 92%;
+  align-self: center;
+}
 
-}
-.infoImg{
-  margin-top:2rem
-}
 .Achievements img {
   width: 50%;
   align-self: center;
@@ -19,33 +18,41 @@
     transform: rotateY(180deg);
 } */
 .AchievementInfo {
-  height: 50vh;
-  width: 70vh;
+  height: 40vh;
+  width: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
+}
+
+.AchievementInfo .big-achievement {
+  width: 14vh;
+  height: 14vh;
+  background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+  border-radius: 5rem;
+  border: 3px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3vh;
 
 }
 
 .AchievementInfo img {
-  margin-bottom: 2rem
 }
 .AchievementInfo h1 {
-  margin-bottom: 1rem
+  margin-bottom: 0.8vh;
 }
 
-.AchievementInfo span{
+.AchievementInfo span {
   position: absolute;
-  right:10vh;
+  right: 5vh;
   top: 5vh;
-
 }
 
-
-@media (max-height: 700px){
-    .Achievements img {
-		padding: 0.4rem;
-	}
+@media (max-height: 700px) {
+  .Achievements img {
+    padding: 0.4rem;
+  }
 }
