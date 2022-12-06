@@ -82,8 +82,16 @@
 
 .Hooks .buttons {
   width: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
+.Hooks .buttons img {
+    width: 2.5vh;
+    height: 2.5h;
+}
 .Hooks h1 {
   font-size: 2.6vh;
 }
@@ -118,4 +126,14 @@
 
 .Hooks .notes {
     padding: 2vh
+}
+.Hooks .buttons-container{
+    display: flex;
+    padding: 1vh 0 0 0
+}
+
+.Hooks .buttons-container img{
+width: 2.5vh;
+height: 2.5vh;
+margin-right: 0.5vh;
 }
