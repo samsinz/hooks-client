@@ -4,10 +4,6 @@
   gap: 0.5rem;
 }
 
-.addhook p {
-  margin-bottom: 2rem !important;
-}
-
 .addhook u {
   color: var(--custompink);
 }
@@ -21,7 +17,7 @@
 
 .addhook label {
   display: block;
-  margin: 1rem 0 0.2rem 0;
+  margin: 2rem 0 0.2rem 0;
 }
 
 .addhook input {
@@ -29,8 +25,15 @@
   background-color: rgba(150, 150, 150, 0.03);
   border: solid white 1px;
   border-radius: 5px;
-  width: 100%;
   height: 2.5rem;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+input#age {
+  width: 100% !important;
+  margin: 0 !important;
+  border-radius: 5px !important;
 }
 
 .addhook .svgButton {
@@ -62,6 +65,7 @@
 .addhook .stage {
   display: flex;
   justify-content: left;
+  cursor: pointer;
 }
 
 .addhook .stageItem {
@@ -72,11 +76,41 @@
   border: solid white 2px;
 }
 
+.addhook .activeStage {
+  cursor: pointer;
+  font-size: 1rem !important;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  border: solid var(--custompink) 2px;
+  color: var(--custompink);
+}
 .addhook .tag {
+  cursor: pointer;
   display: inline;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   margin-right: 1rem;
   border-radius: 5px;
   border: solid white 2px;
+}
+
+.addhook .activeTag {
+  cursor: pointer;
+  display: inline;
+  font-size: 1rem !important;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  border: solid var(--custompink) 2px;
+  color: var(--custompink);
+}
+
+.addhook .legendTiming {
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: -1rem;
+  margin-bottom: 3rem;
 }

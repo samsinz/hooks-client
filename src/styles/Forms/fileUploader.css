@@ -7,6 +7,7 @@
 }
 
 .fileUploader p {
+  font-size: 1rem !important;
   padding-top: 0.4rem;
   text-align: center !important;
   width: 100%;
