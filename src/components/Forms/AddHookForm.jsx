@@ -235,10 +235,7 @@ const AddHookForm = ({ closeAddHook }) => {
             name="comment"
           />
 
-          <FileUploader
-            onFileSelectSuccess={(file) => setSelectedFile(file)}
-            onFileSelectError={({ error }) => alert(error)}
-          />
+          <FileUploader onFileSelectSuccess={(file) => setSelectedFile(file)} />
 
           <button type="submit" className="svgButton arrowButton">
             <svg
