@@ -3,12 +3,13 @@ import useAuth from "../../auth/useAuth"
 import { useRef, useState } from "react";
 import { Navigate, Outlet } from "react-router-dom"
 import apiHandler from '../../api/apiHandler'
+import '../../styles/Forms/editProfile.css'
 
 const DeleteAccount= ({ closeDelete }) => {
 
 
 	const {removeUser} = useAuth();
-	
+
 	const deleteUser = ()=>{
 		
 		 apiHandler
@@ -47,9 +48,9 @@ const DeleteAccount= ({ closeDelete }) => {
 	
 	<h1>Are you sure you want to delete your account? </h1>
 
-	<p>Be careful, this action is irreversible</p>
+	<p className='delete'>Be careful, this action is irreversible</p>
 
-	<span onClick={deleteUser}>YES</span>
+	<span className='delete' onClick={deleteUser}>YES</span>
 
 	</div>
 	)

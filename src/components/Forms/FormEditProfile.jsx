@@ -104,7 +104,7 @@ const FormEditProfile = ({ closeModal }) => {
             </svg>
           </button>
         </form>
-        <p onClick={showDialog}> Do you want to delete your account?</p>
+        <p className="delete" onClick={showDialog}> Do you want to delete your account?</p>
 
         <dialog ref={dialog}>
           <DeleteAccount closeDelete={closeDelete} />
