@@ -6,6 +6,7 @@ import deleteImage from "../assets/images/delete.png";
 import apiHandler from "../api/apiHandler";
 
 import "../styles/Hooks/hooks.css";
+import { useState } from "react";
 
 const Hooks = () => {
   const { isLoggedIn, currentUser, removeUser, authenticateUser } = useAuth();
@@ -14,6 +15,11 @@ const Hooks = () => {
   const [partner] = currentUser.partners.filter((partner) => partner._id === params.id);
   const regex = /[a-z]/;
   const navigate = useNavigate();
+
+  const [name, setName] = useState(partner.name);
+  const [age, setAge] = useState(partner.age);
+  const [comment, setComment] = useState(partner.comment);
+
 
   const handleDeleteHook = (hookId, partnerId) => {
     apiHandler
@@ -61,9 +67,15 @@ const Hooks = () => {
             alt="partner"
           />
           <div className="partner-details">
+          <div style={{display: 'flex'}}>
             <h2 className="bold">
               {partner.name}, {partner.age}
             </h2>
+     
+            <input type="text" value={name} size={name.length} id='name' name='name' onChange={(e) => setName(e.target.value)}/>
+            <input type="text" value={age} size={String(age).length} id='age' name='age' onChange={(e) => setAge(e.target.value)}/>
+
+            </div>
             <h4>{partner.comment}</h4>
             <h4>Hooks: {partner.hooks.length}</h4>
             <div className="buttons-container">

@@ -138,3 +138,21 @@ width: 2.5vh;
 height: 2.5vh;
 margin-right: 0.5vh;
 }
+
+.Hooks input {
+    font-size: 1.8vh;
+    font-weight: 600;
+    text-align: left;
+    padding: 1vh;
+    border-radius: 5px;
+    border: none;
+    height: 4vh;
+    pointer-events:none;
+    background-color: blue;
+}
+
+.Hooks .change {
+    pointer-events:all;
+    border: solid white 1px;
+    background-color: rgba(150, 150, 150, 0.03);
+}
