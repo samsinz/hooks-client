@@ -1,7 +1,7 @@
 .Achievements {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
+  justify-content: space-evenly;
   max-height: 115px;
   overflow: scroll;
   width: 92%;

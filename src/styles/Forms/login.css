@@ -1,35 +1,58 @@
-.FormSignUp {
-
-  width: 30rem;
-  padding: 0 2rem 1rem;
+.FormLogin h2 {
+  margin-bottom: 0.2rem;
 }
-.FormSignUp .sameLine {
+
+.FormLogin{
+  width: 22rem;
+  height: 23.5rem;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.FormLogin .sameLine {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 }
 
-.FormSignUp p {
+.FormLogin p {
   margin-bottom: 2rem !important;
 }
 
-.FormSignUp u {
+.FormLogin u {
   color: var(--custompink);
 }
 
-.FormSignUp .left,
-.FormSignUp .right {
+.ProfileH2{
+  margin-left: 2rem
+}
+
+.Profilepic {
+  width: 8rem;
+  margin-left:7rem;
+  background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+  border: 2px solid transparent;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  
+}
+.FormLogin .left,
+.FormLogin .right {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.FormSignUp label {
+.FormLogin label {
   display: block;
   margin: 1rem 0 0.2rem 0;
 }
 
-.FormSignUp input {
+.FormLogin input,
+.FormLogin #name {
   font-size: 1rem;
   text-align: left;
   padding: 10px;
@@ -43,7 +66,7 @@
   color: #bbbbbb;
 }
 
-.FormSignUp .svgButton {
+.FormLogin .svgButton {
   padding: 0.7rem;
   border: none;
   background-color: transparent;
@@ -52,16 +75,16 @@
   cursor: pointer;
 }
 
-.FormSignUp span {
+.FormLogin span {
   display: flex;
   justify-content: right;
 }
 
-.FormSignUp .svgButton p {
+.FormLogin .svgButton p {
   text-align: right !important;
 }
 
-.FormSignUp .arrowButton {
+.FormLogin .arrowButton {
   border-radius: 100%;
   aspect-ratio: 1;
   display: flex;
@@ -69,13 +92,7 @@
   background-color: white !important;
 }
 
-.toFlex {
-  display: flex;
-  gap: 0.5rem;
+.delete{
+  color: var(--custompink)
 }
 
-.toLink {
-  text-decoration: none;
-  cursor: pointer;
-  color: #c2b0fc;
-}

@@ -19,6 +19,7 @@
   height: 12vh;
   object-fit: cover;
   margin-right: 3vh;
+  border-radius: 12vh;
 }
 
 .Hooks .partner-container {

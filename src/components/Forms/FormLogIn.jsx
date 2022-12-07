@@ -3,6 +3,7 @@ import useForm from "../../hooks/useForm";
 import apiHandler from "../../api/apiHandler";
 import useAuth from "../../auth/useAuth";
 import { Link, useNavigate } from "react-router-dom";
+import '../../styles/Forms/login.css'
 
 const FormLogIn = ({ closeLogin, showSignup }) => {
   const [{ email, password }, handleChange] = useForm({
@@ -31,7 +32,7 @@ const FormLogIn = ({ closeLogin, showSignup }) => {
 
   return (
     <>
-      <div className="FormEditProfile">
+      <div className="FormLogin">
         <span onClick={closeLogin} className="svgButton">
           <svg
             width="20"
@@ -50,14 +51,14 @@ const FormLogIn = ({ closeLogin, showSignup }) => {
         </span>
 
         <form onSubmit={handleSubmit}>
-          <h2>Login</h2>
+          <h2 className="bold">Log in</h2>
           <div className="toFlex">
-            <p>Don't have an account yet?</p>
-            <p className="toLink" onClick={showSignup}>
-              Signup
-            </p>
+            <h4>Don't have an account yet?</h4>
+            <h4 className="hover bold" onClick={showSignup}>
+              Sign up
+            </h4>
           </div>
-          <label htmlFor="email">Email</label>
+          <h4><label htmlFor="email">Email</label></h4>
           <input
             type="email"
             id="accountEmail"
@@ -65,7 +66,7 @@ const FormLogIn = ({ closeLogin, showSignup }) => {
             onChange={handleChange}
             value={email}
           />
-          <label htmlFor="password">Password</label>
+          <h4><label htmlFor="password">Password</label></h4>
           <input
             type="password"
             id="accountPassword"
@@ -73,7 +74,7 @@ const FormLogIn = ({ closeLogin, showSignup }) => {
             onChange={handleChange}
             value={password}
           />
-          {error && <h3 className="error">{error.message}</h3>}
+          {error && <h4 className="error">{error.message}</h4>}
 
           <button type="submit" className="svgButton arrowButton">
             <svg
