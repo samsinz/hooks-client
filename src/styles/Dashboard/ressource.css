@@ -1,25 +1,63 @@
-.safeInfoDuration h1 {
-  margin-bottom: 1rem;
-}
-
-.safeInfoDuration h2 {
-  color: var(--custompink);
-}
-
-.safeInfoDuration{
+.ressource {
   width: 30rem;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
 }
 
-.safeInfoDuration span {
+.ressource span {
   position: absolute;
-  right:5vh;
+  right: 5vh;
   top: 5vh;
 }
 
-.safeInfoDuration p {
-  font-size: 1.5vh;
-  margin: 0;
-  margin-bottom: 2vh;
+.ressource h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 2rem 0;
+}
 
+.ressource h3 {
+  margin: 2rem 2rem 1rem 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.ressource a {
+  color: white;
+  display: block;
+  font-size: 0.8rem;
+}
+
+.ressource p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.ressourceStats {
+  margin-top: 1.5rem;
+  text-align: center;
+  display: flex;
+  gap: 3rem;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ressourceStats .leftStat,
+.ressourceStats .rightStat {
+  width: 50%;
+}
+
+.ressourceStats .statTop {
+  font-weight: bold;
+  font-size: 50px !important;
+  margin-top: 1rem;
+}
+
+.ressourceStats .statBottom {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: -1rem;
+}
+
+.ressourceStats .statLegend {
+  margin-top: 1rem;
 }
