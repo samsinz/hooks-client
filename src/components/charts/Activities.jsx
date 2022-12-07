@@ -74,7 +74,7 @@ const Activities = () => {
           from={from}
           to={to}
           emptyColor="#101419" //11161c
-          colors={[ '#7E24FF', '#7E24FF', '#7E24FF', '#691cd5', '#5a17b8', '#4c139d', '#3d0e7f', '#300b64' ]}
+          colors={[ '7120e5','#7120e5', '#7120e5', '#7E24FF', '#8a39ff', '#974fff', '#a465ff', '#b17bff' ]}
 
           minValue={-38}
           maxValue={100}

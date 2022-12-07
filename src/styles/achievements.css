@@ -1,10 +1,10 @@
 .Achievements {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-height: 115px;
+  justify-content: center;
+  max-height: 129px;
   overflow: scroll;
-  width: 92%;
+  width: 90%;
   align-self: center;
 }
 
