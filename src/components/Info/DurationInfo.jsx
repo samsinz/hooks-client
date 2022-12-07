@@ -55,7 +55,10 @@ const DurationInfo = ({ closeInfo }) => {
         </div>
       </div>
       <h3 className="usefulLinks">Useful links</h3>
-      <a href="https://www.durex.co.uk/blogs/explore-sex/how-long-should-sex-last">
+      <a
+        href="https://www.durex.co.uk/blogs/explore-sex/how-long-should-sex-last"
+        target="_blank"
+      >
         How long should sex last →
       </a>
     </div>

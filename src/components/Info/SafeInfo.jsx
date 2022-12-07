@@ -110,7 +110,10 @@ const SafeInfo = ({ closeInfo }) => {
         </div>
       </div>
       <h3 className="usefulLinks">Useful links</h3>
-      <a href="https://www.familyplanning.org.nz/news/2016/had-unprotected-sex">
+      <a
+        href="https://www.familyplanning.org.nz/news/2016/had-unprotected-sex"
+        target="_blank"
+      >
         What to do in case of unsafe sex →
       </a>
     </div>
