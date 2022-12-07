@@ -12,7 +12,9 @@ const Hooks = () => {
   const { isLoggedIn, currentUser, removeUser, authenticateUser } = useAuth();
   const params = useParams();
   const id = params.id;
-  const [partner] = currentUser.partners.filter((partner) => partner._id === params.id);
+  const [partner] = currentUser.partners.filter(
+    (partner) => partner._id === params.id
+  );
   const regex = /[a-z]/;
   const navigate = useNavigate();
 
@@ -67,10 +69,17 @@ const Hooks = () => {
     <div className="Hooks">
       <div id="title">
         <h1 className="bold hover" onClick={() => navigate("/partners")}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="bi bi-arrow-left"
+            viewBox="0 0 16 16"
+          >
             {" "}
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
             />
           </svg>{" "}
@@ -86,7 +95,9 @@ const Hooks = () => {
               partner.image
                 ? partner.image
                 : regex.test(partner.name.toLowerCase().slice(0, 1))
-                ? `https://res.cloudinary.com/dtr9a2dsx/image/upload/v1670273532/alphabet/${partner.name.toLowerCase().slice(0, 1)}.png`
+                ? `https://res.cloudinary.com/dtr9a2dsx/image/upload/v1670273532/alphabet/${partner.name
+                    .toLowerCase()
+                    .slice(0, 1)}.png`
                 : `https://res.cloudinary.com/dtr9a2dsx/image/upload/v1670273532/alphabet/x.png`
             }
             alt="partner"
@@ -104,8 +115,10 @@ const Hooks = () => {
             <input className={edit ? "change" : ""} type="text" value={comment} size={comment.length} id="comment" name="comment" onChange={handleComment} />
             <h4>Hooks: {partner.hooks.length}</h4>
             <div className="buttons-container">
+
               <img src={editImage} alt="edit" className="hover" onClick={() => handleEdit(partner._id)} />
               <img src={deleteImage} alt="delete" className="hover" onClick={() => handleDeletePartner(partner._id)} />
+
             </div>
           </div>
         </div>
@@ -119,7 +132,9 @@ const Hooks = () => {
           return (
             <div key={hook._id} className="hook">
               <div className="date">
-                <h2 className="bold">{hook.date.slice(0, 10).replace(/-/g, ".")}</h2>
+                <h2 className="bold">
+                  {hook.date.slice(0, 10).replace(/-/g, ".")}
+                </h2>
                 <h4>{hook.location}</h4>
               </div>
               <div className="tags">
@@ -133,7 +148,12 @@ const Hooks = () => {
                 <h4>{hook.notes ? hook.notes : "None."}</h4>
               </div>
               <div className="buttons">
-                <img src={deleteImage} alt="delete" className="hover" onClick={() => handleDeleteHook(hook._id, partner._id)} />
+                <img
+                  src={deleteImage}
+                  alt="delete"
+                  className="hover"
+                  onClick={() => handleDeleteHook(hook._id, partner._id)}
+                />
               </div>
             </div>
           );
