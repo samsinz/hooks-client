@@ -20,7 +20,7 @@ const Part2 = ({
   const minimumDate = new Date("1970-01-01").toISOString();
 
   return (
-    <div className="addhook">
+    <div className="part2">
       <div className="sameLine">
         <div className="left">
           <label htmlFor="location">Where</label>
@@ -125,7 +125,20 @@ const Part2 = ({
         name="rating"
       />
 
-      <p onClick={() => setStep(3)}> next</p>
+      <div className="nextStep" onClick={() => setStep(3)}>
+        <svg
+          width="23"
+          height="20"
+          viewBox="0 0 23 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13.3177 20L11.6771 18.3807L18.4314 11.6264H0.938477V9.28267H18.4314L11.6771 2.54972L13.3177 0.909091L22.8632 10.4545L13.3177 20Z"
+            fill="white"
+          />
+        </svg>
+      </div>
     </div>
   );
 };
