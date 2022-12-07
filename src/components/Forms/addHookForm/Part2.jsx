@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import "./../../../styles/Forms/addhook.css";
 
-const Part2 = () => {
+const Part2 = ({
+  handleChange,
+  values,
+  setStage,
+  orgasm,
+  protection,
+  setOrgasm,
+  setProtection,
+
+  setStep,
+}) => {
+  const [sexIsActive, setSexIsActive] = useState(false);
+  const [foreplayIsActive, setForeplayIsActive] = useState(false);
+  const [kissingIsActive, setKissingIsActive] = useState(false);
+
+  const current = new Date().toISOString().split("T")[0];
+  const minimumDate = new Date("1970-01-01").toISOString();
+
   return (
-    <div>
+    <div className="addhook">
       <div className="sameLine">
         <div className="left">
           <label htmlFor="location">Where</label>
@@ -27,7 +45,6 @@ const Part2 = () => {
           />
         </div>
       </div>
-
       <label htmlFor="type">Stage</label>
       <div className="stage">
         <p
@@ -64,13 +81,11 @@ const Part2 = () => {
           Sex
         </p>
       </div>
-
       <div className="newHookDuration">
         <label htmlFor="duration">Timing</label>
         <input
           onChange={handleChange}
           value={values.duration}
-          defaultValue={null}
           min="0"
           max="2"
           type="range"
@@ -83,21 +98,24 @@ const Part2 = () => {
           <p>Too long</p>
         </div>
       </div>
-
       <p
         className={orgasm ? "activeTag" : "tag"}
-        onClick={() => setOrgasm(!orgasm)}
+        onClick={() => {
+          setOrgasm(!orgasm);
+          // setScore(score += 50)
+        }}
       >
         + You had an orgasm
       </p>
-
       <p
         className={protection ? "activeTag" : "tag"}
-        onClick={() => setProtection(!protection)}
+        onClick={() => {
+          // setScore(score += 50)
+          setProtection(!protection);
+        }}
       >
         + You used protection
       </p>
-
       <label htmlFor="rating">Rating</label>
       <input
         onChange={handleChange}
@@ -106,6 +124,8 @@ const Part2 = () => {
         id="rating"
         name="rating"
       />
+
+      <p onClick={() => setStep(3)}> next</p>
     </div>
   );
 };
