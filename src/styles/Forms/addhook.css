@@ -39,7 +39,7 @@
 .addhook input {
   padding: 10px;
   background-color: rgba(150, 150, 150, 0.03);
-  /* border: solid white 1px; */
+  border: solid white 1px;
   border-radius: 5px;
   height: 2.5rem;
   width: 100% !important;
