@@ -18,13 +18,17 @@ const Partners = () => {
   const navigate = useNavigate();
   const addHook = useRef();
   const regex = /[a-z]/;
-
+  console.log(currentUser);
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
   useEffect(() => {
-    setAllPartners(currentUser.partners.filter((partner) => partner.name.toLowerCase().includes(search.toLowerCase())));
+    setAllPartners(
+      currentUser.partners.filter((partner) =>
+        partner.name.toLowerCase().includes(search.toLowerCase())
+      )
+    );
   }, [search]);
 
   const openAddHook = () => {

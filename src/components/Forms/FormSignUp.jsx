@@ -6,14 +6,26 @@ import apiHandler from "../../api/apiHandler";
 import FileUploader from "./FileUploader";
 
 const FormSignUp = ({ closeSignup, showLogin }) => {
+  const current = new Date().toISOString().split("T")[0];
+  console.log(current);
+
+  // age limit : today - 18 years //
+  function subtractYears(date, years) {
+    date.setFullYear(date.getFullYear() - years);
+    return date;
+  }
+  const date = new Date("2022-02-20T00:00:00.000Z");
+  const newDate = subtractYears(date, 18);
+  const ageLimit = newDate.toISOString().split("T")[0];
+
   const [values, handleChange] = useForm({
     name: "",
-    birth: "",
+    birth: ageLimit,
     email: "",
     password: "",
   });
   const [selectedFile, setSelectedFile] = useState("");
-  const current = new Date().toISOString().split("T")[0];
+
   const [error, setError] = useState(null);
 
   const navigate = useNavigate();
@@ -71,7 +83,10 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
 
           <div className="sameLine">
             <div className="left">
-            <h4> <label htmlFor="name">Name</label></h4>
+              <h4>
+                {" "}
+                <label htmlFor="name">Name</label>
+              </h4>
               <input
                 onChange={handleChange}
                 value={values.name}
@@ -81,18 +96,24 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
               />
             </div>
             <div className="right">
-            <h4> <label htmlFor="birth">Birthdate</label></h4>
+              <h4>
+                {" "}
+                <label htmlFor="birth">Birthdate</label>
+              </h4>
               <input
                 onChange={handleChange}
                 value={values.birth}
                 type="date"
                 id="birth"
                 name="birth"
-                max={current}
+                max={ageLimit}
               />
             </div>
           </div>
-          <h4> <label htmlFor="email">Email</label></h4>
+          <h4>
+            {" "}
+            <label htmlFor="email">Email</label>
+          </h4>
           <input
             onChange={handleChange}
             value={values.email}
@@ -100,7 +121,10 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
             id="email"
             name="email"
           />
-          <h4> <label htmlFor="password">Password</label></h4> 
+          <h4>
+            {" "}
+            <label htmlFor="password">Password</label>
+          </h4>
           <input
             onChange={handleChange}
             value={values.password}
