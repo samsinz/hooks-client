@@ -14,7 +14,7 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
     date.setFullYear(date.getFullYear() - years);
     return date;
   }
-  const date = new Date("2022-02-20T00:00:00.000Z");
+  const date = new Date();
   const newDate = subtractYears(date, 18);
   const ageLimit = newDate.toISOString().split("T")[0];
 

@@ -4,8 +4,9 @@ import "./../../../styles/Forms/addhook.css";
 
 const Part3 = ({ values, handleChange }) => {
   return (
-    <div className="addhook">
-      <label htmlFor="comment">Comments</label>
+    <div className="part3">
+      <h2>Optional fields</h2>
+      <label htmlFor="comment">Add a comment or nickname</label>
       <input
         onChange={handleChange}
         value={values.comment}
@@ -13,9 +14,15 @@ const Part3 = ({ values, handleChange }) => {
         id="comment"
         name="comment"
       />
-
+      <label htmlFor="notes">Add notes</label>
+      <input
+        onChange={handleChange}
+        value={values.notes}
+        type="textarea"
+        id="notes"
+        name="notes"
+      />
       <FileUploader onFileSelectSuccess={(file) => setSelectedFile(file)} />
-
       <button type="submit" className="svgButton arrowButton">
         <svg
           width="23"

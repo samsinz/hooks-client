@@ -74,6 +74,7 @@ const AddHookForm = ({ closeAddHook }) => {
     fd.append("duration", values.duration);
     fd.append("orgasm", orgasm);
     fd.append("protection", protection);
+    fd.append("notes", values.notes);
 
     apiHandler
       .addHook(fd)
