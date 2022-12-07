@@ -91,8 +91,8 @@ const SafeInfo = ({ closeInfo }) => {
           exposure to an STD and remember to get tested regularly.
         </p>
 
-        <div class="ressourceStats">
-          <div class="leftStat">
+        <div className="ressourceStats">
+          <div className="leftStat">
             <p className="statTop colored-text">1 in 5</p>
             <p className="statBottom colored-text">people</p>
             <p className="statLegend">
@@ -100,7 +100,7 @@ const SafeInfo = ({ closeInfo }) => {
             </p>
           </div>
 
-          <div class="rightStat">
+          <div className="rightStat">
             <p className="statTop colored-text">53</p>
             <p className="statBottom colored-text">percent</p>
             <p className="statLegend">

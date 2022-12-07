@@ -34,8 +34,8 @@ const DurationInfo = ({ closeInfo }) => {
           length of time you have sex is only one aspect of sexual health.
         </p>
 
-        <div class="ressourceStats">
-          <div class="leftStat">
+        <div className="ressourceStats">
+          <div className="leftStat">
             <p className="statTop colored-text">5'25</p>
             <p className="statBottom colored-text">minutes</p>
             <p className="statLegend">
@@ -44,7 +44,7 @@ const DurationInfo = ({ closeInfo }) => {
             </p>
           </div>
 
-          <div class="rightStat">
+          <div className="rightStat">
             <p className="statTop colored-text">3 to 7</p>
             <p className="statBottom colored-text">minutes</p>
             <p className="statLegend">

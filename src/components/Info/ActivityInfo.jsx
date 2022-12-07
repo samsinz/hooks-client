@@ -30,8 +30,8 @@ const ActivityInfo = ({ closeInfo }) => {
           can bet that each person will have their own story to tell.
         </p>
 
-        <div class="ressourceStats">
-          <div class="leftStat">
+        <div className="ressourceStats">
+          <div className="leftStat">
             <p className="statTop colored-text">8</p>
             <p className="statBottom colored-text">percent</p>
             <p className="statLegend">
@@ -39,7 +39,7 @@ const ActivityInfo = ({ closeInfo }) => {
             </p>
           </div>
 
-          <div class="rightStat">
+          <div className="rightStat">
             <p className="statTop colored-text">63</p>
             <p className="statBottom colored-text">percent</p>
             <p className="statLegend">
