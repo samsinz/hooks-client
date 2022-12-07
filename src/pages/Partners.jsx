@@ -42,7 +42,7 @@ const Partners = () => {
   const handleFavorite = (partnerId, state) => {
     apiHandler
       .toggleFavorite({ partnerId: partnerId, state: state })
-      .then(() => authenticateUser())
+      .then(async () => await authenticateUser())
       .catch((error) => console.error(error));
   };
 

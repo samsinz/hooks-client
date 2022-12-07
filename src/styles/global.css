@@ -63,7 +63,7 @@ p {
 dialog {
   background-color: rgba(17, 22, 27, 0.9);
   border: solid rgba(39, 48, 56, 1) 1px;
-  border-radius: 5%;
+  border-radius: 3vh;
   padding: 2rem;
 }
 dialog::backdrop {
@@ -103,7 +103,7 @@ dialog::backdrop {
 
 .border-gradient-circular {
   background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
-  width: 23%;
+  width: 26%;
   aspect-ratio: 1/1;
   border-radius: 100%;
   border: 2px solid transparent;
@@ -132,6 +132,10 @@ dialog::backdrop {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
 
 

@@ -40,8 +40,8 @@ const Hooks = () => {
     if (edit) {
       apiHandler
         .editPartner({ partnerId: partnerId, name: name, age: age, comment: comment })
-        .then(() => {
-          authenticateUser();
+        .then(async () => {
+          await authenticateUser();
         })
         .catch((error) => console.error(error));
     }
@@ -51,15 +51,15 @@ const Hooks = () => {
   const handleDeleteHook = (hookId, partnerId) => {
     apiHandler
       .deleteHook({ hookId: hookId, partnerId: partnerId })
-      .then(() => authenticateUser())
+      .then(async () => await authenticateUser())
       .catch((error) => console.error(error));
   };
 
   const handleDeletePartner = (partnerId) => {
     apiHandler
       .deletePartner({ partnerId: partnerId })
-      .then(() => {
-        authenticateUser();
+      .then(async () => {
+        await authenticateUser();
         navigate("/partners");
       })
       .catch((error) => console.error(error));
@@ -108,11 +108,11 @@ const Hooks = () => {
               {partner.name}, {partner.age}
             </h2>
       */}
-              <input className={edit ? "change" : ""} type="text" value={name} size={name.length} id="name" name="name" onChange={handleName} />
-              <input className={edit ? "change" : ""} type="text" value={age} size={String(age).length} id="age" name="age" onChange={handleAge} />
+              <input className={edit ? "change" : ""} type="text" value={name} size={name.length} id="name" name="name" onChange={handleName}  placeholder='Name'/>
+              <input className={edit ? "change" : ""} type="text" value={age} size="3"id="age" name="age" onChange={handleAge}  placeholder='Age'/>
             </div>
             {/* <h4>{partner.comment}</h4> */}
-            <input className={edit ? "change" : ""} type="text" value={comment} size={comment.length} id="comment" name="comment" onChange={handleComment} />
+            <input className={edit ? "change" : ""} type="text" value={comment} size={comment.length} id="comment" name="comment" onChange={handleComment} placeholder='Add comment'/>
             <h4>Hooks: {partner.hooks.length}</h4>
             <div className="buttons-container">
 
