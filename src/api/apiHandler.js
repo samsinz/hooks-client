@@ -74,6 +74,14 @@ const service = {
     .catch(errorHandler);
   },
 
+  editPartner(userInfo){
+    const {partnerId} = userInfo;
+    return service
+    .post(`/api/partners/${partnerId}/edit`, userInfo)
+    .then((res) => res.data)
+    .catch(errorHandler);
+  },
+
   // getAllTheCats() {
   // 	return service
   // 		.get("/api/cats")
