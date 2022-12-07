@@ -29,7 +29,7 @@
 }
 
 .Partners .search {
-    margin: 0 4vh;
+    margin: 0 4vh 3vh;
     width: 120vh;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .Partners .partner-card {
-    margin-top: 3vh;
+    margin-bottom: 3vh;
     background: rgba(150, 150, 150, 0.03);
     border-radius: 20px;
 

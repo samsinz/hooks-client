@@ -40,7 +40,12 @@ const Activities = () => {
           "0" + (new Date(Date.parse(currentUser.partners[i].hooks[j].date)).getMonth()+1)
         ).slice(-2)}-${("0" + new Date(Date.parse(currentUser.partners[i].hooks[j].date)).getDate()).slice(-2)}`;
 
-        tempCalendar.push({ value: 1, day: date });
+        let tempIndex=0;
+        if(tempCalendar.filter((entry)=> { tempIndex=tempCalendar.indexOf(entry); return entry.day === date}).length != 0){
+            tempCalendar[tempIndex].value+=20;
+        }else {
+            tempCalendar.push({ value: 1, day: date });
+        }
       }
     }
     setDates(tempCalendar);
@@ -53,6 +58,7 @@ const Activities = () => {
 
   return (
     <div className="Activities">
+    {console.log(dates)}
       <div className="info">
         <h2 className="bold">Sexual activity</h2>
 
@@ -68,7 +74,8 @@ const Activities = () => {
           from={from}
           to={to}
           emptyColor="#101419" //11161c
-          colors={["#7E24FF"]}
+          colors={[ '#7E24FF', '#7E24FF', '#7E24FF', '#691cd5', '#5a17b8', '#4c139d', '#3d0e7f', '#300b64' ]}
+
           minValue={-38}
           maxValue={100}
           margin={{ top: 0, right: 0, bottom: 0, left: 0 }}

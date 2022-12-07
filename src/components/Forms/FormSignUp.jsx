@@ -60,18 +60,18 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
 
         <form onSubmit={handleSubmit}>
           <div className="titleArea">
-            <h2>Create your account</h2>
+            <h2 className="bold">Create your account</h2>
             <div className="toFlex">
-              <p> Already have an accout? </p>
-              <p className="toLink" onClick={showLogin}>
+              <h4> Already have an accout? </h4>
+              <h4 className="bold hover" onClick={showLogin}>
                 Log in
-              </p>
+              </h4>
             </div>
           </div>
 
           <div className="sameLine">
             <div className="left">
-              <label htmlFor="name">Name</label>
+            <h4> <label htmlFor="name">Name</label></h4>
               <input
                 onChange={handleChange}
                 value={values.name}
@@ -81,7 +81,7 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
               />
             </div>
             <div className="right">
-              <label htmlFor="birth">Birthdate</label>
+            <h4> <label htmlFor="birth">Birthdate</label></h4>
               <input
                 onChange={handleChange}
                 value={values.birth}
@@ -92,7 +92,7 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
               />
             </div>
           </div>
-          <label htmlFor="email">Email</label>
+          <h4> <label htmlFor="email">Email</label></h4>
           <input
             onChange={handleChange}
             value={values.email}
@@ -100,7 +100,7 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
             id="email"
             name="email"
           />
-          <label htmlFor="password">Password</label>
+          <h4> <label htmlFor="password">Password</label></h4> 
           <input
             onChange={handleChange}
             value={values.password}
@@ -110,7 +110,7 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
           />
           <FileUploader onFileSelectSuccess={(file) => setSelectedFile(file)} />
 
-          {error && <h3 className="error">{error.message}</h3>}
+          {error && <h4 className="error">{error.message}</h4>}
 
           <button type="submit" className="svgButton arrowButton">
             <svg
