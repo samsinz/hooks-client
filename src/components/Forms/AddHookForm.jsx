@@ -59,9 +59,7 @@ const AddHookForm = ({ closeAddHook }) => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const handleSubmit = () => {
     const fd = new FormData();
     fd.append("_id", values._id);
     fd.append("name", values.name);

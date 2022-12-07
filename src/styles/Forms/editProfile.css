@@ -1,7 +1,11 @@
-.FormEditProfile h2 {
-  margin-bottom: 1rem;
-  margin-left:7rem;
+.FormEditProfile {
+  padding: 1rem 3rem 0 3rem;
+}
 
+.FormEditProfile h2 {
+  font-weight: bold;
+  margin-bottom: 2rem !important;
+  margin-left: 7rem;
 }
 
 .FormEditProfile .sameLine {
@@ -10,26 +14,22 @@
   gap: 0.5rem;
 }
 
-.FormEditProfile p {
-  margin-bottom: 2rem !important;
-}
-
 .FormEditProfile u {
   color: var(--custompink);
 }
 
-.ProfileH2{
-  margin-left: 2rem
+.ProfileH2 {
+  margin-left: 2rem;
 }
 
 .Profilepic {
   width: 8rem;
-  margin-left:7rem;
-  background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+  margin-left: 7rem;
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
   border: 2px solid transparent;
   aspect-ratio: 1/1;
   border-radius: 100%;
-  
 }
 .FormEditProfile .left,
 .FormEditProfile .right {
@@ -81,6 +81,28 @@
   background-color: white !important;
 }
 
-.delete{
+/* .delete{
   color: var(--custompink)
+} */
+
+.deleteModal h2 {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 0 2rem 0 0;
+}
+p.delete {
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  text-decoration: underline;
+}
+
+p.toDelete {
+  margin-top: 4rem !important;
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  text-decoration: underline;
 }

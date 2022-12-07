@@ -3,6 +3,10 @@
   padding: 2rem 2rem;
 }
 
+.ressource .svgButton {
+  cursor: pointer;
+}
+
 .ressource span {
   position: absolute;
   right: 5vh;

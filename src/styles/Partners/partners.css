@@ -17,11 +17,16 @@
 }
 
 .Partners .add {
-  font-weight: 800;
-  padding: 0.2vh 0.5vh;
+  text-align: center;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  display: inline-block;
+  vertical-align: baseline;
+  font-weight: 400;
+  font-size: 1rem;
   margin-right: 0.3rem;
   background: rgba(150, 150, 150, 0.5);
-  border-radius: 2rem;
+  border-radius: 100%;
 }
 
 .Partners #title h3:hover .add {
@@ -29,8 +34,8 @@
 }
 
 .Partners .search {
-    margin: 0 4vh 3vh;
-    width: 120vh;
+  margin: 0 4vh 3vh;
+  width: 120vh;
 }
 
 .Partners h1 {
@@ -38,105 +43,101 @@
 }
 
 .Partners input {
-    width: 25vh;
-    height: 4vh;
-    font-size: 1.9vh;
-    background-color: #151a1f;
-    padding-left: 1vh;
-    border: 1px solid #4c4c4c;
-    color: #bbbbbb;
-    border-radius: 1vh;
+  width: 25vh;
+  height: 4vh;
+  font-size: 1.9vh;
+  background-color: #151a1f;
+  padding-left: 1vh;
+  border: 1px solid #4c4c4c;
+  color: #bbbbbb;
+  border-radius: 1vh;
 }
 
-.Partners input:focus{
-    outline: 1px solid white;
+.Partners input:focus {
+  outline: 1px solid white;
 }
 
 .Partners .partner-card {
-    margin-bottom: 3vh;
-    background: rgba(150, 150, 150, 0.03);
-    border-radius: 20px;
+  margin-bottom: 3vh;
+  background: rgba(150, 150, 150, 0.03);
+  border-radius: 20px;
 
-    display: flex;
-    width: 120vh;
-    height: 20vh;
-    /* justify-content: space-around; */
+  display: flex;
+  width: 120vh;
+  height: 20vh;
+  /* justify-content: space-around; */
 }
 
 .Partners .profile-pic {
-    width: 18vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
+  width: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .Partners .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 16vh;
-    margin-right: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 16vh;
+  margin-right: 2vh;
 }
 
 .Partners .info h2 {
-    margin-bottom: 0.5vh;
+  margin-bottom: 0.5vh;
 }
 
 .Partners .info h3 {
-    font-size: 1.6vh;
-    text-transform: capitalize;
+  font-size: 1.6vh;
+  text-transform: capitalize;
 }
 
 .Partners #more {
-    text-align: center;
-    width: 10vh;
-    border-radius: 0.3rem;
-    border: 1.5px solid white;
-    margin-top: 1vh;
-    padding: 0.3vh 0.8vh;
-    font-size: 1.3vh;
-    font-weight: 500;
+  text-align: center;
+  width: 10vh;
+  border-radius: 0.3rem;
+  border: 1.5px solid white;
+  margin-top: 1vh;
+  padding: 0.3vh 0.8vh;
+  font-size: 1.3vh;
+  font-weight: 500;
 }
 
 .Partners #more:hover {
-    background: rgba(150, 150, 150, 0.4);
-    cursor: pointer;
+  background: rgba(150, 150, 150, 0.4);
+  cursor: pointer;
 }
 
 .Partners #partner-image {
-    width: 70%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 10vh;
+  width: 70%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10vh;
 }
 
 .Partners .safe {
-    width: 16vh;
+  width: 16vh;
 }
 
 .Partners .orgasms {
-    width: 16vh;
-
+  width: 16vh;
 }
 
 .Partners .rating {
-    width: 16vh;
-
+  width: 16vh;
 }
 .Partners .ratings {
-    width: 36vh;
-
+  width: 36vh;
 }
 
-.Partners .favorite{
-    position: absolute;
-    width: 4vh;
-    height: 4vh;
-    bottom: 3.9vh;
-    left: 2.4vh;
-    cursor: pointer;
+.Partners .favorite {
+  position: absolute;
+  width: 4vh;
+  height: 4vh;
+  bottom: 3.9vh;
+  left: 2.4vh;
+  cursor: pointer;
 }
 
 .Partners h2 {
@@ -145,7 +146,7 @@
 }
 
 .Partners h3 {
-  font-size: 1.4vh;
+  font-size: 1.5vh;
 }
 
 .Partners h4 {
@@ -155,4 +156,3 @@
 .Partners p {
   font-size: 1.4vh;
 }
-
