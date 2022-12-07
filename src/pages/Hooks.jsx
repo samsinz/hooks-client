@@ -39,7 +39,12 @@ const Hooks = () => {
   const handleEdit = (partnerId) => {
     if (edit) {
       apiHandler
-        .editPartner({ partnerId: partnerId, name: name, age: age, comment: comment })
+        .editPartner({
+          partnerId: partnerId,
+          name: name,
+          age: age,
+          comment: comment,
+        })
         .then(async () => {
           await authenticateUser();
         })
@@ -108,17 +113,52 @@ const Hooks = () => {
               {partner.name}, {partner.age}
             </h2>
       */}
-              <input className={edit ? "change" : ""} type="text" value={name} size={name.length} id="name" name="name" onChange={handleName}  placeholder='Name'/>
-              <input className={edit ? "change" : ""} type="text" value={age} size="3"id="age" name="age" onChange={handleAge}  placeholder='Age'/>
+              <input
+                className={edit ? "change" : ""}
+                type="text"
+                value={name}
+                size={name.length}
+                id="name"
+                name="name"
+                onChange={handleName}
+                placeholder="Name"
+              />
+              <input
+                className={edit ? "change" : ""}
+                type="text"
+                value={age}
+                size="3"
+                id="age"
+                name="age"
+                onChange={handleAge}
+                placeholder="Age"
+              />
             </div>
             {/* <h4>{partner.comment}</h4> */}
-            <input className={edit ? "change" : ""} type="text" value={comment} size={comment.length} id="comment" name="comment" onChange={handleComment} placeholder='Add comment'/>
+            <input
+              className={edit ? "change" : ""}
+              type="text"
+              value={comment}
+              size={comment.length}
+              id="comment"
+              name="comment"
+              onChange={handleComment}
+              placeholder="Add comment"
+            />
             <h4>Hooks: {partner.hooks.length}</h4>
             <div className="buttons-container">
-
-              <img src={editImage} alt="edit" className="hover" onClick={() => handleEdit(partner._id)} />
-              <img src={deleteImage} alt="delete" className="hover" onClick={() => handleDeletePartner(partner._id)} />
-
+              <img
+                src={editImage}
+                alt="edit"
+                className="hover"
+                onClick={() => handleEdit(partner._id)}
+              />
+              <img
+                src={deleteImage}
+                alt="delete"
+                className="hover"
+                onClick={() => handleDeletePartner(partner._id)}
+              />
             </div>
           </div>
         </div>

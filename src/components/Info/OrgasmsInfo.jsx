@@ -47,7 +47,7 @@ const OrgasmsInfo = ({ closeInfo }) => {
         </div>
       </div>
       <h3 className="usefulLinks">Useful links</h3>
-      <a href="https://pleasurebetter.com/orgasm-statistics/">
+      <a href="https://pleasurebetter.com/orgasm-statistics/" target="_blank">
         45 Orgasm Statistics →
       </a>
     </div>

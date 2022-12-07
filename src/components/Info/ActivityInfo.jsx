@@ -49,7 +49,7 @@ const ActivityInfo = ({ closeInfo }) => {
         </div>
       </div>
       <h3 className="usefulLinks">Useful links</h3>
-      <a href="https://bedbible.com/hookup-culture-statistics/">
+      <a href="https://bedbible.com/hookup-culture-statistics/" target="_blank">
         Hookup Culture Statistics →
       </a>
     </div>

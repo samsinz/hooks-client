@@ -60,6 +60,7 @@
 
 .Hooks .hook {
   display: flex;
+  justify-content: space-between;
   width: 120vh;
   background: rgba(150, 150, 150, 0.03);
   margin-bottom: 4vh;
@@ -82,7 +83,7 @@
 }
 
 .Hooks .notes {
-  width: 35vh;
+  width: 20vh;
 }
 
 .Hooks .buttons {
