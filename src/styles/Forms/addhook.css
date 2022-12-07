@@ -5,6 +5,7 @@
 .addhook h2 {
   font-weight: bold;
   margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .addhook .searchPartner {
@@ -31,17 +32,18 @@
 .addhook label {
   font-weight: 400;
   display: block;
-  margin: 2rem 0 0.2rem 0;
+  margin: 0rem 0 0.4rem 0;
+  font-size: 0.9rem;
 }
 
 .addhook input {
   padding: 10px;
   background-color: rgba(150, 150, 150, 0.03);
-  border: solid white 1px;
+  /* border: solid white 1px; */
   border-radius: 5px;
   height: 2.5rem;
   width: 100% !important;
-  margin: 0 !important;
+  margin: 0 0 2rem 0 !important;
 }
 
 input#age {
@@ -51,12 +53,15 @@ input#age {
 }
 
 .addhook .svgButton {
-  padding: 0.7rem;
+  /* padding: 0.7rem; */
   border: none;
   background-color: transparent;
-  margin: 0 0 2rem auto;
+  /* margin: 0 0 2rem auto; */
   display: flex;
   cursor: pointer;
+  position: absolute;
+  top: 3.5rem;
+  right: 4rem;
 }
 
 .addhook span {
@@ -72,49 +77,69 @@ input#age {
   border-radius: 100%;
   aspect-ratio: 1;
   display: flex;
-  margin: 1.5rem 0 0 auto;
-  background-color: white !important;
+  margin: 5rem 0 0 auto;
+  background-color: transparent;
+  border: none;
+}
+
+.addhook .arrowButton:hover {
+  /* background-color: aquamarine; */
 }
 
 .addhook .stage {
   display: flex;
-  justify-content: left;
-  cursor: pointer;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  gap: 1rem
 }
 
 .addhook .stageItem {
+  text-align: center;
+  flex-grow: 1;
+  cursor: pointer;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
+  padding: 0.3rem 1rem;
   border-radius: 5px;
   border: solid white 2px;
 }
 
 .addhook .activeStage {
+  text-align: center;
+  flex-grow: 1;
   cursor: pointer;
   font-size: 1rem !important;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
   border-radius: 5px;
+  padding: 0.3rem 1rem;
   border: solid var(--custompink) 2px;
   color: var(--custompink);
 }
 .addhook .tag {
   cursor: pointer;
-  display: inline;
+  /* display: inline; */
   font-size: 1rem;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
+  padding: 0.3rem 1rem;
   border-radius: 5px;
   border: solid white 2px;
 }
 
+.addhook .optionTags {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem
+}
+
+.addhook .newHookDuration input:focus {
+  outline: none;
+}
+
 .addhook .activeTag {
   cursor: pointer;
-  display: inline;
+  /* display: inline; */
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
   font-size: 1rem !important;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
   border-radius: 5px;
   border: solid var(--custompink) 2px;
   color: var(--custompink);
@@ -140,3 +165,5 @@ input#age {
   justify-content: flex-end;
   cursor: pointer;
 }
+
+

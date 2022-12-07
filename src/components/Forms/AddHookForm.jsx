@@ -5,9 +5,9 @@ import apiHandler from "../../api/apiHandler";
 import FileUploader from "./FileUploader";
 import React from "react";
 import service from "../../api/apiHandler";
-import Part1 from "./addHookForm/part1";
-import Part2 from "./addHookForm/part2";
-import Part3 from "./addHookForm/part3";
+import Part1 from "./addHookForm/Part1";
+import Part2 from "./addHookForm/Part2";
+import Part3 from "./addHookForm/Part3";
 
 const AddHookForm = ({ closeAddHook }) => {
   const [step, setStep] = useState(1);
@@ -26,6 +26,7 @@ const AddHookForm = ({ closeAddHook }) => {
     date: "",
     type: "",
     rating: "",
+    notes: "",
     duration: 0,
     orgasm: orgasm,
     protection: protection,
