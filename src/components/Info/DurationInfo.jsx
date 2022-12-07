@@ -1,11 +1,17 @@
 import React from "react";
-import '../../styles/Dashboard/ressource.css'
+import "../../styles/Dashboard/ressource.css";
 
 const DurationInfo = ({ closeInfo }) => {
   return (
-    <div className="safeInfoDuration">
+    <div className="ressource">
       <span onClick={closeInfo} className="svgButton">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             d="M2.13184 2.13184L10.2636 10.2636M10.2636 10.2636L18.3953 18.3953M10.2636 10.2636L2.13184 18.3953M10.2636 10.2636L18.3953 2.13184"
             stroke="white"
@@ -16,21 +22,42 @@ const DurationInfo = ({ closeInfo }) => {
       </span>
 
       <div>
-        <h1>Sex duration</h1>
+        <h2>Sex duration</h2>
         <p>
-          Despite what many people may believe, there is no normal or right duration for sex. What is most important is that all partners are satisfied with the
-          duration and quality of their sexual experiences. However, there are some factors that can affect the duration of sex, such as age, physical fitness,
-          and overall health.
+          Despite what many people may believe, there is no normal or correct
+          length of sex. The most important thing is that all partners are
+          satisfied with the length and quality of their sexual experiences.
+          However, there are factors that can affect the length of sex, such as
+          age, physical condition and general health. Pay attention to your own
+          sexual satisfaction and communicate with your partner about what you
+          enjoy and what you would like to change or improve. Overall, the
+          length of time you have sex is only one aspect of sexual health.
         </p>
-        <p>
-          In addition to the duration of sex, it is also important to consider the overall health of a person's sexual experiences. Pay attention to your own
-          sexual satisfaction and communicate with your partner about what you enjoy and what you would like to change or improve.
-        </p>
-        <p>
-          Overall, the duration of sex is just one aspect of sexual health. By focusing on overall health and satisfaction, individuals and couples can enjoy
-          fulfilling and satisfying sexual experiences.
-        </p>
+
+        <div class="ressourceStats">
+          <div class="leftStat">
+            <p className="statTop colored-text">5'25</p>
+            <p className="statBottom colored-text">minutes</p>
+            <p className="statLegend">
+              is the average duration of sexual intercourse, from penetration to
+              ejaculation.
+            </p>
+          </div>
+
+          <div class="rightStat">
+            <p className="statTop colored-text">3 to 7</p>
+            <p className="statBottom colored-text">minutes</p>
+            <p className="statLegend">
+              is the ideal length of sexual intercourse (not including
+              foreplay).
+            </p>
+          </div>
+        </div>
       </div>
+      <h3 className="usefulLinks">Useful links</h3>
+      <a href="https://www.durex.co.uk/blogs/explore-sex/how-long-should-sex-last">
+        How long should sex last →
+      </a>
     </div>
   );
 };
