@@ -40,7 +40,7 @@ const NavMain = () => {
           </h1>
           <div id="tags">
             <span>
-              {currentUser.partners.length === 1 ? currentUser.partners.length + " hook" : currentUser.partners.length + " hooks"} · {currentUser.score} pts
+              {currentUser.partners.length === 1 ? currentUser.partners.length + " partner" : currentUser.partners.length + " partners"} · {currentUser.score} pts
             </span>
             {/* <span>{currentUser.score} pts</span> */}
           </div>
