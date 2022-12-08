@@ -1,8 +1,8 @@
 .FormSignUp {
-
   width: 30rem;
   padding: 0 2rem 1rem;
 }
+
 .FormSignUp .sameLine {
   display: flex;
   flex-direction: row;
@@ -69,12 +69,12 @@
   background-color: white !important;
 }
 
-.toFlex {
+.FormSignUp .toFlex {
   display: flex;
   gap: 0.5rem;
 }
 
-.toLink {
+.FormSignUp .toLink {
   text-decoration: none;
   cursor: pointer;
   color: #c2b0fc;

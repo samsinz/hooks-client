@@ -1,0 +1,75 @@
+.howItWorks h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.howItWorks h2 {
+  font-weight: bold;
+}
+
+.howItWorks h4 {
+  font-size: 1rem !important;
+}
+
+.howItWorks .description {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.howItWorks #get-started {
+  padding: 1rem 2rem;
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+  border-radius: 2rem;
+  border: 2px solid transparent;
+  margin-right: 5rem;
+  display: block;
+  margin: auto;
+}
+
+.howItWorks #get-started:hover {
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to left, var(--customblue), var(--custompink)) border-box;
+}
+
+.howItWorks span {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.howItWorks .contentHowItWorks {
+  width: 70%;
+  margin: 5rem auto;
+  padding-bottom: 8rem;
+}
+
+.howItWorks .titleArea {
+  margin-bottom: 4rem;
+}
+
+.howItWorks .buttonGetStarted {
+  margin-top: 2rem;
+}
+
+.howItWorks img {
+  display: block;
+  margin: auto;
+}
+
+.howItWorks .infoBoxes {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+}
+
+.howItWorks .infoBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.howItWorks .infoTitle {
+  margin-bottom: 1rem;
+}

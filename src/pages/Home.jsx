@@ -15,6 +15,7 @@ import Activities from "../components/charts/Activities";
 import Ratings from "../components/charts/Ratings";
 
 import FormLogIn from "../components/Forms/FormLogIn";
+import HomeNav from "../components/HomeNav";
 
 const Home = () => {
   // modale signup //
@@ -43,27 +44,9 @@ const Home = () => {
 
   return (
     <div className="Home">
-      {/* l'image se met par dessus le menu donc il n'est pas cliquable */}
-      {/* <img id="glow" src={homeGlow} alt="glow" /> */}
 
-      <div className="top-bar">
-        <div className="logo">
-          <NavLink className="hover" to="/">
-            <img src={hookLogo} alt="logo" className="logo"/>
-          </NavLink>
-        </div>
-        <div className="links">
-          <NavLink className="hover" to="/howitworks">
-            How it works
-          </NavLink>
-          <NavLink className="hover" onClick={showSignup}>
-            Sign up
-          </NavLink>
-          <NavLink className="hover" onClick={showLogin}>
-            Log in
-          </NavLink>
-        </div>
-      </div>
+      <HomeNav {...{ showSignup, showLogin }} />
+
       <img id="glow" src={homeGlow} alt="glow" />
 
       <div className="home-content">

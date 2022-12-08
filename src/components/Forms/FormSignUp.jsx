@@ -81,15 +81,15 @@ const FormSignUp = ({ closeSignup, showLogin }) => {
         </span>
 
         <form onSubmit={handleSubmit}>
-          <div className="titleArea">
-            <h2 className="bold">Create your account</h2>
-            <div className="toFlex">
-              <h4> Already have an accout? </h4>
-              <h4 className="bold hover" onClick={showLogin}>
-                Log in
-              </h4>
-            </div>
-          </div>
+          <h2 className="bold">Create your account</h2>
+
+          <h4 className="toFlex">
+            {" "}
+            Already have an accout?
+            <span className="bold hover" onClick={showLogin}>
+              Log in
+            </span>
+          </h4>
 
           <div className="sameLine">
             <div className="left">

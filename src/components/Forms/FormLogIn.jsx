@@ -3,7 +3,7 @@ import useForm from "../../hooks/useForm";
 import apiHandler from "../../api/apiHandler";
 import useAuth from "../../auth/useAuth";
 import { Link, useNavigate } from "react-router-dom";
-import '../../styles/Forms/login.css'
+import "../../styles/Forms/login.css";
 
 const FormLogIn = ({ closeLogin, showSignup }) => {
   const [{ email, password }, handleChange] = useForm({
@@ -52,13 +52,17 @@ const FormLogIn = ({ closeLogin, showSignup }) => {
 
         <form onSubmit={handleSubmit}>
           <h2 className="bold">Log in</h2>
-          <div className="toFlex">
-            <h4>Don't have an account yet?</h4>
-            <h4 className="hover bold" onClick={showSignup}>
+
+          <h4 className="toFlex">
+            Don't have an account yet?&nbsp;
+            <span className="hover bold" onClick={showSignup}>
               Sign up
-            </h4>
-          </div>
-          <h4><label htmlFor="email">Email</label></h4>
+            </span>
+          </h4>
+
+          <h4>
+            <label htmlFor="email">Email</label>
+          </h4>
           <input
             type="email"
             id="accountEmail"
@@ -66,7 +70,9 @@ const FormLogIn = ({ closeLogin, showSignup }) => {
             onChange={handleChange}
             value={email}
           />
-          <h4><label htmlFor="password">Password</label></h4>
+          <h4>
+            <label htmlFor="password">Password</label>
+          </h4>
           <input
             type="password"
             id="accountPassword"

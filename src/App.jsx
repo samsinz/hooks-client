@@ -13,7 +13,7 @@ import useAuth from "./auth/useAuth";
 import "./styles/app.css";
 import AddHookForm from "./components/Forms/AddHookForm";
 import Hooks from "./pages/Hooks";
-import Testing from "./components/Forms/Testing";
+import HowItWorks from "./pages/HowItWorks";
 
 function App() {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
@@ -24,7 +24,7 @@ function App() {
 
       <div className="Panel">
         <Routes>
-        <Route path="/howitworks" element={<Testing />} />
+          <Route path="/howitworks" element={<HowItWorks />} />
 
           <Route element={<LoggedOut />}>
             <Route path="/" element={<Home />} />
@@ -37,7 +37,6 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/partners/:id" element={<Hooks />} />
-
           </Route>
         </Routes>
       </div>
