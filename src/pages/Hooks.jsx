@@ -162,9 +162,9 @@ const Hooks = () => {
             </div>
           </div>
         </div>
-        <div id="add" className="hover">
+        {/* <div id="add" className="hover">
           +
-        </div>
+        </div> */}
       </div>
       {partner.hooks
         .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
