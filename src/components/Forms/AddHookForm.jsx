@@ -132,6 +132,7 @@ const AddHookForm = ({ closeAddHook }) => {
             }}
           />
         )}
+        {console.log(values.rating)}
         {step === 3 && <Part3 {...{ values, handleChange }} />}
 
         {error && <h3 className="error">{error.message}</h3>}
