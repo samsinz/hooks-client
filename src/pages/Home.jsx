@@ -6,6 +6,7 @@ import homeGlow from "../assets/images/home-glow.png";
 import homeTrophy from "../assets/images/home-trophy.png";
 import homeProtection from "../assets/images/home-protection.png";
 import FormSignUp from "../components/Forms/FormSignUp";
+import hookLogo from "../assets/images/hooks-logo.png"
 
 import service from "../api/apiHandler";
 import useAuth from "../auth/useAuth";
@@ -43,7 +44,9 @@ const Home = () => {
 
   return (
     <div className="Home">
+
       <HomeNav {...{ showSignup, showLogin }} />
+
       <img id="glow" src={homeGlow} alt="glow" />
 
       <div className="home-content">

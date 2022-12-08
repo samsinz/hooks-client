@@ -9,7 +9,10 @@ import useAuth from "../../auth/useAuth";
 import DeleteAccount from "../LoggedOut/DeleteAccount";
 
 const FormEditProfile = ({ closeModal }) => {
+
+
   const dialog = useRef();
+  const birth = useRef()
 
   const showDialog = () => {
     dialog.current.showModal();
@@ -40,7 +43,7 @@ const FormEditProfile = ({ closeModal }) => {
 
   const [values, handleChange] = useForm({
     name: currentUser.name,
-    birth: currentUser.birth,
+    // birth: currentUser.birth,
     image: currentUser.image,
   });
   const [selectedFile, setSelectedFile] = useState("");
@@ -55,8 +58,10 @@ const FormEditProfile = ({ closeModal }) => {
     const fd = new FormData();
     fd.append("name", values.name);
     fd.append("email", values.email);
-    fd.append("birth", values.birth);
+    fd.append("birth", birth.current.value);
     fd.append("image", selectedFile);
+
+
 
     apiHandler
       .patch("/api/auth/me", fd)
@@ -68,7 +73,10 @@ const FormEditProfile = ({ closeModal }) => {
         console.log(error);
         // setError(error.response.data);
       });
+
+     
   };
+  // console.log(values.birth);
   return (
     <>
       <div className="FormEditProfile">
@@ -105,15 +113,19 @@ const FormEditProfile = ({ closeModal }) => {
                 name="name"
               />
             </div>
+            
             <div className="right">
               <label htmlFor="birth">Birthdate</label>
               <input
                 onChange={handleChange}
-                value={new Date(values.birth).toISOString().split("T")[0]}
+                defaultValue={new Date(currentUser.birth).toISOString().split("T")[0]}
                 type="date"
                 id="birth"
                 name="birth"
                 max={current}
+                ref={birth}
+                
+              
               />
             </div>
           </div>

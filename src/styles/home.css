@@ -13,12 +13,7 @@
 }
 
 .Home .logo {
-  font-family: Dolce Vita;
-  font-size: 2rem;
-  /* background: radial-gradient(100% 341.89% at 0% 50%, #0047ff 0%, #fa00ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; */
+  width: 5rem;
 }
 
 .Home .links {

@@ -19,9 +19,13 @@ const Part2 = ({
   const current = new Date().toISOString().split("T")[0];
   const minimumDate = new Date("1970-01-01").toISOString();
 
+  const [error, setError] = useState(false)
+
   const handleNext = () => {
     if (values.location && values.date && (sexIsActive || foreplayIsActive || kissingIsActive) && values.rating) {
       setStep(3);
+    } else{
+      setError(true)
     }
   };
 
@@ -105,7 +109,7 @@ const Part2 = ({
       </div>
       <label htmlFor="rating">Rating</label>
       <input onChange={handleChange} value={values.rating} type="number" id="rating" name="rating" />
-
+          {error && <p>Please fill out the entire form.</p>}
       <div className="nextStep" onClick={handleNext}>
         <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
