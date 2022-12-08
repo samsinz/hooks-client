@@ -1,0 +1,13 @@
+.Loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.Loading .icon {
+    width: 10vh;
+    height: 10vh;
+    aspect-ratio: 1/1;
+}
