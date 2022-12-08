@@ -27,7 +27,7 @@ const AchievementsInfo = ({ closeAchievement, id }) => {
         <img className="infoImg" src={id.image} alt="info" />
       </div>
       <h1 className="bold">{id.name}</h1>
-      <p style={(textAlign= 'center')}>{id.description}</p>
+      <p style={{textAlign: "center"}}>{id.description}</p>
     </div>
   );
 };
