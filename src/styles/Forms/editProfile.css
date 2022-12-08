@@ -23,6 +23,7 @@
 }
 
 .Profilepic {
+  object-fit: cover;
   width: 8rem;
   margin-left: 7rem;
   background: linear-gradient(#151a1f, #151a1f) padding-box,
