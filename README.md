@@ -1,4 +1,4 @@
-# HOOKS
+# Hooks
 
 
 This project was completed in one week by our group of 3: Sam Sinz, Olympe Lespagnon and Justine Sarzi. We succeeded to deploy the platform even if we wished to have more time to implement more features.
@@ -10,6 +10,11 @@ Every relation are called 'Hook' and they can add different hooks to the same pa
 
 
 ## DEMO
+
+Sign up or Log in with this account:
+email: test@test.com
+password: test
+
 ## [Link to the App](https://my-hooks.netlify.app/)
 
 
