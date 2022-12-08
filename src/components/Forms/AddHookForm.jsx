@@ -25,9 +25,9 @@ const AddHookForm = ({ closeAddHook }) => {
     location: "",
     date: "",
     type: "",
-    rating: "",
+    rating: 5,
     notes: "",
-    duration: 0,
+    duration: 1,
     orgasm: orgasm,
     protection: protection,
   });
