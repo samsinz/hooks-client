@@ -150,8 +150,7 @@ const FormEditProfile = ({ closeModal }) => {
             </svg>
           </button>
         </form>
-        <p className="toDelete" onClick={showDialog}>
-          {" "}
+        <p className="hover" onClick={showDialog}>
           Do you want to delete your account?
         </p>
 
