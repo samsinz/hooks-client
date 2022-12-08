@@ -1,0 +1,33 @@
+.HomeNav #get-started {
+  padding: 1rem 2rem;
+  /* animation: gradientLoop2 3s alternate infinite; */
+  /* animation-direction: alternate; */
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+  border-radius: 2rem;
+  border: 2px solid transparent;
+}
+
+.HomeNav #get-started:hover {
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to left, var(--customblue), var(--custompink)) border-box;
+}
+
+.HomeNav .links {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.HomeNav {
+  padding: 2.5rem 5rem 2.5rem 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.HomeNav .logo {
+  font-family: Dolce Vita;
+  font-size: 2rem;
+}

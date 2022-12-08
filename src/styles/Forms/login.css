@@ -2,15 +2,13 @@
   margin-bottom: 0.2rem;
 }
 
-.FormLogin{
+.FormLogin {
   width: 22rem;
   height: 23.5rem;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
 }
-
-
 
 .FormLogin .sameLine {
   display: flex;
@@ -26,18 +24,18 @@
   color: var(--custompink);
 }
 
-.ProfileH2{
-  margin-left: 2rem
+.ProfileH2 {
+  margin-left: 2rem;
 }
 
 .Profilepic {
   width: 8rem;
-  margin-left:7rem;
-  background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+  margin-left: 7rem;
+  background: linear-gradient(#151a1f, #151a1f) padding-box,
+    linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
   border: 2px solid transparent;
   aspect-ratio: 1/1;
   border-radius: 100%;
-  
 }
 .FormLogin .left,
 .FormLogin .right {
@@ -76,8 +74,9 @@
 }
 
 .FormLogin span {
-  display: flex;
-  justify-content: right;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
 }
 
 .FormLogin .svgButton p {
@@ -92,7 +91,6 @@
   background-color: white !important;
 }
 
-.delete{
-  color: var(--custompink)
+.delete {
+  color: var(--custompink);
 }
-
