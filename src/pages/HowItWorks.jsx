@@ -68,10 +68,10 @@ const HowItWorks = () => {
             <p>01.</p>
             <h2 className="infoTitle">Keep a track of your hookups</h2>
             <p>
-              On Hooks, you can list all your sexual partners and their
-              characteristics. Hooks also allows you to enter multiple sexual
-              encounters per partner to access data that model the evolution of
-              your sexual well-being with this particular person.
+              On Hooks, you can list all your sexual encounters. Hooks also
+              allows you to enter multiple sexual encounters per partner to
+              access data that model the evolution of your sexual well-being
+              with this particular person.
             </p>
           </div>
 

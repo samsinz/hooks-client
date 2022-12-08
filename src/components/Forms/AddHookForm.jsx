@@ -132,6 +132,7 @@ const AddHookForm = ({ closeAddHook }) => {
             }}
           />
         )}
+
         {step === 3 && <Part3 {...{ values, handleChange, setSelectedFile }} />}
 
         {error && <h3 className="error">{error.message}</h3>}
