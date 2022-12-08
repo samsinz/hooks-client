@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import howItWorks from "../assets/images/howitworks.png";
 import "../styles/howitworks.css";
 import "../styles/home.css";
-import HomeNav from "../components/HomeNav";
+import HomeNav from "../components/Nav/HomeNav";
 import FormLogIn from "../components/Forms/FormLogIn";
 import FormSignUp from "../components/Forms/FormSignUp";
 

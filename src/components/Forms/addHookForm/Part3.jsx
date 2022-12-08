@@ -2,7 +2,7 @@ import React from "react";
 import FileUploader from "../FileUploader";
 import "./../../../styles/Forms/addhook.css";
 
-const Part3 = ({ values, handleChange, setStep }) => {
+const Part3 = ({ values, handleChange, setSelectedFile, setStep }) => {
   return (
     <div className="part3">
       <h2>Optional fields</h2>

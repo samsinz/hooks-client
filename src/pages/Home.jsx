@@ -15,7 +15,7 @@ import Activities from "../components/charts/Activities";
 import Ratings from "../components/charts/Ratings";
 
 import FormLogIn from "../components/Forms/FormLogIn";
-import HomeNav from "../components/HomeNav";
+import HomeNav from "../components/Nav/HomeNav";
 
 const Home = () => {
   // modale signup //
