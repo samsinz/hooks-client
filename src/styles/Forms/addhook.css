@@ -90,7 +90,7 @@ input#age {
   display: flex;
   margin-bottom: 2rem;
   justify-content: space-between;
-  gap: 1rem
+  gap: 1rem;
 }
 
 .addhook .stageItem {
@@ -127,7 +127,7 @@ input#age {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem
+  gap: 1rem;
 }
 
 .addhook .newHookDuration input:focus {
@@ -165,5 +165,3 @@ input#age {
   justify-content: flex-end;
   cursor: pointer;
 }
-
-
