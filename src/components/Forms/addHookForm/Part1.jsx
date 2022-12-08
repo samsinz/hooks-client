@@ -4,9 +4,21 @@ import "./../../../styles/Forms/addhook.css";
 
 const Part1 = ({ handlePartnersList, partnersName, handleChange, values, setStep }) => {
   const { currentUser, authenticateUser } = useAuth();
+  const [nameError, setNameError] =useState(false)
+  const [ageError, setAgeError] =useState(false)
 
   const handleNext = () => {
-    if (values.name && values.age) {
+    if(!values.name){
+      setNameError(true);
+    } else{
+      setNameError(false);
+    }
+    if(values.age >= 18){
+      setAgeError(false);
+    } else{
+      setAgeError(true);
+    }
+    if (values.name && values.age>=18) {
       setStep(2);
     }
   };
@@ -33,7 +45,7 @@ const Part1 = ({ handlePartnersList, partnersName, handleChange, values, setStep
       <label htmlFor="name">What is your partner's name?</label>
       <input onChange={handleChange} value={values.name} type="text" id="name" name="name" />
       <label htmlFor="age">How old are they?</label>
-      <input onChange={handleChange} value={values.age} type="number" id="age" name="age" />
+      <input onChange={handleChange} value={values.age} type="number" id="age" name="age" min="18"/>
 
       <div className="nextStep" onClick={handleNext}>
         <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,6 +55,8 @@ const Part1 = ({ handlePartnersList, partnersName, handleChange, values, setStep
           />
         </svg>
       </div>
+      {nameError && <p>Your partner needs a name.</p>}
+      {ageError && <p>You need to confirm your partner is over 18.</p>}
     </div>
   );
 };

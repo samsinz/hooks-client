@@ -19,9 +19,10 @@ const Tags = ({ hook }) => {
           <div className="level" style={{ width: `${hook.duration * 50}%` }}></div>
         </div>
         <div className="legend">
-          <h3>Too short</h3>
-          <h3>Perfect</h3>
-          <h3>Too long</h3>
+        {console.log(hook.duration)}
+          <h3 className={hook.duration===0?"colored-text":""}>Too short</h3>
+          <h3 className={hook.duration===1?"colored-text":""}>Perfect</h3>
+          <h3 className={hook.duration===2?"colored-text":""}>Too long</h3>
         </div>
       </div>
     </div>
