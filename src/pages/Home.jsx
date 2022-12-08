@@ -6,6 +6,7 @@ import homeGlow from "../assets/images/home-glow.png";
 import homeTrophy from "../assets/images/home-trophy.png";
 import homeProtection from "../assets/images/home-protection.png";
 import FormSignUp from "../components/Forms/FormSignUp";
+import hookLogo from "../assets/images/hooks-logo.png"
 
 import service from "../api/apiHandler";
 import useAuth from "../auth/useAuth";
@@ -48,7 +49,7 @@ const Home = () => {
       <div className="top-bar">
         <div className="logo">
           <NavLink className="hover" to="/">
-            <span>Hooks</span>
+            <img src={hookLogo} alt="logo" className="logo"/>
           </NavLink>
         </div>
         <div className="links">
