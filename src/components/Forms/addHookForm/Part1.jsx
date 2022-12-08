@@ -39,7 +39,7 @@ const Part1 = ({
             <datalist id="partners">
               {partnersName.map((partner) => {
                 return (
-                  <option key={partner.id} value={partner.name}>
+                  <option key={partner._id} value={partner.name}>
                     {partner.comment}
                   </option>
                 );
