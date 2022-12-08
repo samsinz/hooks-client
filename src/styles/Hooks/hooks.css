@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  
 }
 
 .Hooks #partner-image {
@@ -28,6 +29,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin-bottom: 4vh;
+
 }
 
 .Hooks .partner-info {
@@ -60,7 +63,7 @@
   justify-content: space-between;
   width: 120vh;
   background: rgba(150, 150, 150, 0.03);
-  margin-top: 4vh;
+  margin-bottom: 4vh;
   height: 20vh;
   border-radius: 20px;
 }

@@ -30,8 +30,8 @@ const OrgasmsInfo = ({ closeInfo }) => {
           perfectly normal.
         </p>
 
-        <div class="ressourceStats">
-          <div class="leftStat">
+        <div className="ressourceStats">
+          <div className="leftStat">
             <p className="statTop colored-text">18</p>
             <p className="statBottom colored-text">percent</p>
             <p className="statLegend">
@@ -39,7 +39,7 @@ const OrgasmsInfo = ({ closeInfo }) => {
             </p>
           </div>
 
-          <div class="rightStat">
+          <div className="rightStat">
             <p className="statTop colored-text">5-10</p>
             <p className="statBottom colored-text">percent</p>
             <p className="statLegend">of women have never orgasmed</p>

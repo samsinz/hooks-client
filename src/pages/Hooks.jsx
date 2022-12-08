@@ -167,7 +167,7 @@ const Hooks = () => {
         </div>
       </div>
       {partner.hooks
-        .sort((a, b) => Date.parse(a.date) - Date.parse(b.date))
+        .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
         .map((hook) => {
           return (
             <div key={hook._id} className="hook">
