@@ -95,7 +95,7 @@ const Hooks = () => {
         <div className="partner-info">
           <img
             id="partner-image"
-            className={partner.image ? true : "border-gradient-circular-og"}
+            className={partner.image ? "" : "border-gradient-circular-og"}
             src={
               partner.image
                 ? partner.image
