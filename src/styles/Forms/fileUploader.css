@@ -7,10 +7,10 @@
   display: none;
 }
 
-.fileUploader p {
-  font-size: 1rem !important;
-  padding-top: 0.2rem;
-  text-align: center !important;
+.fileUploader .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 2.5rem;
   border-radius: 5px;
@@ -19,7 +19,11 @@
   border: solid white 1px;
 }
 
-.fileUploader p:hover {
+.fileUploader p {
+  font-size: 1rem;
+}
+
+.fileUploader .btn:hover {
   background-color: rgba(180, 180, 180, 0.314);
   cursor: pointer;
 }

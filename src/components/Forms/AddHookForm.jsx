@@ -8,8 +8,10 @@ import service from "../../api/apiHandler";
 import Part1 from "./addHookForm/Part1";
 import Part2 from "./addHookForm/Part2";
 import Part3 from "./addHookForm/Part3";
+import useAuth from "../../auth/useAuth";
 
 const AddHookForm = ({ closeAddHook }) => {
+  const {authenticateUser} = useAuth()
   const [step, setStep] = useState(1);
   const [stage, setStage] = useState("");
 
@@ -59,7 +61,8 @@ const AddHookForm = ({ closeAddHook }) => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     const fd = new FormData();
     fd.append("_id", values._id);
     fd.append("name", values.name);
@@ -77,10 +80,13 @@ const AddHookForm = ({ closeAddHook }) => {
 
     apiHandler
       .addHook(fd)
-      .then(() => {
+      .then( () => {
         reset();
         setSelectedFile(null);
         closeAddHook();
+        authenticateUser();
+        setStep(1)
+        
       })
       .catch((error) => {
         setError(error.response.data);
