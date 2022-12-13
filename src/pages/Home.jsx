@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import "../styles/home.css";
 import homeDashboard from "../assets/images/home-dashboard.png";
 import homeGlow from "../assets/images/home-glow.png";
@@ -18,6 +18,10 @@ import FormLogIn from "../components/Forms/FormLogIn";
 import HomeNav from "../components/Nav/HomeNav";
 
 const Home = () => {
+
+  const navigate = useNavigate();
+
+
   // modale signup //
   const signup = useRef();
 
@@ -58,6 +62,7 @@ const Home = () => {
             overview of your well-being and find detailed information about your
             relationships.
           </p>
+          <p style={{fontWeight: '100'}}>Coded with passion by <a href="https://github.com/olxmpe">@olxmpe</a>, <a href="https://github.com/samsinz">@sam.sinz</a>, and <a href="https://github.com/jsarzi">@jsarzi</a>.</p>
           <button onClick={showSignup} id="get-started" className="hover">
             Get started &nbsp; &nbsp;
             <svg
@@ -73,6 +78,18 @@ const Home = () => {
               />
             </svg>
           </button>
+          <button onClick={() => {window.location.href = 'https://github.com/samsinz/hooks-client'}}id="get-started" className="hover">GitHub Repo &nbsp; &nbsp;<svg
+              width="13"
+              height="12"
+              viewBox="0 0 13 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.25923 11.2102L6.23651 10.1989L9.78764 6.64773H0.867188V5.17045H9.78764L6.23651 1.625L7.25923 0.607954L12.5604 5.90909L7.25923 11.2102Z"
+                fill="white"
+              />
+            </svg></button>
           {/* <p>
             Already have an account ?{" "}
             <span onClick={showLogin}>
