@@ -41,7 +41,7 @@ const RatingsPartners = ({ partner }) => {
     }
 
     setRatings((currentValue) => [...currentValue, { id: "ratings", data: cleanedRatings }]);
-  }, [partner]);
+  }, []);
 
   if (!ratings.length) {
     return <div>Loading</div>;
@@ -49,6 +49,7 @@ const RatingsPartners = ({ partner }) => {
 
   return (
     <div className="ratings-component">
+    {console.log(ratings)}
       <div className="legend">
         <span>10</span>
         <span>5</span>
@@ -56,7 +57,7 @@ const RatingsPartners = ({ partner }) => {
       </div>
       <ResponsiveLine
         data={ratings}
-        key={["ratings"]}
+        key={partner._id}
         margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
         xScale={{ type: "point" }}
         yScale={{

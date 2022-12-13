@@ -11,9 +11,9 @@ Every relation are called 'Hook' and they can add different hooks to the same pa
 
 ## DEMO
 
-Sign up or Log in with this account:
-email: test@test.com
-password: test
+Sign up or log in using this account:
+- Email: test@test.com
+- Password: test
 
 ## [Link to the App](https://my-hooks.netlify.app/)
 
@@ -42,3 +42,5 @@ We did the following:
 - App responsive
 - Having a notification when you unlock an achievement 
 
+
+## [Link to the server repository](https://github.com/samsinz/hooks-server)

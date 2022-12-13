@@ -24,12 +24,13 @@ const Partners = () => {
   };
 
   useEffect(() => {
+    console.log('Trigger');
     setAllPartners(
       currentUser.partners.filter((partner) =>
         partner.name.toLowerCase().includes(search.toLowerCase())
       )
     );
-  }, [search]);
+  }, [search, currentUser.partners]);
 
   const openAddHook = () => {
     addHook.current.showModal();

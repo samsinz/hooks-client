@@ -1,9 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./../../styles/Forms/fileUploader.css";
 
 const FileUploader = ({ onFileSelectSuccess, setImageProfile }) => {
   const fileInput = useRef(null);
   const [state, setState] = useState(false);
+
+  useEffect(() => {
+    setState(false)
+  },[])
 
   const handleFileInput = (e) => {
     // handle validations
@@ -11,9 +15,9 @@ const FileUploader = ({ onFileSelectSuccess, setImageProfile }) => {
     setImageProfile ? setImageProfile(URL.createObjectURL(file)) : true;
     onFileSelectSuccess(file);
     setState(true);
-    setTimeout(() => {
-      setState(false);
-    }, 3000);
+    // setTimeout(() => {
+    //   setState(false);
+    // }, 8000);
   };
 
   return (

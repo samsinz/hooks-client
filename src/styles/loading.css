@@ -4,10 +4,27 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    flex-wrap: wrap;
 }
 
 .Loading .icon {
-    width: 10vh;
-    height: 10vh;
+    width: 9vh;
+    height: 9vh;
     aspect-ratio: 1/1;
 }
+
+.Loading .circle {
+    background: linear-gradient(#151a1f, #151a1f) padding-box, linear-gradient(to right, var(--customblue), var(--custompink)) border-box;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    border: 8px solid transparent;
+    /* margin-bottom: 0.6rem; */
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .Loading img {
+    width: 65%;
+    object-fit: contain;
+  }
